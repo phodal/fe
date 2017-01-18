@@ -34,8 +34,17 @@ FE 和 BE 的共同的语言
 
 第一天里，我们学了一门叫做 HTML 的语言。初学的时候，HTML 让我联想到了 XML，它们的结尾都是 ML。ML<sup>Markup Language</sup> 的意思是『标记语言』，HTML<sup>HyperText Markup Language</sup> 的意思是『超文本』。直到今天我才想明白，为什么那对情侣在学习的时候很害羞。
 
-HTML 是一个特别简单的语言，我再也找不到更简单的语言了。
+HTML 是一个特别简单的语言，我再也找不到更简单的语言了。但是为了运行起 HTML，我们仍然也花费了不少的功夫。不仅仅需要有 IDE，还需要一些额外的工具，比如浏览器，还有各种 Node.js。
 
+准备这些东西，已经有让我有了放弃的想法，但是毕竟万事开头难，过了这个坑下次就轻松了。
+
+###
+
+ - WebStorm
+ - Sublime
+ - Chrome 浏览器。
+
+如果你需要更多的工具，可以看看我的百宝箱：[https://github.com/phodal/toolbox](https://github.com/phodal/toolbox)，里面可是收藏了不少的好东西。
 
 后来，BE 学了 PHP 语言，FE 学的是 JavaScript，他们喜欢天天一起撕逼：哪个语言才是最 x 的语言。好在他们又有了一个共同的特点，天天制造 $，才没有分手。
 
