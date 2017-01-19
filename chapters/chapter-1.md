@@ -54,7 +54,9 @@ Chrome 浏览器虽然很不错，但是当时市场占有率太低，只能拿�
 
 大一刚到的时候，年轻气盛就去办了个社团，当了个社长。当时还能使用 Google 的服务，Google 免费的提供了 Google App Engine，应用就可以轻松地在上面运行，就是上面的那个网站。后来，世道变了，免费的东西没了，使用 SAE 还要去备案。
 
-慢慢地，当我开始越来越多的使用 JavaScript 时，DreamWeaver 提供的功能就变得越来越有限了，我开始觉得它越来越难用了。后来我转向了 Aptana，今天我使用 Intellij IDEA 专业版 和 WebStorm。
+慢慢地，当我开始越来越多的使用 JavaScript 时，DreamWeaver 提供的功能就变得越来越有限了，我开始觉得它越来越难用了。曾经有一段时间里，我使用 Aptana——它可以将 minify 后的代码格式化。
+
+现在，我使用 Intellij IDEA 和 WebStorm作为主要开发工具，它们的重构功能让我难以自拔。当我需要修改一些简单的文本里，我会使用 Vim 或者 Sublime text。也仍然在使用 Chrome 作为我的日常和开发用浏览器。
 
 万能的jQuery
 ---
