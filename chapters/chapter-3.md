@@ -7,25 +7,8 @@
 
 过去一年（即 2016 年）的每三个月（或者半年）里，前端领域不断涌现出新的知识，这些新的知识不断地在更新。这些知识点，可以源自于后台知识领域，源自于某些特定的语言，源自于新的知识理念。我们可以很轻松地找到一个例子，如前端所需要的 JavaScript 语言本身，这个语言出现了越来越多的变种。
 
-一年的前端之旅
+语言的变化
 ---
-
-
-一年前：jQuery
-
-九个月前：Backbone + 响应式设计
-
-六个月前：React + 响应式设计
-
-三个月前：Angular + Ionic
-
-今天：RX.js、ES6、TypeScript
-
-
-语言与框架演进
----
-
-### 语言
 
 几年间，出现了 CoffeeScript、TypeScript、ClojureScript、Dart、ES6 等等的语言，他们都可以编译为 JavaScript，随后就可以在浏览器上运行。诸如 ES6，这一个新的 JavaScript 版本（现有的 JavaScript 版本，称为 ES5，即 EcmaScritp 5），则可以在最新的浏览器上运行部分或者全部的特性。
 
@@ -33,9 +16,62 @@
 
 ![JavaScript编译语言](../images/js-language-compare.jpg)
 
+### JavaScript
+
+JavaScript 最初是由 Brendan Eich 在 xx 时开发的。
+
+对于一般的 Web 应用来说，JavaScript 搭配 jQuery 生态下的插件就够用。然而，应用并不会那么简单。
+
+Google 开发了 Google Map，使用 Ajax 技术。RESTful API  
+
+Web 应用变得越来越复杂。
+
+JavaScript 没有类，没有各种
+
+CoffeeScript
+
+对于常用
+
+### ES6+
+
+作为一个程序员，如果我们觉得一个工具不顺手，那么应该造一个新的轮子。我也喜欢去造前端的轮子，有时候是为了理解一个框架的原理，有时候则是为了创建一个更好的工具。也因此，当 JavaScript 不能满足前端工程师需求的时候，我们应该发展出一个更好的语言。于是，ES 6 就这样诞生了。
+
+ECMAScript 2015 （ES6）
+
+上一次ES5后，几乎规范化了6年（2009年12月 到 2015年6月）
+
+> TC39 是负责 JavaScript 进化的委员会。TC39 定期举行会议，其会议是由成员公司（主要的浏览器厂商）派代表和特邀专家出席了会议。
+
+### TypeScript
+
+我开始尝试 TypeScript 的原因是，ES 6 一直在变化。在 ES6 语言特性没有稳定下来的时候，我选择它作为技术栈总会存在一些风险。在这个时候，TypeScript 就成为了一个更好的选择——它创建得更早，并且语言特性稳定。而真正促使我使用 TypeScript 的契机则是，Angular 2 中采用了 TypeScript 作为开发语言。简单的来说，就是我需要用它，所以我才学 TypeScript 的。
+
+TypeScript 与其他编译为 JavaScript 的语言初衷是类似的，为了开发大规模 JavaScript 的应用。
+
 除去语言本身，还有各种新的前端框架。和其他领域（如后台，APP等等）中的框架一样，有的框架可以用于开发中大型应用，有的框架则能让我们更好地完成开发。
 
-### 框架
+一年里的四个前端项目
+---
+
+有意思的是，如果各位读者和我一样，是一只好奇的猫。那么，我们就会玩过一个又一个的框架。这些框架从思想上存在一些差异，但是它们都有相似之处。
+
+那么，先让我分享一下，这些技术
+
+### 一年前：jQuery
+
+jQuery Gulp + Mustahce 生成前端模板
+
+如 GitHub Pages 上的静态博客
+
+### 九个月前：Backbone + 响应式设计
+
+
+
+### 六个月前：React + 响应式设计
+
+### 三个月前：Angular + Ionic
+
+### 今天：RX.js、ES6、TypeScript
 
 不幸的是，大部分的框架并不是那么简单。为了使用这个框架你，可能需要学习更多的框架、知识、理论。一个很好的例子就是 React，这个框架的开发人员，引入了相当多的概念，JSX、VIrtual Dom。而为了更好地使用 React 来开发，我们还需要引入其他框架，如 Redux、ES6 等等的内容。
 
