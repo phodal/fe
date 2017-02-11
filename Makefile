@@ -8,6 +8,7 @@ all: html epub rtf pdf mobi
 
 markdown:
 	awk 'FNR==1{print ""}{print}' $(source) > $(filename).md
+	sed -i 's@](../images@](images@g' $(filename).md
 
 html: markdown
 	pandoc -s $(filename).md -t html5 -o index.html -c style.css \
