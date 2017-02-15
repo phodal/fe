@@ -382,6 +382,38 @@ Backbone 的神奇之处在于，在可以结合不同的框架在一起使用�
 
 这些框架从思想上存在一些差异，但是它们都有相似之处，如组件化、MV**、All in JS、模板引擎等等。欲知后事如何，请期待下一章“前端=模板 + 数据，这就是模板引擎”。
 
+你应该知道的那些调试技能
+===
+
+Intellij Idea, Debugger, ``evaluate expression``
+
+IETester
+---
+
+Chrome 
+---
+
+### Basic
+
+Network,Console,debugger
+
+### Device Inspect
+
+Safari, Debug Device
+
+### Simulator
+
+Network, Repsponsive
+
+### Advanced
+
+Timelie, Profiles, Application
+
+PostMan
+---
+
+https://github.com/phodal/toolbox
+
 前端基础知识
 ===
 
