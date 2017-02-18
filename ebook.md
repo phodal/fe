@@ -405,12 +405,13 @@ Intellij Idea, Debugger, ``evaluate expression``，即评估表达式。
 
 在编写代码的时候，你可以边实现功能
 
-Chrome 
+基本调试技巧
 ---
 
-### Basic
-
 Network,Console,debugger
+
+移动设备调试
+---
 
 ### Device Inspect
 
@@ -420,14 +421,23 @@ Safari, Debug Device
 
 Network, Repsponsive
 
-### Advanced
+性能调试
+---
 
 Timelie, Profiles, Application
 
-PostMan
+插件扩展
 ---
 
+### Postman
+
 https://github.com/phodal/toolbox
+
+### PageSpeed
+
+### React
+
+
 
 前端基础知识
 ===
