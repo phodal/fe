@@ -24,18 +24,34 @@ Intellij Idea, Debugger, ``evaluate expression``，即评估表达式。
 基本调试技巧
 ---
 
-Network,Console,debugger
+![认识一下调试窗口](../images/basic-inspect.png)
+
+### Inspect
+
+### Network
+
+### Console
 
 移动设备调试
 ---
 
+### Emulation
+
+Network, Repsponsive
+
 ### Device Inspect
+
+``chrome://inspect/``
+
+![Inspect Devices](../images/inspect-devices.jpg)
+
+同理，对于 Safari 浏览器来说也是一样的：
 
 Safari, Debug Device
 
-### Simulator
+除此，如果正在开发的应用是混合应用，Safari 也可以对此进行调试。
 
-Network, Repsponsive
+![Safari Simulator](../images/safari-hybird.jpg)
 
 性能调试
 ---
