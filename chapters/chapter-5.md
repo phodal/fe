@@ -42,7 +42,7 @@
 
 这个调试窗口看上去，有点高大上：
 
-![认识一下调试窗口](../images/basic-inspect.png)
+![认识一下调试窗口](http://ued.party/images/basic-inspect.png)
 
 图中左上角的两个图标，分别是：
 
@@ -62,7 +62,7 @@
 
 而当我们想查看页面上某个元素的 DOM 结构或者 CSS 时，我们可以点击开发者工具中的 Inspect 图标，并在页面上选择相应的元素。我们还可以使用快捷键来选择元素，Windows / Linux上使用 Shift + Ctrl + C，Mac OS 上使用 Command + Shift + C。如下图所示：
 
-![实时调试样式](../images/inspect-styles.jpg)
+![实时调试样式](http://ued.party/images/inspect-styles.jpg)
 
 我们还会发现工具栏中的 Elements 菜单自动被选上了，这是因为我们要选择的元素是属于 Elements 下的。也因此，还可以在 Elements 中选择 HTML代码，查看它在页面上的位置。它们两者是互相对应的，当我们选择一个元素时，会自动为我们选择相应的元素。
 
@@ -77,7 +77,7 @@
 
 与静态语言相比，JavaScript的调试就相对比较简单一些，我们可以在运行的时候调试代码。只需要在浏览器的相就部分打个断点，再执行相应的操作，就可以等代码掉到这个坑里。如下是 Chrome 浏览器进行代码调试时的截图：
 
-![Chrome 调试](../images/realtime-debug.png)
+![Chrome 调试](http://ued.party/images/realtime-debug.png)
 
 从工具栏中的 Sources 就可以进行到这个界面。左侧的部分会显示当前页面的代码及资源，如 HTML、CSS、JavaScript，还有图片等。这些内容都是由当前页面的 html 加载来决定的，如果是单页面应用，则会是所有的资源。
 
@@ -113,7 +113,7 @@
 
 我们所需要的就是，打开开发者工具，然后选择图标中的设备工具栏，就有如下的图：
 
-![Chrome 移动设备](../images/chrome-mobile.jpg)
+![Chrome 移动设备](http://ued.party/images/chrome-mobile.jpg)
 
 在使用它进行调试时，我们可以自定义屏幕大小，也可以选择一些主流的设备进行响应式设计，如iPhone。除此，我们还能测试不同的网络环境，如 4G、2G 的下载速度，又或者是离线情况下使用。
 
@@ -133,13 +133,13 @@
 
 [https://phodal.github.io/motree/](https://phodal.github.io/motree/)
 
-![Inspect Devices](../images/inspect-devices.jpg)
+![Inspect Devices](http://ued.party/images/inspect-devices.jpg)
 
 随后，我们就可以像在桌面浏览器的调试一样，对代码进行调试。
 
 同理，对于 Safari 浏览器来说也是类似的。除此，Safari 浏览器可以支持更有意思的调试，如果正在开发的应用是混合应用，Safari 也可以对此进行调试。开发混合应用时，我们往往会遇到一些奇怪的 Bug，这时我们就需要它了。
 
-![Safari Simulator](../images/safari-hybird.jpg)
+![Safari Simulator](http://ued.party/images/safari-hybird.jpg)
 
 网络调试
 ---
@@ -150,13 +150,13 @@
 
 Chrome 里的开发者工具中的 Network 不仅可以查看页面的加速速度，还可以看我们发出的请求的详细信息、返回结果的详细信息，以及我们发送给服务端的数据。如下图所示：
 
-![Debug网络](../images/debug-network.jpg)
+![Debug网络](http://ued.party/images/debug-network.jpg)
 
 在图里，我们可以清晰地看到请求的 URL、返回的状态码，它可以让我们知道发出的请求是对的、返回的状态也是对的。如果我们发出的请求是对的，而返回的内容是错的，那么我们可以相信这是服务端的错误。如果返回的状态码是错的，我们也可以看出到底是服务端的错误，还是客户端的错误。
 
 设计表单时，我们可以看到它发出的参数是否是正确的。
 
-![表单数据](../images/form-data.png)
+![表单数据](http://ued.party/images/form-data.png)
 
 这一来一往，我们就知道到底是哪个地方的问题。
 
@@ -166,11 +166,11 @@ Chrome 里的开发者工具中的 Network 不仅可以查看页面的加速速�
 
 让我推荐两个简单的工具，一个是 Postman，用于调试 API 用的：
 
-![Postman](../images/postman.png)
+![Postman](http://ued.party/images/postman.png)
 
 还有一个是 Google 的 Page Speed，可以帮助我们优化网络：
 
-![PageSpeed 结果](../images/pagespeed-reseult.png)
+![PageSpeed 结果](http://ued.party/images/pagespeed-reseult.png)
 
 小结
 ---

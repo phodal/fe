@@ -98,6 +98,7 @@
 </ul></li>
 <li><a href="#小结-2">小结</a></li>
 </ul></li>
+<li><a href="#前端也需要性能优化">前端也需要性能优化</a></li>
 <li><a href="#前端基础知识">前端基础知识</a><ul>
 <li><a href="#准备工作">准备工作</a></li>
 <li><a href="#编写一个简单的-html">编写一个简单的 HTML</a></li>
@@ -358,7 +359,7 @@
 </ul>
 <p>这个调试窗口看上去，有点高大上：</p>
 <figure>
-<img src="images/basic-inspect.png" alt="认识一下调试窗口" /><figcaption>认识一下调试窗口</figcaption>
+<img src="http://ued.party/images/basic-inspect.png" alt="认识一下调试窗口" /><figcaption>认识一下调试窗口</figcaption>
 </figure>
 <p>图中左上角的两个图标，分别是：</p>
 <ul>
@@ -376,7 +377,7 @@
 </ol>
 <p>而当我们想查看页面上某个元素的 DOM 结构或者 CSS 时，我们可以点击开发者工具中的 Inspect 图标，并在页面上选择相应的元素。我们还可以使用快捷键来选择元素，Windows / Linux上使用 Shift + Ctrl + C，Mac OS 上使用 Command + Shift + C。如下图所示：</p>
 <figure>
-<img src="images/inspect-styles.jpg" alt="实时调试样式" /><figcaption>实时调试样式</figcaption>
+<img src="http://ued.party/images/inspect-styles.jpg" alt="实时调试样式" /><figcaption>实时调试样式</figcaption>
 </figure>
 <p>我们还会发现工具栏中的 Elements 菜单自动被选上了，这是因为我们要选择的元素是属于 Elements 下的。也因此，还可以在 Elements 中选择 HTML代码，查看它在页面上的位置。它们两者是互相对应的，当我们选择一个元素时，会自动为我们选择相应的元素。</p>
 <p>编码时，可以在左侧的“元素区”编辑 HTML，右侧的区域的“Styles”可以查看元素的样式，“Computed”可以查看元素的拿模型，“Event Listeners”则可以查看元素的监听事件，等等的内容。由于 CSS 样式存在一定的优化级，如：</p>
@@ -388,7 +389,7 @@
 <h3 id="实时调试代码">实时调试代码</h3>
 <p>与静态语言相比，JavaScript的调试就相对比较简单一些，我们可以在运行的时候调试代码。只需要在浏览器的相就部分打个断点，再执行相应的操作，就可以等代码掉到这个坑里。如下是 Chrome 浏览器进行代码调试时的截图：</p>
 <figure>
-<img src="images/realtime-debug.png" alt="Chrome 调试" /><figcaption>Chrome 调试</figcaption>
+<img src="http://ued.party/images/realtime-debug.png" alt="Chrome 调试" /><figcaption>Chrome 调试</figcaption>
 </figure>
 <p>从工具栏中的 Sources 就可以进行到这个界面。左侧的部分会显示当前页面的代码及资源，如 HTML、CSS、JavaScript，还有图片等。这些内容都是由当前页面的 html 加载来决定的，如果是单页面应用，则会是所有的资源。</p>
 <p>如上图所示，调试时，我们只需要：</p>
@@ -413,7 +414,7 @@
 <p>那么，我们就可以根据这些信息，最终确定设备是桌面设备，还是移动设备，是 Android 手机，还是 iOS 手机。</p>
 <p>我们所需要的就是，打开开发者工具，然后选择图标中的设备工具栏，就有如下的图：</p>
 <figure>
-<img src="images/chrome-mobile.jpg" alt="Chrome 移动设备" /><figcaption>Chrome 移动设备</figcaption>
+<img src="http://ued.party/images/chrome-mobile.jpg" alt="Chrome 移动设备" /><figcaption>Chrome 移动设备</figcaption>
 </figure>
 <p>在使用它进行调试时，我们可以自定义屏幕大小，也可以选择一些主流的设备进行响应式设计，如iPhone。除此，我们还能测试不同的网络环境，如 4G、2G 的下载速度，又或者是离线情况下使用。</p>
 <p>如果我们只是适配不同的设备屏幕，那么我们使用这个工具就够了。而当我们需要做一些设备相关的逻辑时，我们还需要使用真机来进行调试。</p>
@@ -428,39 +429,40 @@
 <p>这时我们就需要连接上真机，并在浏览器上打开 <code>chrome://inspect/</code>，进入移动设备的调试界面，并在手机 Chrome 浏览器上敲入要调试的网址：</p>
 <p><a href="https://phodal.github.io/motree/" class="uri">https://phodal.github.io/motree/</a></p>
 <figure>
-<img src="images/inspect-devices.jpg" alt="Inspect Devices" /><figcaption>Inspect Devices</figcaption>
+<img src="http://ued.party/images/inspect-devices.jpg" alt="Inspect Devices" /><figcaption>Inspect Devices</figcaption>
 </figure>
 <p>随后，我们就可以像在桌面浏览器的调试一样，对代码进行调试。</p>
 <p>同理，对于 Safari 浏览器来说也是类似的。除此，Safari 浏览器可以支持更有意思的调试，如果正在开发的应用是混合应用，Safari 也可以对此进行调试。开发混合应用时，我们往往会遇到一些奇怪的 Bug，这时我们就需要它了。</p>
 <figure>
-<img src="images/safari-hybird.jpg" alt="Safari Simulator" /><figcaption>Safari Simulator</figcaption>
+<img src="http://ued.party/images/safari-hybird.jpg" alt="Safari Simulator" /><figcaption>Safari Simulator</figcaption>
 </figure>
 <h2 id="网络调试">网络调试</h2>
 <p>在前后端 Web 应用开发的初期，前后端进行交互是一种痛苦的事，会遇到各种意味之外的错误。我们需要查看参数传递过程中是否漏传了，是否传入了一些错误的值，是否是跨域问题等等。</p>
 <h3 id="网络调试-1">网络调试</h3>
 <p>Chrome 里的开发者工具中的 Network 不仅可以查看页面的加速速度，还可以看我们发出的请求的详细信息、返回结果的详细信息，以及我们发送给服务端的数据。如下图所示：</p>
 <figure>
-<img src="images/debug-network.jpg" alt="Debug网络" /><figcaption>Debug网络</figcaption>
+<img src="http://ued.party/images/debug-network.jpg" alt="Debug网络" /><figcaption>Debug网络</figcaption>
 </figure>
 <p>在图里，我们可以清晰地看到请求的 URL、返回的状态码，它可以让我们知道发出的请求是对的、返回的状态也是对的。如果我们发出的请求是对的，而返回的内容是错的，那么我们可以相信这是服务端的错误。如果返回的状态码是错的，我们也可以看出到底是服务端的错误，还是客户端的错误。</p>
 <p>设计表单时，我们可以看到它发出的参数是否是正确的。</p>
 <figure>
-<img src="images/form-data.png" alt="表单数据" /><figcaption>表单数据</figcaption>
+<img src="http://ued.party/images/form-data.png" alt="表单数据" /><figcaption>表单数据</figcaption>
 </figure>
 <p>这一来一往，我们就知道到底是哪个地方的问题。</p>
 <h3 id="使用插件">使用插件</h3>
 <p>除了上面说到的工具，我们还可以在 Chrome 应用商店里找到更多、更合适的工具。我在我的 GitHub 上维护了，我常用的一些工具：<a href="https://github.com/phodal/toolbox" class="uri">https://github.com/phodal/toolbox</a>，我整理了平时使用的插件在上面。</p>
 <p>让我推荐两个简单的工具，一个是 Postman，用于调试 API 用的：</p>
 <figure>
-<img src="images/postman.png" alt="Postman" /><figcaption>Postman</figcaption>
+<img src="http://ued.party/images/postman.png" alt="Postman" /><figcaption>Postman</figcaption>
 </figure>
 <p>还有一个是 Google 的 Page Speed，可以帮助我们优化网络：</p>
 <figure>
-<img src="images/pagespeed-reseult.png" alt="PageSpeed 结果" /><figcaption>PageSpeed 结果</figcaption>
+<img src="http://ued.party/images/pagespeed-reseult.png" alt="PageSpeed 结果" /><figcaption>PageSpeed 结果</figcaption>
 </figure>
 <h2 id="小结-2">小结</h2>
 <p>在这一章里介绍了使用 Chrome 浏览器来调试的工具，这些在前端工程师的日常开发中非常有用。</p>
 <p>除此，在 Chrome 浏览器里还有一些额外的功能可以使用。如在 “Application”菜单栏中，我们可以看到与应用相关的一些缓存和存储信息。Chrome 浏览器里，我们可以看到 Local Storage、Cookies、Session Storage、IndexedDB、Web SQL 等等的用于数据存储的工具。编写单页面应用时，我们都需要在客户端存储一些数据，这时就需要用到这个工具。除此，还有 Google PWA 应用的一些相关属性，Manifest、Service Workers。</p>
+<h1 id="前端也需要性能优化">前端也需要性能优化</h1>
 <h1 id="前端基础知识">前端基础知识</h1>
 <h2 id="准备工作">准备工作</h2>
 <p>为了编写代码，我们需要一些额外的工作。</p>
