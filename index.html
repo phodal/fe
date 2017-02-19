@@ -6,6 +6,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
   <title>我的职业是前端工程师 – </title>
   <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
   <link rel="stylesheet" href="style.css">
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
@@ -82,23 +119,22 @@
 </ul></li>
 <li><a href="#总结">总结</a></li>
 </ul></li>
-<li><a href="#前端工程师必知的七个调试技能">前端工程师必知的七个调试技能</a><ul>
+<li><a href="#前端工程师必会的六个调试技能">前端工程师必会的六个调试技能</a><ul>
 <li><a href="#我的调试入门">我的调试入门</a></li>
 <li><a href="#基本调试技巧实时调试">基本调试技巧：实时调试</a><ul>
 <li><a href="#实时调试样式">实时调试样式</a></li>
 <li><a href="#实时调试代码">实时调试代码</a></li>
-<li><a href="#调试网络">调试网络</a></li>
 </ul></li>
 <li><a href="#移动设备调试">移动设备调试</a><ul>
-<li><a href="#emulation">Emulation</a></li>
-<li><a href="#device-inspect">Device Inspect</a></li>
+<li><a href="#模拟真机设备模拟器">模拟真机：设备模拟器</a></li>
+<li><a href="#真机调试device-inspect">真机调试：Device Inspect</a></li>
 </ul></li>
-<li><a href="#性能调试">性能调试</a></li>
-<li><a href="#插件扩展">插件扩展</a><ul>
-<li><a href="#postman">Postman</a></li>
-<li><a href="#pagespeed">PageSpeed</a></li>
-<li><a href="#react">React</a></li>
+<li><a href="#网络及性能调试">网络及性能调试</a><ul>
+<li><a href="#网络调试">网络调试</a></li>
+<li><a href="#timeline">Timeline</a></li>
 </ul></li>
+<li><a href="#使用插件帮助调试">使用插件帮助调试</a></li>
+<li><a href="#小结-2">小结</a></li>
 </ul></li>
 <li><a href="#前端基础知识">前端基础知识</a><ul>
 <li><a href="#准备工作">准备工作</a></li>
@@ -331,7 +367,7 @@
 <h2 id="总结">总结</h2>
 <p>今天，大部分的框架并不只是那么简单。为了使用这个框架你，可能需要学习更多的框架、知识、理论。一个很好的例子就是 React，这个框架的开发人员，引入了相当多的概念，JSX、VIrtual Dom。而为了更好地使用 React 来开发，我们还需要引入其他框架，如 Redux、ES6 等等的内容。</p>
 <p>这些框架从思想上存在一些差异，但是它们都有相似之处，如组件化、MV**、All in JS、模板引擎等等。欲知后事如何，请期待下一章“前端=模板 + 数据，这就是模板引擎”。</p>
-<h1 id="前端工程师必知的七个调试技能">前端工程师必知的七个调试技能</h1>
+<h1 id="前端工程师必会的六个调试技能">前端工程师必会的六个调试技能</h1>
 <blockquote>
 <p>我还是一个野生程序员的时候，不会 Debug，只会傻傻地写一句句 std::count。即使是在今天，有些时候我也会这样做：打一个 console.log，然后看看结果是不是和预期的一样。如果不是和预期一样，就修改一下代码，刷新一下浏览器。这得亏是 JavaScript 是一门动态语言，可以很快的看到运行的结果。</p>
 </blockquote>
@@ -400,28 +436,75 @@
 <li>再刷新页面就可以进入调试</li>
 </ul>
 <p>这时，我们只需要将光标，移动到正在调试的变量上，就可以实时预览这个值。我们还能在 Console 里对这些值进行实时的处理，当业务逻辑比较复杂时，这个功能就特别有帮助——实时的编写代码。</p>
-<h3 id="调试网络">调试网络</h3>
 <h2 id="移动设备调试">移动设备调试</h2>
-<h3 id="emulation">Emulation</h3>
-<p>Network, Repsponsive</p>
-<h3 id="device-inspect">Device Inspect</h3>
-<p><code>chrome://inspect/</code></p>
+<p>从几年前开始，越来越多的公司将 Mobile First 作为第一优先级的技术转型。这时对于前端而言，我们需要响应式设计，我们需要处理不同的分辨率，我们需要处理不同的操作系统，我们需要编写更多的代码，以及见证更多的 Bug 诞生。</p>
+<p>越来越多的移动端功能需要开发时，能提供好的开发体验的工具就会越受欢迎，于是各个浏览器产商就提供了更好的移动开发功能：</p>
+<ul>
+<li>可以在浏览器上模拟真机的分辨率、User Agent 等等基本的信息</li>
+<li>提供接口来连接真机，并允许开发者在上面进行调试。</li>
+</ul>
+<p>在浏览器上模拟的特点是，你可以一次开发匹配多种分辨率的设备，但是并不能帮助你发现一些真机才存在的 Bug——如 Android 设备的后退键。而真机的缺点则是，你需要一个个设备的进行调试。因此，理想的开发模式是：<strong>先在浏览器进行响应式设计，随后在真机上进行测试</strong>。</p>
+<h3 id="模拟真机设备模拟器">模拟真机：设备模拟器</h3>
+<p>为了适配不同分配率的移动设备时，我们会使用 media query 进行响应式设计。并制定出一些屏幕的分辨率，并以此来区分三种类型的设备：计算机、平板、手机，如针对于计算机的像素应该是大于 1024 的。</p>
+<p>屏幕大小只是用来判断的一部分依据，还有一部分是通过 User Agent。它包含客户端浏览器的相关信息，如所使用的操作系统及版本、CPU 类型、浏览器及版本、浏览器渲染引擎等等。如下是我使用浏览器时，浏览器发出的 User Agent：</p>
+<p><code>Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Mobile Safari/537.36</code></p>
+<p>那么，我们就可以根据这些信息，最终确定设备是桌面设备，还是移动设备，是 Android 手机，还是 iOS 手机。</p>
+<p>我们所需要的就是，打开开发者工具，然后选择图标中的设备工具栏，就有如下的图：</p>
+<figure>
+<img src="images/chrome-mobile.jpg" alt="Chrome 移动设备" /><figcaption>Chrome 移动设备</figcaption>
+</figure>
+<p>在使用它进行调试时，我们可以自定义屏幕大小，也可以选择一些主流的设备进行响应式设计，如iPhone。除此，我们还能测试不同的网络环境，如 4G、2G 的下载速度，又或者是离线情况下使用。</p>
+<p>如果我们只是适配不同的设备屏幕，那么我们使用这个工具就够了。而当我们需要做一些设备相关的逻辑时，我们还需要使用真机来进行调试。</p>
+<h3 id="真机调试device-inspect">真机调试：Device Inspect</h3>
+<p>过去的很长一段时间里，我一直都不需要真机调试这种功能——因为只是进行响应式设计。当我们在项目上遇到一系列关于 Android 返回键的 Bug 时，我们就不得不使用设备进行调试。</p>
+<p>对于移动单页面应用来说，我们需要创建一系列的 UI、事件和行为。理论上，我们需要保证用户可以在全屏的情况下，像一个移动应用一样运行。除了一般应用的功能，我们还需要在页面上创建返回键来返回到上一个页面。这时，难免的我们就需要处理 Android 设备上的这种 Bug。于是，我们需要：</p>
+<ul>
+<li>判断设备是不是 Android 设备</li>
+<li>判断按下的是设备上的返回键，而不是浏览器上的返回</li>
+<li>如果是设备上的返回键，则进行特殊处理，避免用户退出应用</li>
+</ul>
+<p>这时我们就需要连接上真机，并在浏览器上打开 <code>chrome://inspect/</code>，进入移动设备的调试界面，并在手机 Chrome 浏览器上敲入要调试的网址：</p>
+<p><a href="https://phodal.github.io/motree/" class="uri">https://phodal.github.io/motree/</a></p>
 <figure>
 <img src="images/inspect-devices.jpg" alt="Inspect Devices" /><figcaption>Inspect Devices</figcaption>
 </figure>
-<p>同理，对于 Safari 浏览器来说也是一样的：</p>
-<p>Safari, Debug Device</p>
-<p>除此，如果正在开发的应用是混合应用，Safari 也可以对此进行调试。</p>
+<p>随后，我们就可以像在桌面浏览器的调试一样，对代码进行调试。</p>
+<p>同理，对于 Safari 浏览器来说也是类似的。除此，Safari 浏览器可以支持更有意思的调试，如果正在开发的应用是混合应用，Safari 也可以对此进行调试。</p>
 <figure>
 <img src="images/safari-hybird.jpg" alt="Safari Simulator" /><figcaption>Safari Simulator</figcaption>
 </figure>
-<h2 id="性能调试">性能调试</h2>
-<p>Timelie, Profiles, Application</p>
-<h2 id="插件扩展">插件扩展</h2>
-<h3 id="postman">Postman</h3>
-<p>https://github.com/phodal/toolbox</p>
-<h3 id="pagespeed">PageSpeed</h3>
-<h3 id="react">React</h3>
+<p>在开发混合应用时，我们往往会遇到一些奇怪的 Bug，这时我们就需要它了。</p>
+<h2 id="网络及性能调试">网络及性能调试</h2>
+<h3 id="网络调试">网络调试</h3>
+<figure>
+<img src="images/debug-network.jpg" alt="Debug网络" /><figcaption>Debug网络</figcaption>
+</figure>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">curl</span> -I -s https://www.phodal.com -A google                                                    </code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">HTTP/1.1</span> 200 OK
+<span class="ex">Server</span>: nginx/1.11.5
+<span class="ex">Content-Type</span>: text/html<span class="kw">;</span> <span class="va">charset=</span>utf-8
+<span class="ex">Connection</span>: keep-alive
+<span class="ex">Vary</span>: Accept-Encoding
+<span class="ex">Vary</span>: Accept-Language, Cookie
+<span class="ex">Content-Language</span>: en
+<span class="ex">X-UA-Compatible</span>: IE=Edge,chrome=1
+<span class="ex">Date</span>: Sun, 19 Feb 2017 06:59:49 GMT
+<span class="ex">X-Page-Speed</span>: Powered By Phodal
+<span class="ex">Cache-Control</span>: max-age=0, no-cache</code></pre></div>
+<h3 id="timeline">Timeline</h3>
+<p>Timelie, Profiles</p>
+<h2 id="使用插件帮助调试">使用插件帮助调试</h2>
+<p>Postman</p>
+<figure>
+<img src="images/postman.png" alt="Postman" /><figcaption>Postman</figcaption>
+</figure>
+<p>还有一种简单的方式就是使用 Google 的 Page Speed，它会自动地帮我们诊断中需要优化的部分。</p>
+<figure>
+<img src="images/pagespeed-reseult.png" alt="PageSpeed 结果" /><figcaption>PageSpeed 结果</figcaption>
+</figure>
+<h2 id="小结-2">小结</h2>
+<p>如在 “Application”菜单栏中，我们可以看到与应用相关的一些缓存和存储信息。Chrome 浏览器里，我们可以看到 Local Storage、Cookies、Session Storage、IndexedDB、Web SQL 等等的用于数据存储的工具。编写单页面应用时，我们都需要在客户端存储一些数据，这时就需要用到这个工具。</p>
+<p>除此，还有 Google PWA 应用的一些相关属性，Manifest、Service Workers。</p>
 <h1 id="前端基础知识">前端基础知识</h1>
 <h2 id="准备工作">准备工作</h2>
 <p>为了编写代码，我们需要一些额外的工作。</p>

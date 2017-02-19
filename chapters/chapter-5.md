@@ -1,4 +1,4 @@
-前端工程师必知的七个调试技能
+前端工程师必会的六个调试技能
 ===
 
 > 我还是一个野生程序员的时候，不会 Debug，只会傻傻地写一句句 std::count。即使是在今天，有些时候我也会这样做：打一个 console.log，然后看看结果是不是和预期的一样。如果不是和预期一样，就修改一下代码，刷新一下浏览器。这得亏是 JavaScript 是一门动态语言，可以很快的看到运行的结果。
@@ -89,45 +89,107 @@
 
 这时，我们只需要将光标，移动到正在调试的变量上，就可以实时预览这个值。我们还能在 Console 里对这些值进行实时的处理，当业务逻辑比较复杂时，这个功能就特别有帮助——实时的编写代码。
 
-### 调试网络
-
-
-
 移动设备调试
 ---
 
-### Emulation
+从几年前开始，越来越多的公司将 Mobile First 作为第一优先级的技术转型。这时对于前端而言，我们需要响应式设计，我们需要处理不同的分辨率，我们需要处理不同的操作系统，我们需要编写更多的代码，以及见证更多的 Bug 诞生。
 
-Network, Repsponsive
+越来越多的移动端功能需要开发时，能提供好的开发体验的工具就会越受欢迎，于是各个浏览器产商就提供了更好的移动开发功能：
 
-### Device Inspect
+ - 可以在浏览器上模拟真机的分辨率、User Agent 等等基本的信息
+ - 提供接口来连接真机，并允许开发者在上面进行调试。
 
-``chrome://inspect/``
+在浏览器上模拟的特点是，你可以一次开发匹配多种分辨率的设备，但是并不能帮助你发现一些真机才存在的 Bug——如 Android 设备的后退键。而真机的缺点则是，你需要一个个设备的进行调试。因此，理想的开发模式是：**先在浏览器进行响应式设计，随后在真机上进行测试**。
+
+### 模拟真机：设备模拟器
+
+为了适配不同分配率的移动设备时，我们会使用 media query 进行响应式设计。并制定出一些屏幕的分辨率，并以此来区分三种类型的设备：计算机、平板、手机，如针对于计算机的像素应该是大于 1024 的。
+
+屏幕大小只是用来判断的一部分依据，还有一部分是通过 User Agent。它包含客户端浏览器的相关信息，如所使用的操作系统及版本、CPU 类型、浏览器及版本、浏览器渲染引擎等等。如下是我使用浏览器时，浏览器发出的 User Agent：
+
+``Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Mobile Safari/537.36``
+
+那么，我们就可以根据这些信息，最终确定设备是桌面设备，还是移动设备，是 Android 手机，还是 iOS 手机。
+
+我们所需要的就是，打开开发者工具，然后选择图标中的设备工具栏，就有如下的图：
+
+![Chrome 移动设备](../images/chrome-mobile.jpg)
+
+在使用它进行调试时，我们可以自定义屏幕大小，也可以选择一些主流的设备进行响应式设计，如iPhone。除此，我们还能测试不同的网络环境，如 4G、2G 的下载速度，又或者是离线情况下使用。
+
+如果我们只是适配不同的设备屏幕，那么我们使用这个工具就够了。而当我们需要做一些设备相关的逻辑时，我们还需要使用真机来进行调试。
+
+### 真机调试：Device Inspect 
+
+过去的很长一段时间里，我一直都不需要真机调试这种功能——因为只是进行响应式设计。当我们在项目上遇到一系列关于 Android 返回键的 Bug 时，我们就不得不使用设备进行调试。
+
+对于移动单页面应用来说，我们需要创建一系列的 UI、事件和行为。理论上，我们需要保证用户可以在全屏的情况下，像一个移动应用一样运行。除了一般应用的功能，我们还需要在页面上创建返回键来返回到上一个页面。这时，难免的我们就需要处理 Android 设备上的这种 Bug。于是，我们需要：
+
+ - 判断设备是不是 Android 设备
+ - 判断按下的是设备上的返回键，而不是浏览器上的返回
+ - 如果是设备上的返回键，则进行特殊处理，避免用户退出应用
+
+这时我们就需要连接上真机，并在浏览器上打开 ``chrome://inspect/``，进入移动设备的调试界面，并在手机 Chrome 浏览器上敲入要调试的网址：
+
+[https://phodal.github.io/motree/](https://phodal.github.io/motree/)
 
 ![Inspect Devices](../images/inspect-devices.jpg)
 
-同理，对于 Safari 浏览器来说也是一样的：
+随后，我们就可以像在桌面浏览器的调试一样，对代码进行调试。
 
-Safari, Debug Device
-
-除此，如果正在开发的应用是混合应用，Safari 也可以对此进行调试。
+同理，对于 Safari 浏览器来说也是类似的。除此，Safari 浏览器可以支持更有意思的调试，如果正在开发的应用是混合应用，Safari 也可以对此进行调试。
 
 ![Safari Simulator](../images/safari-hybird.jpg)
 
-性能调试
+在开发混合应用时，我们往往会遇到一些奇怪的 Bug，这时我们就需要它了。
+
+网络及性能调试
 ---
 
-Timelie, Profiles, Application
 
-插件扩展
+
+### 网络调试
+
+![Debug网络](../images/debug-network.jpg)
+
+```bash
+curl -I -s https://www.phodal.com -A google                                                    
+```
+
+```bash
+HTTP/1.1 200 OK
+Server: nginx/1.11.5
+Content-Type: text/html; charset=utf-8
+Connection: keep-alive
+Vary: Accept-Encoding
+Vary: Accept-Language, Cookie
+Content-Language: en
+X-UA-Compatible: IE=Edge,chrome=1
+Date: Sun, 19 Feb 2017 06:59:49 GMT
+X-Page-Speed: Powered By Phodal
+Cache-Control: max-age=0, no-cache
+```
+
+### Timeline
+
+Timelie, Profiles
+
+使用插件帮助调试
 ---
 
-### Postman
+Postman
 
-https://github.com/phodal/toolbox
+![Postman](../images/postman.png)
 
-### PageSpeed
+还有一种简单的方式就是使用 Google 的 Page Speed，它会自动地帮我们诊断中需要优化的部分。
 
-### React
+![PageSpeed 结果](../images/pagespeed-reseult.png)
+
+小结
+---
+
+如在 “Application”菜单栏中，我们可以看到与应用相关的一些缓存和存储信息。Chrome 浏览器里，我们可以看到 Local Storage、Cookies、Session Storage、IndexedDB、Web SQL 等等的用于数据存储的工具。编写单页面应用时，我们都需要在客户端存储一些数据，这时就需要用到这个工具。
+
+除此，还有 Google PWA 应用的一些相关属性，Manifest、Service Workers。
 
 
