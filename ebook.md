@@ -563,9 +563,8 @@ Chrome 里的开发者工具中的 Network 不仅可以查看页面的加速速�
 
 除此，在 Chrome 浏览器里还有一些额外的功能可以使用。如在 “Application”菜单栏中，我们可以看到与应用相关的一些缓存和存储信息。Chrome 浏览器里，我们可以看到 Local Storage、Cookies、Session Storage、IndexedDB、Web SQL 等等的用于数据存储的工具。编写单页面应用时，我们都需要在客户端存储一些数据，这时就需要用到这个工具。除此，还有 Google PWA 应用的一些相关属性，Manifest、Service Workers。
 
-前端也需要性能优化
+前端如何练习
 ===
-
 
 前端基础知识
 ===
