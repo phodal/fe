@@ -585,7 +585,7 @@ Chrome 里的开发者工具中的 Network 不仅可以查看页面的加速速�
 
 我一直很喜欢那句，Output is Input 的话，即：
 
-![Output is input](../output-input.png)
+![Output is input](images/output-input.png)
 
 即，我们输出知识的时候，便是在输入更完整的知识。因此当我练习的时候，我便会刻意地去结合使用他们，往往能达到事半功倍的效果。想尝试玩一个新的框架时，我便会用这样的逻辑去玩它：**使用新框架编写一个应用，再阅读、整理相应的资料**。
 
