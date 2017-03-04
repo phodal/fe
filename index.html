@@ -6,6 +6,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
   <title>我的职业是前端工程师 – </title>
   <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
   <link rel="stylesheet" href="style.css">
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
@@ -114,16 +151,20 @@
 <li><a href="#关于练手项目">关于练手项目</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#前后端分离协作你应该知道的几件事">前后端分离协作，你应该知道的几件事</a><ul>
+<li><a href="#前后端分离你应该知道的八件事">前后端分离，你应该知道的八件事</a><ul>
+<li><a href="#前后端分离">前后端分离</a><ul>
+<li><a href="#什么是前后端分离">什么是前后端分离？</a></li>
 <li><a href="#真的需要前后端分离吗">真的需要前后端分离吗？</a></li>
 <li><a href="#前后端分离将遇到的那些挑战">前后端分离将遇到的那些挑战</a></li>
-<li><a href="#后台提供数据前端负责显示">后台提供数据，前端负责显示</a></li>
+</ul></li>
+<li><a href="#前后端分离的核心后台提供数据前端负责显示">前后端分离的核心：后台提供数据，前端负责显示</a></li>
+<li><a href="#前后端分离如何协作">前后端分离如何协作</a><ul>
 <li><a href="#组织架构决定了协作模式">组织架构决定了协作模式</a></li>
 <li><a href="#接口模式决定生产力">接口模式决定生产力</a></li>
 <li><a href="#全功能团队解决沟通问题">全功能团队解决沟通问题</a></li>
-<li><a href="#异地开发降低效率">异地开发降低效率</a></li>
-<li><a href="#如何进行测试与集成测试">如何进行测试与集成测试</a></li>
-<li><a href="#还有几个问题">还有几个问题</a></li>
+<li><a href="#如何进行自动化测试">如何进行自动化测试</a></li>
+</ul></li>
+<li><a href="#还有几个问题">### 还有几个问题</a></li>
 </ul></li>
 <li><a href="#前端移动开发">前端移动开发</a><ul>
 <li><a href="#移动开发的三种类型">移动开发的三种类型</a><ul>
@@ -576,16 +617,20 @@
 <li>兴趣结合理论型。有一个长长的Idea列表，难免有些时间会和将要学习的理论有很大的交集。这种的练习效果是最好的。</li>
 <li>整合成文章、电子书。这一步主要是为了分享、巩固知识点、讨论。</li>
 </ul>
-<h1 id="前后端分离协作你应该知道的几件事">前后端分离协作，你应该知道的几件事</h1>
+<h1 id="前后端分离你应该知道的八件事">前后端分离，你应该知道的八件事</h1>
 <blockquote>
 <p>前后端不分离，是怎样的？大概也只有我们这些『老古董』们，才对此有更多感受。不对，那些写 React 的人，可能会对此也有一些体会。</p>
 </blockquote>
 <p>今天，如果有一个前端工程师说，不知道前后端分离是什么。那么，要么是刚毕业不久的，要么是从老版的公司里出来的员工，要么是刚从时光机里出来的。</p>
-<p>我刚开始接触前后端分离的时候，正值它开始慢慢扩散的时候，也还没有意识到它带来的好处。觉得它甚是麻烦，当我改一个接口的时候，我需要同时修改两部分的代码，以及对应的测试。反而，还不如直接修改原有的模板来得简单。并且在很多时候，会发现一些</p>
+<h2 id="前后端分离">前后端分离</h2>
+<p>我刚开始接触前后端分离的时候，正值它开始慢慢扩散的时候，也还没有意识到它带来的好处。觉得它甚是麻烦，当我改一个接口的时候，我需要同时修改两部分的代码，以及对应的测试。反而，还不如直接修改原有的模板来得简单。</p>
+<p>可是当我去使用这个，由前后端分离做成的单页面应用时，我开始觉得这些是值得。当页面加载完后，每打开一个新的链接时，不再需要等网络返回给我结果；我也能快速的回到上一个页面，像一个 APP 一样的体现这样的应用。整个过程里，我们只是不断地从后台去获取数据，不需要重复地请求页面——因为这些页面的模板已经存在本地了，我们所缺少的只是实时的数据。</p>
+<p>后来，当我从架构去考虑这件事时，我才发现这种花费是值得的。</p>
+<h3 id="什么是前后端分离">什么是前后端分离？</h3>
 <p>前后端分离和微服务一样，渐渐地影响了新的大型系统的架构。微服务和前后端分离要解决是类似的问题，<strong>解耦</strong>——可以解耦复杂的业务逻辑，解耦架构。可要是说相像吧，消息队伍和前后端便相似一些，通过传递数据的形式来解耦组件。</p>
 <p>前后端分离意味着，<strong>前后端之间使用 JSON 来交流，两个开发团队之间使用 API 作为契约进行交互</strong>。从此，后台选用的技术栈不影响前台。当后台开发人员选择 Java 的时候，我可以不用 JSP 来编写前端页面，继续使用我的 React 又或者 Angular。而我使用 React 时，也不影响后台使用某一个框架。</p>
 <p>概念我们已经清楚了，但是还有一个问题：我们真的需要前后端分离吗？</p>
-<h2 id="真的需要前后端分离吗">真的需要前后端分离吗？</h2>
+<h3 id="真的需要前后端分离吗">真的需要前后端分离吗？</h3>
 <p>过去，听说 TDD (Test-driven development，测试驱动开发) 可以改善代码的质量，我们便实施了 TDD；接着，听说 BDD (Behavior-driven development，行为驱动开发) 可以交付符合业务需求的软件，我们便实施了 BDD；后来，听说 DDD (Domain-driven design，领域驱动设计) 可以分离业务代码与基础代码，我们便实施了 DDD。今天，听说了前后端分离很流行，于是我们就实施了前后端分离——这就是传说中的 HDD（Hype-driven Development，热闹驱动开发）。</p>
 <p>前后端分离在过去的两三年里，确实特别的热闹。但是我们怎么才能知道，是不是需要这样的架构呢？</p>
 <ul>
@@ -593,32 +638,74 @@
 <li><strong>是否需要搜索引擎优化？</strong>如果需要的话，那么从一开始我们就需要考虑后端渲染。</li>
 <li><strong>能提升开发效率吗？</strong>如果不能有效的提升开发效率，为什么要作死呢？</li>
 <li><strong>是否会提供 API 给 APP？</strong>如果我们已经有一个 API 提供给 APP，那么要做这件事就很容易了。如果未来会有的话，那么我们更应该尝试去分离。</li>
+<li><strong>前端的修改是不是非常频繁？</strong>如果不需要经常修改的话，那么这种优化便没有优势。</li>
 </ul>
-<p>当然，如果老板说，我们需要前后端分离，那就做呗！</p>
-<h2 id="前后端分离将遇到的那些挑战">前后端分离将遇到的那些挑战</h2>
-<p>当我们决定需要前后端分离时，我们仍然还需要面对一系列的问题：</p>
+<p>当然了，如果老板说，我们需要前后端分离，那就做呗！很多时候，一些技术决策都会由于战略原因，而发生一些有意思的变化。</p>
+<h3 id="前后端分离将遇到的那些挑战">前后端分离将遇到的那些挑战</h3>
+<p>而，当我们决定需要前后端分离时，我们仍然还需要面对一系列的问题：</p>
 <ul>
-<li><strong>是否足够的安全？</strong>如果我们设计出来的架构不够安全，那么这一系列的操作都是白搭。</li>
+<li><strong>是否足够的安全？</strong>如果我们设计出来的架构不够安全，那么这一系列的操作都是白搭。我们怎么去存储用户数据，使用 LocalStorage 的话，还要考虑加密。采用哪种认证方式来让用户登录，并保存相应的状态？</li>
 <li><strong>是否有足够的技术来支撑前后端分离？</strong>有没有能力创建出符合 RESTful 风格的 API？</li>
 <li><strong>是否有能力维护 API 接口？</strong>当前端或者后台需要修改接口时，是否能轻松地修改。</li>
 <li><strong>前后端协作的成本高不高？</strong>前端和后台两个团队是不是很容易合作？是不是可以轻松地进行联调？</li>
 <li><strong>前后端职责是否能明确？</strong>即：<strong>后台提供数据，前端负责显示</strong>。</li>
 <li><strong>是否建立了前端的错误追踪机制？</strong>能否帮助我们快速地定位出问题。</li>
 </ul>
-<h2 id="后台提供数据前端负责显示">后台提供数据，前端负责显示</h2>
-<p>我曾经有过使用 PHP 和 Java 开发后台代码的经历，仍然也主要是集中在前端领域。在这样的传统架构里，编写前端页面可不是一件容易的事。</p>
-<p>传统的 MVC 架构里，有相当多的业务逻辑因为某些原因，会被放置到 View 层，也就是模板层里。换句话来说，就是这些逻辑都会被放到前端。我们看到的可能就不是各种<code>if</code>、<code>else</code>还有简单的<code>equal</code>判断，还会包含一些复杂的业务逻辑，比如说对某些产品进行特殊的处理。</p>
-<p>除此，后台还需要提供逻辑</p>
-<h2 id="组织架构决定了协作模式">组织架构决定了协作模式</h2>
+<p>当我们在不同的项目组上尝试时，就会发现主要的挑战是沟通上的挑战，而非技术上的局限。</p>
+<h2 id="前后端分离的核心后台提供数据前端负责显示">前后端分离的核心：后台提供数据，前端负责显示</h2>
+<p>我曾经有过使用 PHP 和 Java 开发后台代码的经历，仍然也主要是集中在前端领域。在这样的传统架构里，编写前端页面可不是一件容易的事。后台只会传给前端一个 ModelAndView，然后前端就要扑哧扑哧地去丰富业务逻辑。</p>
+<p>传统的 MVC 架构里，因为某些原因有相当多的业务逻辑，会被放置到 View 层，也就是模板层里。换句话来说，就是这些逻辑都会被放到前端。我们看到的可能就不是各种<code>if</code>、<code>else</code>还有简单的<code>equal</code>判断，还会包含一些复杂的业务逻辑，比如说对某些产品进行特殊的处理。</p>
+<p>如果这个时候，我们还需要做各种页面交互，如填写表单、Popup、动态数据等等，就不再是简单的和模板引擎打交道了。我们需要编写大量的 JavaScript 代码，因为业务的不断增加，仅使用 jQuery 无法管理如此复杂的代码。</p>
+<p>而仅仅只是因为逻辑复杂的前端代码，无法影响大部分团队进行前后端分离——因为它没有业务价值。实际上是先有了单页面应用，才会出现前后端分离。单页面应用可以让用户不需要下载 APP，就可以拥有相似的体现。并且与早期的移动网页相比，拥有更好的体验。</p>
+<p>为了达到这样的目的，后台似乎返回对应的 Model 即可，稍微修改一下 Controller 的逻辑，然后返回这些数据。</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript">
+[<span class="op">{</span>
+    <span class="st">&quot;content&quot;</span><span class="op">:</span> <span class="st">&quot;&quot;</span><span class="op">,</span>
+    <span class="st">&quot;date&quot;</span><span class="op">:</span> <span class="st">&quot;2017-03-04&quot;</span><span class="op">,</span>
+    <span class="st">&quot;description&quot;</span><span class="op">:</span> <span class="st">&quot;前后端分离，你应该知道的八件事</span><span class="sc">\r\n\r\n</span><span class="st">前后端不分离，是怎样的？大概也只有我们这些『老古董』们，才对此有更多感受。不对，那些写 React 的人，可能会对此也有一些体会。&quot;</span><span class="op">,</span>
+    <span class="st">&quot;id&quot;</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span>
+    <span class="st">&quot;slug&quot;</span><span class="op">:</span> <span class="st">&quot;iamafe-frontend-backend&quot;</span><span class="op">,</span>
+    <span class="st">&quot;title&quot;</span><span class="op">:</span> <span class="st">&quot;我的职业是前端工程师:  前后端分离，你应该知道的八件事&quot;</span><span class="op">,</span>
+    <span class="st">&quot;user&quot;</span><span class="op">:</span> <span class="st">&quot;&quot;</span>
+<span class="op">}</span>]</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="op">{</span>
+    <span class="st">&quot;count&quot;</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span>
+    <span class="st">&quot;next&quot;</span><span class="op">:</span> <span class="kw">null</span><span class="op">,</span>
+    <span class="st">&quot;previous&quot;</span><span class="op">:</span> <span class="kw">null</span><span class="op">,</span>
+    <span class="st">&quot;results&quot;</span><span class="op">:</span> [
+        <span class="op">{</span>
+            <span class="st">&quot;content&quot;</span><span class="op">:</span> <span class="st">&quot;&quot;</span><span class="op">,</span>
+            <span class="st">&quot;date&quot;</span><span class="op">:</span> <span class="st">&quot;2017-03-04&quot;</span><span class="op">,</span>
+            <span class="st">&quot;description&quot;</span><span class="op">:</span> <span class="st">&quot;前后端分离，你应该知道的八件事</span><span class="sc">\r\n\r\n</span><span class="st">前后端不分离，是怎样的？大概也只有我们这些『老古董』们，才对此有更多感受。不对，那些写 React 的人，可能会对此也有一些体会。&quot;</span><span class="op">,</span>
+            <span class="st">&quot;id&quot;</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span>
+            <span class="st">&quot;slug&quot;</span><span class="op">:</span> <span class="st">&quot;iamafe-frontend-backend&quot;</span><span class="op">,</span>
+            <span class="st">&quot;title&quot;</span><span class="op">:</span> <span class="st">&quot;我的职业是前端工程师:  前后端分离，你应该知道的八件事&quot;</span><span class="op">,</span>
+            <span class="st">&quot;user&quot;</span><span class="op">:</span> <span class="st">&quot;&quot;</span>
+        <span class="op">}</span>
+    ]
+<span class="op">}</span></code></pre></div>
+<h2 id="前后端分离如何协作">前后端分离如何协作</h2>
+<h3 id="组织架构决定了协作模式">组织架构决定了协作模式</h3>
 <p>还是继续扯到，康威定律</p>
 <p>有的传统公司里，可能并没有专职的前端开发人员。这时，有一些后台开发人员就会转向前端。当未来后台人员缺人时，这些人又会变成后台开发。</p>
 <p>对于小型的团队来说，他们可以在一起工作，并以此来提高效率。</p>
-<h2 id="接口模式决定生产力">接口模式决定生产力</h2>
-<p>契约</p>
-<h2 id="全功能团队解决沟通问题">全功能团队解决沟通问题</h2>
-<h2 id="异地开发降低效率">异地开发降低效率</h2>
-<h2 id="如何进行测试与集成测试">如何进行测试与集成测试</h2>
-<h2 id="还有几个问题">还有几个问题</h2>
+<h3 id="接口模式决定生产力">接口模式决定生产力</h3>
+<ul>
+<li>API 文档，维护</li>
+<li>基于代码的契约模式</li>
+</ul>
+<h3 id="全功能团队解决沟通问题">全功能团队解决沟通问题</h3>
+<ul>
+<li>我需要对返回的结果进行分页</li>
+<li>能不能直接在返回结果中直接判断有没有下一页啊</li>
+<li>在返回结果中，我不需要 tag 字段</li>
+</ul>
+<h3 id="如何进行自动化测试">如何进行自动化测试</h3>
+<ul>
+<li>需要单独的对代码进行测试</li>
+<li>需要和后台集成在一起，并运行自动化测试</li>
+</ul>
+<h2 id="还有几个问题">### 还有几个问题</h2>
 <ol type="1">
 <li>安全 HTTPS</li>
 <li>授权 JSON WEB TOKEN</li>
