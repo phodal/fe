@@ -36,3 +36,6 @@
 1. 安全 HTTPS
 2. 授权 JSON WEB TOKEN
 3. 存储 Local Storage 加密
+
+前后端分离的逻辑架构图
+---
