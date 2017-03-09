@@ -790,6 +790,95 @@ Chrome 里的开发者工具中的 Network 不仅可以查看页面的加速速�
 
 于是乎在这个时候，这些逻辑就被无可避免地放到前台里了。
 
+身为一个前端工程师，你居然不懂 SEO 
+===
+
+你很少听过大公司讨论 SEO，因为他们不需要
+
+内部 SEO
+
+URL 设计——以 id 作为 URL
+---
+
+Title Description Keyword
+---
+
+内链管理
+---
+
+Sitemap
+---
+
+
+你应该知道的单页面应用的五要素 
+===
+
+Router：页面跳转
+---
+
+URL 设计 列表，详细
+
+模板引擎
+---
+
+状态管理
+---
+
+Service，LocalStorage, Redux
+
+数据获取与鉴权
+---
+
+Ajax FETCH
+
+展示
+---
+
+DOM
+View
+
+模板引擎，修改元素
+
+组件化
+
+模块管理
+---
+
+ 
+
+数据存储
+===
+
+LocalForge
+
+LocalStorage
+---
+
+WebSQL
+---
+
+IndexedDB
+---
+
+SQLite
+---
+
+前端也需要性能优化
+===
+
+
+### Timeline
+ 
+### 首屏加载优化
+
+### 缓存优化
+ 
+### 生命周期优化
+
+### HTML5 图片缓存
+
+### 资源缓存， API 结果
+
 前端移动开发
 ===
 
@@ -812,39 +901,6 @@ Chrome 里的开发者工具中的 Network 不仅可以查看页面的加速速�
 性能
 ---
 
-
-前端也需要性能优化
-===
-
-
-### Timeline
- 
-### 首屏加载优化
-
-### 缓存优化
- 
-### 生命周期优化
-
-### HTML5 图片缓存
-
-### 资源缓存， API 结果
-
-数据存储
-===
-
-LocalForge
-
-LocalStorage
----
-
-WebSQL
----
-
-IndexedDB
----
-
-SQLite
----
 
 前端基础知识
 ===

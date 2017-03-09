@@ -1,22 +1,19 @@
-前端移动开发
+身为一个前端工程师，你居然不懂 SEO 
 ===
 
+你很少听过大公司讨论 SEO，因为他们不需要
 
-移动开发的三种类型
+内部 SEO
+
+URL 设计——以 id 作为 URL
 ---
 
-### Web 应用
-
-### 混合应用
-
-### React Native
-
-响应式设计
+Title Description Keyword
 ---
 
-用户体验
+内链管理
 ---
 
-性能
+Sitemap
 ---
 
