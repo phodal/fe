@@ -131,16 +131,6 @@
     *   [JavaScript 居然是小三](#javascript-居然是小三)
 
 
-TODO
----
-
- - Predix: 为什么前端没有前途？
- - API 使用 与 设计 ？
- - 混合应用设计？
- - 构建系统？？？？
- - 如何设计响应式布局？
- - 如何理解/构建 SPA 应用？
-
 参考：[https://github.com/phodal/awesome-growth](https://github.com/phodal/awesome-growth)
 ---
 
