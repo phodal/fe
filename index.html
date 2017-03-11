@@ -163,16 +163,19 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#不可避免的前端逻辑表单">不可避免的前端逻辑：表单</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#前端搜索引擎优化技巧-如何设计一个高质量的-url-及页面标题">前端搜索引擎优化技巧 ：如何设计一个高质量的 URL 及页面标题</a><ul>
+<li><a href="#seo-优化技巧-如何设计一个高质量的-url-及页面标题">SEO 优化技巧 ：如何设计一个高质量的 URL 及页面标题</a><ul>
 <li><a href="#搜索引擎优化都是前端的活">搜索引擎优化都是前端的活</a></li>
 <li><a href="#如何设计一个高质量的-url">如何设计一个高质量的 URL</a><ul>
 <li><a href="#受-restful-api-影响-的-url-设计">受 RESTful API 影响 的 URL 设计</a></li>
 <li><a href="#手动自定义-url">手动自定义 URL</a></li>
-<li><a href="#自动化-url-简单的-url-生成规则">自动化 URL ：简单的 URL 生成规则</a></li>
+<li><a href="#详情页-简单的-url-生成规则">详情页 ：简单的 URL 生成规则</a></li>
 <li><a href="#自动化-url分类与多级目录">自动化 URL：分类与多级目录</a></li>
-<li><a href="#自动化-url-将搜索参数放入-url">自动化 URL ：将搜索参数放入 URL</a></li>
+<li><a href="#搜索结果页将参数融入-url">搜索结果页：将参数融入 URL</a></li>
 </ul></li>
-<li><a href="#自动生成高质量的标题">自动生成高质量的标题：</a></li>
+<li><a href="#自动生成高质量的站点标题">自动生成高质量的站点标题</a><ul>
+<li><a href="#什么是站点标题">什么是站点标题？</a></li>
+<li><a href="#什么才算一个高质量的站点标题">什么才算一个高质量的站点标题？</a></li>
+</ul></li>
 </ul></li>
 <li><a href="#你应该知道的单页面应用的五要素">你应该知道的单页面应用的五要素</a><ul>
 <li><a href="#router页面跳转">Router：页面跳转</a></li>
@@ -723,7 +726,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>前端在用户输入的过程中就需要实时地检查，是否带有特殊符号、值是否是在允许的范围内、是不是符合相应的规范等等。而不是等用户填写完内容并提交后，再由服务端来告诉用户说，“你的用户名不符合规范”。</p>
 <p>服务在收到前端收到的数据后，不管前端有没有进行验证，都应该按后台的逻辑进行验证。</p>
 <p>于是乎在这个时候，这些逻辑就被无可避免地放到前台里了。</p>
-<h1 id="前端搜索引擎优化技巧-如何设计一个高质量的-url-及页面标题">前端搜索引擎优化技巧 ：如何设计一个高质量的 URL 及页面标题</h1>
+<h1 id="seo-优化技巧-如何设计一个高质量的-url-及页面标题">SEO 优化技巧 ：如何设计一个高质量的 URL 及页面标题</h1>
 <blockquote>
 <p>今天，很多网站的 URL 的设计都是有问题的——因为 RESTful。依据 RESTful API 原则，我们设计出来的 API 的 URL 都会有这样那样的缺陷。</p>
 </blockquote>
@@ -731,7 +734,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li></li>
 </ul>
 <blockquote>
-<p>在过去的几年里，搜索引擎的影响力发生了一些变化——其影响力的趋势是逐渐变弱。应用程序已经变成了流量的一个大入口，当然搜索引擎也还是一个大的入口。搜索引擎优化看上去并没有那么重要，企业靠活动、运营来挖掘新的用户。可当所有的人不重视，而我们重视的时候，那么这个流量入口就是你的天下。</p>
+<p>在过去的几年里，搜索引擎的影响力发生了一些变化——其影响力的趋势是逐渐变弱。应用程序已经变成了流量的一个大入口，当然搜索引擎也还是一个大的入口。搜索引擎优化看上去并没有那么重要，企业靠活动、运营来挖掘新的用户。可当所有的人不重视，而我们重视的时候，那么这个流量入口就是我们的天下。</p>
 </blockquote>
 <p>自打我开始写博客起（大概是在 2011 年左右），便开始研究搜索引擎优化（Search Engine Optimization）。这项看似不重要的技术，却为我的博客带来 了大量的流量。</p>
 <p>工作之后，我才发现这是一门大生意——为了排在搜索引擎靠前的位置，每个网站每天都在不断的送钱给 Google、百度、Bing 等搜索引擎公司。当我们在 Google、百度上点击一下，首页上的某个推广链接，可能就会为它们带去几十美刀的收入。要是能竞争到此，那说明这个行业相当的赚钱。同时，处在这个行业的人呐也越来越不赚钱了——他们都把钱交给了科技公司了。</p>
@@ -810,10 +813,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </tbody>
 </table>
 <p>最后，我们设计出来的文章地址，可能就是 blog/123，又或者是 blog/58c286d7ac502e0062d7c84e。因为，我们是依据这个 ID 到数据库去操作（CRUD）相应的值。ID 本身是自增的，并且是唯一的，所以这种设计因此就比较简单了。因此，我们到数据去查询的时候，我们只需要<code>where id=&quot;123&quot;</code>即可。</p>
-<p>可是对于一个博客来说，每个 URL 也应该是唯一的，我们仍然可以使用``where slug=“how-to-design-a-high-quality-url”。</p>
+<p>可是对于一个博客来说，<strong>每个博客的链接都是唯一</strong>的。因此，我们仍然可以使用``where slug=“how-to-design-a-high-quality-url”。</p>
 <p>于是，自定义 URL 就是其中的一种形式。</p>
 <h3 id="手动自定义-url">手动自定义 URL</h3>
-<p>与 URL 相比，ID 本身是不如记的。如我的专栏《我的职业是前端工程师》 的豆瓣上的链接是：<a href="https://read.douban.com/column/5945187/" class="uri">https://read.douban.com/column/5945187/</a> ，而在知乎上则是 <a href="https://zhuanlan.zhihu.com/beafe" class="uri">https://zhuanlan.zhihu.com/beafe</a>。试问一下，如果你要记的话，哪个更轻松？</p>
+<p>与 URL 相比，ID 本身是不如记的。如我的专栏《我的职业是前端工程师》 的豆瓣上的链接是：<a href="https://read.douban.com/column/5945187/" class="uri">https://read.douban.com/column/5945187/</a> ，而在知乎上则是 <a href="https://zhuanlan.zhihu.com/beafe" class="uri">https://zhuanlan.zhihu.com/beafe</a>。试问一下，如果要记下来的话，哪个更轻松？</p>
 <p>以我的博客为例，正常的 URL 是这样的，<a href="https://www.phodal.com/blog/use-jenkinsfile-blue-ocean-visualization-pipeline/" class="uri">https://www.phodal.com/blog/use-jenkinsfile-blue-ocean-visualization-pipeline/</a>，对应的标题是：<a href="https://www.phodal.com/blog/use-jenkinsfile-blue-ocean-visualization-pipeline/">Jenkins 2.0 里使用 Jenkinsfile 设计更好的 Pipeline</a>，这种设计本身可以将关键词融入 URL ，就更容易换得一个好的排名：</p>
 <figure>
 <img src="images/jenkins-pipeline-example.png" alt="Google jenkins 2.0 pipeline" /><figcaption>Google jenkins 2.0 pipeline</figcaption>
@@ -821,7 +824,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>这里的 use-jenkinsfile-blue-ocean-visualization-pipeline 就是优化的部分。而为了设计方便，大部分的博客都会将 URL 设计成 /blog/123。结果便是，当用户搜索 jenkinsfile 和 pipline 时，就出现了一些劣势。</p>
 <p>对应的，使用汉字搜索为主的中文网站来说，使用 wo-de-zhiye-shi-qianduan-gongchenshi 可能是一种更不错的选择。我们只需要使用一些分词库，就可以生成对应的中文拼音 URL。</p>
 <p>当我们有大量的商品的时候，手动定义可能会让人有些厌烦。于是我们应该定义一些规则，然后生成相对应的 URL。</p>
-<h3 id="自动化-url-简单的-url-生成规则">自动化 URL ：简单的 URL 生成规则</h3>
+<h3 id="详情页-简单的-url-生成规则">详情页 ：简单的 URL 生成规则</h3>
 <p>考虑到手动生成的难度，以及一些 RESTful 设计的风格问题，我们可以考虑结合他们的形式，诸如：</p>
 <table>
 <thead>
@@ -847,28 +850,48 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h3 id="自动化-url分类与多级目录">自动化 URL：分类与多级目录</h3>
 <p>假使我们的网站上拥有大量的商品时，那么我们采用 RESTful 来描述资源时，这个时候路径可能就会变成这样：</p>
 <pre><code>/markets/3c/sj/meizu/meizu-mx5</code></pre>
-<p>如果不考虑搜索引擎优化，这个 URL 本身是没有什么毛病的，除了分类有点多。分类多对于 SEO 来说，主要问题就是，Page Rank 会被分配到不同的分类上，而导致当前页面的 Page Rank 比较低。因而，对于不同的网站来说可能有不同的需求，因此也没有一个好的定论。</p>
-<h3 id="自动化-url-将搜索参数放入-url">自动化 URL ：将搜索参数放入 URL</h3>
-<p>而当搜索条件更加复杂时，想搜索一个 100~150 元左右的 移动电源时，不应该是 product/12345678 ，product/mobilebank-range-100-150-city-shenzhen</p>
-<p>如果有后台渲染时，数据直接由后台处理：</p>
-<p>在前端处理逻辑就会比较复杂，需要用正则去：(+)-range-(+)-(+)-city-(+)</p>
+<p>如果不考虑搜索引擎优化，这个 URL 本身是没有什么毛病的，除了：<strong>分类有点多</strong>。</p>
+<p>分类多对于 SEO 来说，主要问题就是，Page Rank 会被分配到不同的分类上，而导致当前页面的 Page Rank 比较低。因而，对于不同的网站来说可能有不同的策略需求。有的网站可能需要主目录的 Rank 比较高，有的网站则需要详情页的 Rank 值比较高，因此也没有一个好的定论：</p>
+<ul>
+<li>如果希望详情页的 Rank 比较高，那么应该减少分类</li>
+<li>如果需要分类的 Rank 比较高，那么这样设计就是合理的</li>
+</ul>
+<h3 id="搜索结果页将参数融入-url">搜索结果页：将参数融入 URL</h3>
+<p>在上面的例子中，因为博客都是唯一的，所以要配置一个唯一的参数都是比较简单的。当我们需要搜索结果时，情况就变得有些复杂——我们需要搜索和过滤。</p>
+<p>对于一个使用 RESTful API 表示的搜索结果页，我们会这样去配置它的 URL：</p>
+<pre><code>http://www.xxx.com/search/?q={keyword}&amp;page={page}&amp;size={size}</code></pre>
+<p>然后，再我们的 Link Header 里指定下一页的结果就可以了。这样的 API 设计看上去，非常适合我们的场景。用户在筛选条件里选好想要的条件，再填入关键词就可以了。</p>
+<p>现在让我们来假设一种用户场景，我们想搜索一个 100~150 元左右的 移动电源，并且它还是深圳产的。这个时候，网页返回的 URL 可能就是：</p>
+<pre><code>search/?minPrice=100&amp;maxPrice=150&amp;product=powerbank&amp;location=shenzhen&amp;page=1</code></pre>
+<p>这个时候索引的结果，可就失去了分类的意义了。于是，我们需要一个更好的 URL，诸如：</p>
+<pre><code>product/powerbank/?minPrice=100&amp;maxPrice=150&amp;location=shenzhen&amp;location=shenzhen</code></pre>
+<p>那么，对于 URL 索引的 Rank 将会加给 powerbank，点击量 + 页面数量可以让它有一个好的排名：</p>
+<p>当然诸如淘宝、京东这样的网站就不需要这么做了，他们对于 SEO 的需求没有这么强烈——因为要在百度上排个好名，可不止 SEO 的事了。</p>
+<p>而如果我们愿意的话，还可以将参数融入到 URL 中，powerbank/range-100-150-city-shenzhen/page-1。这样，不止移动电源上有一个好的排名，100~150 元的移动电源也可以有一个好的排名。这时候，我们需要使用正则来匹配这些规则，一个简单的示例<code>(\S+)-range-(\d+)-(\d+)-city-(\S+)</code>，匹配结果如下：</p>
 <figure>
 <img src="images/seo-match-example.png" alt="SEO URL" /><figcaption>SEO URL</figcaption>
 </figure>
+<p>但是，不管怎样这些参数带来的影响，都是相当微弱的。正在要做好的是网站本身，以及相关的站点结构设计、网站内容。</p>
+<h2 id="自动生成高质量的站点标题">自动生成高质量的站点标题</h2>
+<h3 id="什么是站点标题">什么是站点标题？</h3>
+<p>就是我们在搜索结果页看到的那个标题。</p>
 <figure>
-<img src="images/zol-example.png" alt="ZOL Example" /><figcaption>ZOL Example</figcaption>
+<img src="images/title-example.jpg" alt="站点标题" /><figcaption>站点标题</figcaption>
 </figure>
-<h2 id="自动生成高质量的标题">自动生成高质量的标题：</h2>
-<p>示例 Title ： 文章标题 - 分类 | 网站名称 - 几个字简介</p>
-<p>不算太差的标题</p>
-<ul>
-<li>我的职业是前端工程师 - 知乎专栏</li>
-</ul>
-<p>移动电源 -【美创70-100元移动电源(充电宝)】美创70-100元移动电源(充电宝)报价及图片大全-ZOL中关村在线</p>
-<p>【Phodal牌 100-150 元移动电源】Phodal 100- 150 元移动电源 - SITE INFO</p>
+<p>如上图所示的结果，是我用 Google 搜索：“程序员如何提高影响力”得到的结果。对应的第一个链接的，<code>如何提高影响力- Phodal | Phodal - A Growth Engineer</code> 就是我博客的站点标题。对应在 HTML 中就是 title 标题：</p>
 <figure>
 <img src="images/phodal-com-seo.png" alt="Phodal’s COM SEO" /><figcaption>Phodal’s COM SEO</figcaption>
 </figure>
+<h3 id="什么才算一个高质量的站点标题">什么才算一个高质量的站点标题？</h3>
+<p>这是一个很趣的问题。我想应该是在标题里，带有我想要的信息吧。对于一篇博客来说，我可能想看到的内容有：文章的标题，站点的简单介绍，谁的网站等等的内容。</p>
+<p>如上图中的我的博客的标题，就是一个不错的示例。标题里带有：文章的标题，作者名、站点名、站点简介，即：<code>文章标题 - 作者名 | 站点名 - 站点简介</code>。上图中的 SegmentFault 的标题也相当的不错，<code>文章标题 - 专栏标题 - 站点名</code>。而知乎的专栏，就没有那么有趣了：<code>程序员如何提高影响力2.0 - 知乎专栏</code>。</p>
+<p>有了上面的例子之后，要完成一个相似的站点标题就更添加容易了：即将产品的相关信息带入到标题里。上面的例子中的 Title 看上去都有点生硬，如果我们愿意的话，我们也可以对其进行优化。</p>
+<p>该说的我们都说了，最后再来说说为什么吧。如下是 Google 搜索结果中的用户热图：</p>
+<figure>
+<img src="images/heat-map-2005-2014.jpg" alt="Google Heat Map" /><figcaption>Google Heat Map</figcaption>
+</figure>
+<p>尽管发生了一些变化，但是我们会发现：用户仍然集中注意力在左侧区域，即文章的标题部分。也就是说，我们应该将标题放在最左边，而与搜索无关的网站信息放在最右边。</p>
+<p>所以，标题的形式应该是：文章标题 - 各种相关信息。由于 Title 标签拥有比较重要的作用，所以在不影响读者阅读的时候，应该尽可能地把相关的信息放进去。</p>
 <h1 id="你应该知道的单页面应用的五要素">你应该知道的单页面应用的五要素</h1>
 <h2 id="router页面跳转">Router：页面跳转</h2>
 <p>URL 设计 列表，详细</p>
