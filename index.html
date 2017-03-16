@@ -178,6 +178,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 </ul></li>
 <li><a href="#你应该知道的单页面应用的五要素">你应该知道的单页面应用的五要素</a><ul>
+<li><a href="#单页面应用的演进">单页面应用的演进</a></li>
 <li><a href="#router页面跳转">Router:页面跳转</a></li>
 <li><a href="#事件监听与状态管理">事件监听与状态管理</a></li>
 <li><a href="#数据获取与鉴权">数据获取与鉴权</a></li>
@@ -892,14 +893,40 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>尽管发生了一些变化，但是我们会发现：用户仍然集中注意力在左侧区域，即文章的标题部分。也就是说，我们应该将标题放在最左边，而与搜索无关的网站信息放在最右边。</p>
 <p>所以，标题的形式应该是：文章标题 - 各种相关信息。由于 Title 标签拥有比较重要的作用，所以在不影响读者阅读的时候，应该尽可能地把相关的信息放进去。</p>
 <h1 id="你应该知道的单页面应用的五要素">你应该知道的单页面应用的五要素</h1>
+<p>刚开始写一些企业、商业代码的时候，从 jQuery 开始写起的，然后就是 jQuery Mobile 来做单页面应用。</p>
+<p>对于工作来说，我更希望的是一个完整的解决方案。</p>
+<p>对于编程体验来说，我喜欢一点点的去创造一些轮子。</p>
+<h2 id="单页面应用的演进">单页面应用的演进</h2>
+<p>单页面应用可没有像现在这么复杂，我们在可以在一个 HTML 写好我们所需要的各个模板，data-role 表明这是个页面，用 id 来定义好相应的路由，入口就这么有了。</p>
+<pre><code>&lt;div data-role=&quot;page&quot; id=&quot;foo&quot;&gt;
+&lt;a href=&quot;#foo&quot;&gt;Back to foo&lt;/a&gt;</code></pre>
+<p>加上原来的 jQuery Mobile 的 UI 即可。</p>
+<p>可到底由于我学的知识是在书上学的，整整比市场落后了上个两三年。这时候，大部分的应用已经开始使用 Backbone 和 Angular.js，这些项目可以提供更好的应用开发体难。</p>
+<ul>
+<li>Backbone提供了一个 Router</li>
+<li>Mustache提供了模板</li>
+<li>jQuery抽象了 DOM</li>
+<li>Ajax 负责数据处理</li>
+<li>LocalStorage 数据和状态</li>
+</ul>
 <p>从 Backbone到 React 的经历。</p>
 <h2 id="router页面跳转">Router:页面跳转</h2>
 <p>Route</p>
+<p>Django：</p>
+<pre><code>url(r&#39;^articles/2003/$&#39;, views.special_case_2003),</code></pre>
+<p>Laravel：</p>
+<pre><code>Route::get(&#39;posts/{post}/comments/{comment}&#39;, function ($postId, $commentId) {
+    //
+});</code></pre>
 <p>hashchange， window.location.hash</p>
 <p>URL 设计 列表，详细</p>
 <p>window.location.hash</p>
 <p>History API</p>
 <h2 id="事件监听与状态管理">事件监听与状态管理</h2>
+<p>异步</p>
+<p>事件</p>
+<p>消息</p>
+<p>状态</p>
 <p>Service，LocalStorage, Redux</p>
 <h2 id="数据获取与鉴权">数据获取与鉴权</h2>
 <p>Ajax FETCH</p>
