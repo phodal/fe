@@ -984,15 +984,22 @@ product/powerbank/?minPrice=100&maxPrice=150&location=shenzhen&location=shenzhen
 你应该知道的单页面应用的五要素 
 ===
 
-Router：页面跳转
+从 Backbone到 React 的经历。
+
+Router:页面跳转
 ---
+
+Route
+
+hashchange， window.location.hash
 
 URL 设计 列表，详细
 
-模板引擎
----
+window.location.hash
 
-状态管理
+History API
+
+事件监听与状态管理
 ---
 
 Service，LocalStorage, Redux
@@ -1010,11 +1017,17 @@ View
 
 模板引擎，修改元素
 
-组件化
 
-模块管理
+组件化
 ---
 
+UI 组件化
+
+Require.js
+
+WebPack ES6 
+
+代码模块化
  
 
 数据存储

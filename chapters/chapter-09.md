@@ -1,8 +1,14 @@
 你应该知道的单页面应用的五要素 
 ===
 
+从 Backbone到 React 的经历。
+
 Router:页面跳转
 ---
+
+Route
+
+hashchange， window.location.hash
 
 URL 设计 列表，详细
 
@@ -10,7 +16,7 @@ window.location.hash
 
 History API
 
-状态管理
+事件监听与状态管理
 ---
 
 Service，LocalStorage, Redux
@@ -33,5 +39,10 @@ View
 ---
 
 UI 组件化
+
+Require.js
+
+WebPack ES6 
+
 代码模块化
  
