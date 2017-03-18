@@ -42,12 +42,12 @@
 
  - 使用 jQuery 来做页面交互
  - 使用 jQuery Ajax 来从服务端获取数据 
- - 使用 Backbone 来负责页面的跳转及 Model
+ - 使用 Backbone 来负责路由及 Model
  - 使用 Mustache 作为模板引擎来渲染页面
  - 使用 Require.js 来管理不同的模板
  - 使用 LocalStorage 来存储用户的数据 
 
-通过结合这一系列的工具，我们终于可以实现一个复杂的单页面应用。而这些，也就是今天我们看到的单页面应用的基本元素。我们可以在 Angular  应用、React 应用、Vue.js 应用 看到这些基本要素的影子，如：Vue Router、React Router、Angular 2 RouterModule 都是负责页面跳转及模块关系的。在 Vue 和 React 里，它们都是由辅助模块来实现的。因为 React 只是层 UI 层，而 Vue.js 也是用于构建用户界面的框架。
+通过结合这一系列的工具，我们终于可以实现一个复杂的单页面应用。而这些，也就是今天我们看到的单页面应用的基本元素。我们可以在 Angular  应用、React 应用、Vue.js 应用 看到这些基本要素的影子，如：Vue Router、React Router、Angular 2 RouterModule 都是负责路由（页面跳转及模块关系）的。在 Vue 和 React 里，它们都是由辅助模块来实现的。因为 React 只是层 UI 层，而 Vue.js 也是用于构建用户界面的框架。
 
 Router:页面跳转
 ---
