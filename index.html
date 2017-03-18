@@ -914,15 +914,16 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>当我们点击相应的链接时，就会切换到 HTML 中相应的 ID。这种简单的单页面应用基本上就是一个离线应用了，只适合于简单的场景，可是它带有单页面应用的基本特性。而复杂的应用，则需要从服务器获取数据。然而早期受限于移动浏览器性能的影响，只能从服务器获取相应的 HTML，并替换当前的页面。</p>
 <p>在这样的应用中，我们可以看到单页面应用的基本元素： <strong>页面路由</strong>，通过某种方式，如 URL hash 来说明表明当前所在的页面，并拥有从一个页面跳转到另外一个页面的入口。</p>
 <p>当移动设备的性能越来越好时，开发者们开始在浏览器里渲染页面。</p>
-<p>可到底由于我学的知识是在书上学的，整整比市场落后了上个两三年。这时候，大部分的应用已经开始使用 Backbone 和 Angular.js，这些项目可以提供更好的应用开发体难。</p>
+<p>当移动设备的性能越来越好时，开发者们开始在浏览器里渲染页面：</p>
 <ul>
-<li>Backbone提供了一个 Router</li>
-<li>Mustache提供了模板</li>
-<li>jQuery抽象了 DOM</li>
-<li>Ajax 负责数据处理</li>
-<li>LocalStorage 数据和状态</li>
+<li>使用 jQuery 来做页面交互</li>
+<li>使用 jQuery Ajax 来从服务端获取数据</li>
+<li>使用 Backbone 来负责页面的跳转及 Model</li>
+<li>使用 Mustache 作为模板引擎来渲染页面</li>
+<li>使用 Require.js 来管理不同的模板</li>
+<li>使用 LocalStorage 来存储用户的数据</li>
 </ul>
-<p>从 Backbone到 React 的经历。</p>
+<p>通过结合这一系列的工具，我们终于可以实现一个复杂的单页面应用。而这些，也就是今天我们看到的单页面应用的基本元素。我们可以在 Angular 应用、React 应用、Vue.js 应用 看到这些基本要素的影子，如：Vue Router、React Router、Angular 2 RouterModule 都是负责页面跳转及模块关系的。在 Vue 和 React 里，它们都是由辅助模块来实现的。因为 React 只是层 UI 层，而 Vue.js 也是用于构建用户界面的框架。</p>
 <h2 id="router页面跳转">Router:页面跳转</h2>
 <p>Route</p>
 <p>Django：</p>
