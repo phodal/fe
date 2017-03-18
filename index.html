@@ -179,7 +179,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li><a href="#你应该知道的单页面应用的五要素">你应该知道的单页面应用的五要素</a><ul>
 <li><a href="#单页面应用的演进">单页面应用的演进</a></li>
-<li><a href="#router页面跳转">Router:页面跳转</a></li>
+<li><a href="#路由页面跳转与模块关系">路由：页面跳转与模块关系</a></li>
 <li><a href="#事件监听与状态管理">事件监听与状态管理</a></li>
 <li><a href="#数据获取与鉴权">数据获取与鉴权</a></li>
 <li><a href="#展示">展示</a></li>
@@ -924,14 +924,22 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>使用 LocalStorage 来存储用户的数据</li>
 </ul>
 <p>通过结合这一系列的工具，我们终于可以实现一个复杂的单页面应用。而这些，也就是今天我们看到的单页面应用的基本元素。我们可以在 Angular 应用、React 应用、Vue.js 应用 看到这些基本要素的影子，如：Vue Router、React Router、Angular 2 RouterModule 都是负责路由（页面跳转及模块关系）的。在 Vue 和 React 里，它们都是由辅助模块来实现的。因为 React 只是层 UI 层，而 Vue.js 也是用于构建用户界面的框架。</p>
-<h2 id="router页面跳转">Router:页面跳转</h2>
-<p>Route</p>
-<p>Django：</p>
+<h2 id="路由页面跳转与模块关系">路由：页面跳转与模块关系</h2>
+<p>要说起路由，那可是有很长的故事。当我们在浏览器上输入网址的时候，我们就已经开始了各种路由的旅途了。</p>
+<ol type="1">
+<li>浏览器会检查有没有相应的域名缓存，没有的话就会一层层的去向 DNS服务器 寻向，最后返回对应的服务器的 IP 地址。</li>
+<li>接着，我们请求的网站将会将由对应 IP 的 HTTP 服务器处理，HTTP 服务器会根据请求来交给对应的应用容器来处理。</li>
+<li>随后，我们的应用将根据用户请求的路径，将请求交给相应的函数来处理。最后，返回相应的 HTML 和资源文化</li>
+</ol>
+<p>当我们做后台应用的时候，我们只需要关心上述过程中的最后一步。即，将对应的路由交给对应的函数来处理。这一点，在不同的后台框架的表现形式都是相似的。</p>
+<p>如 Python 语言里的 Web 开发框架 Django 的 URLConf，使用正规表达式来表正</p>
 <pre><code>url(r&#39;^articles/2003/$&#39;, views.special_case_2003),</code></pre>
-<p>Laravel：</p>
+<p>而在 Laravel 里，则是通过参数的形式来呈现</p>
 <pre><code>Route::get(&#39;posts/{post}/comments/{comment}&#39;, function ($postId, $commentId) {
     //
 });</code></pre>
+<p>虽然表现形式有一些差别，但是总体来说也是差不多的。而对于前端应用来说，也是如此，将对应的 URL 的逻辑交由对应的函数来处理。</p>
+<p>稍有不同的是，后台的路由完全交由服务器端来控制，而前端的请求则都是在本地改变其状态。同时在不同的前端框架上，他们在行为上还有一些区别。</p>
 <p>hashchange， window.location.hash</p>
 <p>URL 设计 列表，详细</p>
 <p>window.location.hash</p>
