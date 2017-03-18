@@ -226,12 +226,6 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#对接应用编写测试">对接应用，编写测试</a></li>
 <li><a href="#上线">上线</a></li>
 </ul></li>
-<li><a href="#前端基础知识">前端基础知识</a><ul>
-<li><a href="#准备工作">准备工作</a></li>
-<li><a href="#编写一个简单的-html">编写一个简单的 HTML</a></li>
-<li><a href="#漂亮的-css">漂亮的 CSS</a></li>
-<li><a href="#javascript-居然是小三">JavaScript 居然是小三</a></li>
-</ul></li>
 </ul>
 </nav>
 <h1 id="序为什么前端没有前途">序:为什么前端没有前途？</h1>
@@ -1047,36 +1041,6 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h2 id="实现后台接口">实现后台接口</h2>
 <h2 id="对接应用编写测试">对接应用，编写测试</h2>
 <h2 id="上线">上线</h2>
-<h1 id="前端基础知识">前端基础知识</h1>
-<h2 id="准备工作">准备工作</h2>
-<p>为了编写代码，我们需要一些额外的工作。</p>
-<p><strong>一个可以帮助你调试的 Chrome 浏览器</strong>。这个浏览器我从他的版本号，还是个位数时就开始用了。这个浏览器在不断地添加新的功能，但是它还没改掉消耗大量内存的毛病。</p>
-<p><strong>一个可以让你编写代码的工具</strong>。使用 WebStorm 作为 IDE 也相当的不错。又或者是强大的两个编程器 Vim、Emacs，只是它们的学习曲线有些长，建议初学者：先以学习前端知识为主，工具可在熟悉后再练习。Atom 和 Visual Studio Code 也很不错，。Sublime 是一个轻量级的选择，速度相对于 IDE 快，并且有大量的插件可以使用，还能让你一直免费试用。</p>
-<p>还需<strong>一些 Node.js 的知识</strong>。可以将Node.js作为构建语言使用，对于一个成熟的语言来说，构建工具和构建语言是必须的。又或者你想用 JavaScript 作为后台语言，应该学好 Node.js。</p>
-<p>初学的时候，准备这些东西，已经让我有了放弃的想法。浏览器是一个很简单的选择，而从琳琅满目的开发工具中选择一个，就不是那么轻松了。</p>
-<p>我花了几天的时间，去了解开发者需要怎样的工具，同样的也花了几天去了解这些工具。在我还没写代码的时候，就已经浪费了很多天的时间，这真是罪过啊。俗话说得好：万事开头难，过了这个坑接下来的日子就“轻松”了。</p>
-<p>最后，<strong>你肯定要有一台计算机</strong>，最好可以是 GNU/Linux 操作系统，诸如 Mint、Ubuntu、OpenSuSE，你可以对操作系统有更多的控制权。Mac OS X 也是一个非常好的选择，它有一个漂亮的界面，并且大部分的 GNU/Linux 操作系统上的软件，都可以在上面运行。它就是贵，并且不那么“自由”。不过，我相信大部分的读者使用的是 Windows。</p>
-<p>开始学习前端的时候，我使用的是一台安装有 Windows 7 家庭版操作系统的 ThinkPad 笔记本。影响我切换到 OpenSuSE 的一个主要原因是，运行不起整套的 Web 环境。一个完整的 Web 系统，不仅仅只有 Web 应用本身，还需要有 HTTP 服务器，应用容器等等的软件。</p>
-<p>并且，如果你在使用 Node.js 来开发应用的话，你会发现有相当多的 Node.js 库没有办法成功编译。</p>
-<p>好了，这下花了几天的时间，我们终于可以继续三个月之旅了。</p>
-<h2 id="编写一个简单的-html">编写一个简单的 HTML</h2>
-<p>HTML 让我联想到了 XML，它们的结尾都是 ML。ML<sup>Markup Language</sup> 的意思是『标记语言』，HTML<sup>HyperText Markup Language</sup> 的意思是『超文本』。直到今天我才想明白，为什么那对情侣在学习的时候很害羞。</p>
-<p>HTML 是一个特别简单的语言，我再也找不到更简单的语言了。但是为了运行起 HTML，我们仍然也花费了不少的功夫。</p>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;title&gt;Title&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
-<p>如果你需要更多的工具，可以看看我的百宝箱：<a href="https://github.com/phodal/toolbox" class="uri">https://github.com/phodal/toolbox</a>，里面可是收藏了不少的好东西。</p>
-<p>后来，BE 学了 PHP 语言，FE 学的是 JavaScript，他们喜欢天天一起撕逼：哪个语言才是最 x 的语言。好在他们又有了一个共同的特点，天天制造 $，才没有分手。</p>
-<h2 id="漂亮的-css">漂亮的 CSS</h2>
-<h2 id="javascript-居然是小三">JavaScript 居然是小三</h2>
-<p>最多的比喻是雷锋与雷锋塔的故事，但是这个比喻是反着过来的，这样一来是先有 JavaScript，才有 Java 的。实际上，是先有阿里巴巴与四十个大盗的故事，才有借着他们名气的阿里巴巴。</p>
 <section class="footnotes">
 <hr />
 <ol>
