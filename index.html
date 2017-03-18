@@ -905,10 +905,15 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul>
 <p>当我们<strong>会用的框架越多的时候， 所花费的时间抉择也就越多</strong>。而单页面应用的都有一些相同的元素，对于这些基本元素的理解，可以让我们更快的适合其他框架。</p>
 <h2 id="单页面应用的演进">单页面应用的演进</h2>
-<p>单页面应用可没有像现在这么复杂，我们在可以在一个 HTML 写好我们所需要的各个模板，data-role 表明这是个页面，用 id 来定义好相应的路由，入口就这么有了。</p>
-<pre><code>&lt;div data-role=&quot;page&quot; id=&quot;foo&quot;&gt;
-&lt;a href=&quot;#foo&quot;&gt;Back to foo&lt;/a&gt;</code></pre>
-<p>加上原来的 jQuery Mobile 的 UI 即可。</p>
+<p>我接触到单页面应用的时候，它看起来就像是<strong>将所有的内容放在一个页面上么</strong>。只需要在一个 HTML 写好所需要的各个模板，并在不同的页面上 data-role 表明这是个页面（基于 jQuery Mobile）——每个定义的页面都和今天的移动应用的模式相似，有 header、content、footer 三件套。再用 id 来定义好相应的路由。</p>
+<pre><code>&lt;div data-role=&quot;page&quot; id=&quot;foo&quot;&gt; 
+...
+&lt;/div&gt;</code></pre>
+<p>这样我们就在一个 HTML 里返回了所有的页面了。随后，只需要在在入口处的 href 里，写好相应的 ID 即可。</p>
+<pre><code>&lt;a href=&quot;#foo&quot;&gt;跳转到foo&lt;/a&gt;</code></pre>
+<p>当我们点击相应的链接时，就会切换到 HTML 中相应的 ID。这种简单的单页面应用基本上就是一个离线应用了，只适合于简单的场景，可是它带有单页面应用的基本特性。而复杂的应用，则需要从服务器获取数据。然而早期受限于移动浏览器性能的影响，只能从服务器获取相应的 HTML，并替换当前的页面。</p>
+<p>在这样的应用中，我们可以看到单页面应用的基本元素： <strong>页面路由</strong>，通过某种方式，如 URL hash 来说明表明当前所在的页面，并拥有从一个页面跳转到另外一个页面的入口。</p>
+<p>当移动设备的性能越来越好时，开发者们开始在浏览器里渲染页面。</p>
 <p>可到底由于我学的知识是在书上学的，整整比市场落后了上个两三年。这时候，大部分的应用已经开始使用 Backbone 和 Angular.js，这些项目可以提供更好的应用开发体难。</p>
 <ul>
 <li>Backbone提供了一个 Router</li>
