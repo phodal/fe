@@ -74,17 +74,37 @@ Route::get('posts/{post}/comments/{comment}', function ($postId, $commentId) {
 });
 ```
 
-虽然表现形式有一些差别，但是总体来说也是差不多的。而对于前端应用来说，也是如此，将对应的 URL 的逻辑交由对应的函数来处理。
+虽然表现形式有一些差别，但是总体来说也是差不多的。而对于前端应用来说，也是如此，**将对应的 URL 的逻辑交由对应的函数来处理**。
 
-稍有不同的是，后台的路由完全交由服务器端来控制，而前端的请求则都是在本地改变其状态。同时在不同的前端框架上，他们在行为上还有一些区别。
+React Router 使用了类似形式来处理路由，代码如下所示：	
+```
+ <Route path="messages" component={MessageList} />
+ <Route path="messages/:id" component={MessageDetail} />
+```
 
-hashchange， window.location.hash
 
-URL 设计 列表，详细
+当页面跳转到 messages 的时候，会将控制权将给 MessageList 组件来处理。
 
-window.location.hash
+当页面跳转到 messages/fasfasf-asdfsafd 的时候，将匹配到这二个路由，并交给 MessageDetail 组件 来处理。而路由中的 id 值，也将作为参数 MessageDetail 组件来处理。
 
-History API
+相似的，而 Angular 2 的形式则是：
+
+```
+{ path: 'messages',      component: MessageListComponent },
+{ path: 'messages/:id',      component: MessageDetailComponent },
+```
+
+相似的，这里的 HeroDetailComponent 是一个组件，path 中的 id 值将会传递给 HeroDetailComponent 组件。
+
+从上面来看，尽管表现形式上有所差异，但是其行为是一致的：使用规则引擎来处理路由与函数的关系。稍有不同的是，后台的路由完全交由服务器端来控制，而前端的请求则都是在本地改变其状态。
+
+并且同时在不同的前端框架上，他们在行为上还有一些区别。这取决于我们是否需要后台渲染，即刷新当前页面时的表现形式。
+
+ - 使用 Hash （#）或者  Hash Bang （#!） 的形式。即 # 开头的参数形式，诸如 [ued.party/#/messages](http://ued.party/#/messages)。当我们访问 messages/12 时，URL 的就会变成 [ued.party/#/messages/12](http://ued.party/#/messages/12)
+ - 使用新的 HTML 5 的 history API。用户看到的 URL 和正常的 URL 是一样的。当用户点击某个链接进入到新的页面时，会通过 history 的 pushState 来填入新的地址。当我们访问 messages/12 时，URL 的就会变成 [ued.party/messages/12](http://ued.party/messages/12)。当用户刷新页面的时候，请通过新的 URL 来向服务器请求内容。
+
+幸运的是，大部分的最新 Router 组件都会判断是否支持 history API，再来决定先用哪一个方案。
+
 
 事件监听与状态管理
 ---
