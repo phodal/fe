@@ -168,15 +168,3 @@ fetch(url).then(response => response.json())
 状态
 
 Service，LocalStorage, Redux
-
-软件工程：组件化
----
-
-UI 组件化
-
-Require.js
-
-WebPack ES6 
-
-代码模块化
- 
