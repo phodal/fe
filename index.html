@@ -177,7 +177,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#什么才算一个高质量的站点标题">什么才算一个高质量的站点标题？</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#你应该知道的单页面应用的五要素">你应该知道的单页面应用的五要素</a><ul>
+<li><a href="#你应该知道的单页面应用的核心知识">你应该知道的单页面应用的核心知识</a><ul>
 <li><a href="#单页面应用的演进">单页面应用的演进</a></li>
 <li><a href="#路由页面跳转与模块关系">路由：页面跳转与模块关系</a></li>
 <li><a href="#数据获取与鉴权">数据：获取与鉴权</a></li>
@@ -886,7 +886,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </figure>
 <p>尽管发生了一些变化，但是我们会发现：用户仍然集中注意力在左侧区域，即文章的标题部分。也就是说，我们应该将标题放在最左边，而与搜索无关的网站信息放在最右边。</p>
 <p>所以，标题的形式应该是：文章标题 - 各种相关信息。由于 Title 标签拥有比较重要的作用，所以在不影响读者阅读的时候，应该尽可能地把相关的信息放进去。</p>
-<h1 id="你应该知道的单页面应用的五要素">你应该知道的单页面应用的五要素</h1>
+<h1 id="你应该知道的单页面应用的核心知识">你应该知道的单页面应用的核心知识</h1>
 <blockquote>
 <p>这几年里，单页面应用的框架令人应接不暇，各种新的概念也层出不穷。从过去的 jQuery Mobie、Backbone 到今天的 Angular 2、React、Vue 2，除了版本号不同，他们还有很多的相同之处。</p>
 </blockquote>
@@ -931,7 +931,6 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <pre><code>Route::get(&#39;posts/{post}/comments/{comment}&#39;, function ($postId, $commentId) {
     //
 });</code></pre>
-<<<<<<< HEAD
 <p>虽然表现形式有一些差别，但是总体来说也是差不多的。而对于前端应用来说，也是如此，<strong>将对应的 URL 的逻辑交由对应的函数来处理</strong>。</p>
 <p>React Router 使用了类似形式来处理路由，代码如下所示：</p>
 <pre><code> &lt;Route path=&quot;blog&quot; component={BlogList} /&gt;
@@ -988,33 +987,6 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h3 id="用户交互事件">用户交互：事件</h3>
 <p>事实上，对于用户交互来说也只是改变状态的值，即对状态进行操作。</p>
 <p>举一个例子，当用户点击登录的时候，发送数据到后台，由后台返回这个值。由控制器一一的去修改这些状态，最后确认这个用户登录，并发一个用户已经登录的广播，又或者修改全局的用户值。</p>
-<h1 id="数据存储">数据存储</h1>
-<p>LocalForge</p>
-<h2 id="localstorage">LocalStorage</h2>
-<h2 id="websql">WebSQL</h2>
-<h2 id="indexeddb">IndexedDB</h2>
-<h2 id="sqlite">SQLite</h2>
-=======
-<p>hashchange， window.location.hash</p>
-<p>URL 设计 列表，详细</p>
-<p>window.location.hash</p>
-<p>History API</p>
-<h2 id="事件监听与状态管理">事件监听与状态管理</h2>
-<p>异步</p>
-<p>事件</p>
-<p>消息</p>
-<p>状态</p>
-<p>Service，LocalStorage, Redux</p>
-<h2 id="数据获取与鉴权">数据获取与鉴权</h2>
-<p>Ajax FETCH</p>
-<h2 id="展示">展示</h2>
-<p>DOM View</p>
-<p>模板引擎，修改元素</p>
-<h2 id="组件化">组件化</h2>
-<p>UI 组件化</p>
-<p>Require.js</p>
-<p>WebPack ES6</p>
-<p>代码模块化</p>
 <h1 id="前端的难点模型维护与数据存储">前端的难点：模型维护与数据存储</h1>
 <blockquote>
 <p>前端</p>
@@ -1048,7 +1020,6 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>或者的情况下，我们可需要在不同的存储介质中保持他们了，这个时候只需要不同的适配器即可。</p>
 <p>我们可以使用不同的库来，如支持使用不同介质的 localForge，IndexedDB、WebSQL、localStorage ，又或者是支持不同浏览器的 store.js</p>
 <p>问题的另外一个难点在于存储什么，怎么存储。</p>
->>>>>>> [ch10] thinking in content
 <h1 id="前端也需要性能优化">前端也需要性能优化</h1>
 <h3 id="timeline">Timeline</h3>
 <h3 id="首屏加载优化">首屏加载优化</h3>

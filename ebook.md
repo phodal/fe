@@ -981,7 +981,7 @@ product/powerbank/?minPrice=100&maxPrice=150&location=shenzhen&location=shenzhen
 
 所以，标题的形式应该是：文章标题 - 各种相关信息。由于 Title 标签拥有比较重要的作用，所以在不影响读者阅读的时候，应该尽可能地把相关的信息放进去。
 
-你应该知道的单页面应用的五要素 
+你应该知道的单页面应用的核心知识
 ===
 
 > 这几年里，单页面应用的框架令人应接不暇，各种新的概念也层出不穷。从过去的 jQuery Mobie、Backbone 到今天的 Angular 2、React、Vue 2，除了版本号不同，他们还有很多的相同之处。
