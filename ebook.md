@@ -1159,7 +1159,7 @@ fetch(url).then(response => response.json())
 
 
 
-前端的难点：模型维护与数据存储
+客户端存储技术：模型维护与数据存储
 ===
 
 > 前端
