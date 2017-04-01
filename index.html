@@ -1065,7 +1065,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>当我的博客迁移到 AWS，服务器的性能提升之后，我便开始着手解决网络带来的问题。因此，首先就是要确认问题到底是来自网络的哪一部分。这时，我们就可以借助于 Chrome 浏览器，来查看一下问题的来源。</p>
 <p>打开 Chrome 浏览器的 Network 标签，点击最后的 <strong>Waterfall</strong> 就可以看到相应的内容：</p>
 <figure>
-<img src="network-performance.png" alt="Chrome 网络工具" /><figcaption>Chrome 网络工具</figcaption>
+<img src="images/network-performance.png" alt="Chrome 网络工具" /><figcaption>Chrome 网络工具</figcaption>
 </figure>
 <p>从图中，我们就可以看到影响加载速度的主要因素是：</p>
 <ul>
@@ -1081,16 +1081,20 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h3 id="ttfb-优化">TTFB 优化</h3>
 <p>而对于早期我的博客来说，还有一个主要的限制因素是 DNS 查询所需要的时间——即查询这个域名对应的服务器地址的时间。这主要是受限于<strong>域名服务器提供的 DNS 服务器比较慢</strong>，作一个比较简单的对比：</p>
 <figure>
-<img src="ping-results.png" alt="淘宝 vs www.phodal.com" /><figcaption>淘宝 vs www.phodal.com</figcaption>
+<img src="images/ping-results.png" alt="淘宝 vs www.phodal.com" /><figcaption>淘宝 vs www.phodal.com</figcaption>
 </figure>
 <p>通过使用 <code>traceroute</code> 工具，我们就可以发现经过不同网关所需要的时间了：</p>
 <figure>
-<img src="traceroute.png" alt="traceroute 结果" /><figcaption>traceroute 结果</figcaption>
+<img src="images/traceroute.png" alt="traceroute 结果" /><figcaption>traceroute 结果</figcaption>
 </figure>
 <p>而这还是在我采用了 DNSPod 这样的工具之后的结果，原先的域名服务器则需要更长的时间。可惜，我这么穷已经不能付钱给更好的 DNS 服务提供商了。</p>
 <h3 id="服务器优化">服务器优化</h3>
 <p>后来，我发现我的博客还有一个瓶颈是在服务器上。于是，我使用 APM 工具 NewRelic 发现了另外一个性能瓶颈，服务器默认使用的 Python 版本是 2.6。</p>
-<p>对于如我博客这样性能的服务器来说，应用的一个很大的瓶颈就是：大量的数据查询。如当用户访问博客的列表页时，大概需要 400+ ms 左右的时间，而一篇详情页则差不多是 100ms+。对于数据查询来说，除了使用更多、更好的服务器，还可读减少对数据的查询——即缓存数据结果。</p>
+<p>对于如我博客这样性能的服务器来说，应用的一个很大的瓶颈就是：大量的数据查询。</p>
+<figure>
+<img src="images/newrelic.png" alt="NewRelic Result" /><figcaption>NewRelic Result</figcaption>
+</figure>
+<p>如当用户访问博客的列表页时，大概需要 500+ ms 左右的时间，而一篇详情页则差不多是 200ms+。对于数据查询来说，除了使用更多、更好的服务器，还可读减少对数据的查询——即缓存数据结果。</p>
 <p>而在当时，我并没有注意博客对于缓存的控制，主要是因为使用的静态资源比较少。这一点直到我实习的时候才发现。</p>
 <h2 id="项目优化经验缓存优化">项目优化经验：缓存优化</h2>
 <p>当我试用了 PageSpeed 以及 YSlow 之后， 我发现光只使用 Nginx 来启用压缩 JS 和 CSS 是不够的，我们还需要：</p>
