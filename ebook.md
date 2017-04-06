@@ -1421,6 +1421,10 @@ WebView，如 CrossWalk，又或者是使用诸如  React Native 或者 NativeSc
 
 尽管 JSX 类似于 HTML，但是其对应于不同系统上的原生组件，
 
+### iOS
+
+JavaScriptCore WebView
+
 #### Android
 
 内置了一个用于解析 JavaScript 脚本的框架
