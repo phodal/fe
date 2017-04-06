@@ -64,6 +64,18 @@ WebView，如 CrossWalk，又或者是使用诸如  React Native 或者 NativeSc
 
 ### React Native
 
+生成 JSBundle 文件
+
+尽管 JSX 类似于 HTML，但是其对应于不同系统上的原生组件，
+
+#### Android
+
+内置了一个用于解析 JavaScript 脚本的框架
+
+初始化阶段，Java端会把所有要暴漏的Java类的信息封装成Config传给JS，然后根据Config生成对应Java类的Javascript镜像对象，以及要暴漏的方法，在JS中调用这个镜像对象的方法就会被转发到对应的Java对象上
+
+
+
 响应式设计
 ---
 
