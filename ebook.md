@@ -1374,7 +1374,7 @@ APP 应用来说，如果是使用 HTML + JavaScript 实现的混合应用，算
 
 ![大前端移动应用类型对比](images/frontend-app-compare.png)
 
-混合应用
+Web 应用与混合应用
 ---
 
 与原生应用相比，Web 应用有着相当多的优势：
@@ -1443,21 +1443,31 @@ React Native
 
 ![Webkit Architecture](images/webkit-framework.png)
 
+因此，我们只需要寻找一个基本的 boilerplate 模板，就可以上手开发了。当然，你最好还应该有一个真机，模拟机虽然比较方便，但是性能上仍然还是有一些小足的。要知道有些手机的性能，可是和电脑相当的。
 
+### 选型指南
 
-#### iOS
+如果你们是一个前端开发团队，那么只需要再补充一下移动应用相关的知识，你就可以轻松地 GET 这个技能？你还需要学习  ES 6、React、JSX 等全家桶，这也算是一个门槛。但是如果你们已经有了 React.js 相关的经验，那么就不要犹豫了。
 
-JavaScriptCore WebView
+如果你们是原生应用团队，那么也是时候考虑转型了。毕竟一次开发两套逻辑，可能会造成一些浪费和不一致的问题。也或许，有一天你也顺利地转型，成为一个前端工程师。
 
-#### Android
+当你决定使用 React Native  的时候，你还需要考虑几个问题：
 
-内置了一个用于解析 JavaScript 脚本的框架
+ - 安全问题。React Native 生成的逻辑相关的代码是 js 代码，可以直接查看 jsbundle 文件里的相关代码。尽管官方正在提供一个 base64 的加密 js 方案，但是它也带来了一定的性能问题~~。
+ - 重写部分原生插件。当你的应用特定依赖于一些特定的协议、底层框架时，那么这就重写这部分的内容了。
 
-初始化阶段，Java端会把所有要暴漏的Java类的信息封装成Config传给JS，然后根据Config生成对应Java类的Javascript镜像对象，以及要暴漏的方法，在JS中调用这个镜像对象的方法就会被转发到对应的Java对象上
-
-
-NativeScript、Weex及其他
+NativeScript
 ---
+
+如果 Ionic 2 不能满足你的性能要求，React Native 又存在一定的学习成本、开发成本，那么我们也可以考虑迁移到 NativeScript 上。
+
+与 React Native 相比，NativeScript专注于创建一个单一的开发体验，
+
+
+Weex及其他
+---
+
+Weex，额，我没用过，不敢用。
 
 API 使用 与 设计 ？
 ===
