@@ -204,15 +204,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li><a href="#优化中的反最佳实践">优化中的反最佳实践</a></li>
 </ul></li>
-<li><a href="#前端移动开发">前端移动开发</a><ul>
+<li><a href="#谈谈前端工程师开发移动应用">谈谈前端工程师开发移动应用</a><ul>
 <li><a href="#大前端移动应用类型对比">大前端移动应用类型对比</a><ul>
 <li><a href="#混合应用">混合应用</a></li>
 <li><a href="#react-native">React Native</a></li>
-<li><a href="#ios">iOS</a></li>
+<li><a href="#nativescript">NativeScript</a></li>
 </ul></li>
-<li><a href="#响应式设计">响应式设计</a></li>
-<li><a href="#用户体验">用户体验</a></li>
-<li><a href="#性能">性能</a></li>
 </ul></li>
 <li><a href="#api-使用-与-设计">API 使用 与 设计 ？</a></li>
 <li><a href="#前端工程化思维">前端工程化思维</a><ul>
@@ -1125,7 +1122,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h2 id="优化中的反最佳实践">优化中的反最佳实践</h2>
 <p>在对应用进行优化的过程中，还会遇到一个非常有意思的问题：你将采用的优化方案，往往是和业界所推荐的最佳模式相违背的。如 inline css 对于用户来说，可以获得更好的体验效果。又如更快的 Google AMP，则能在打开速度上有更大的提升，但是却和最佳实践相去甚远。</p>
 <p>待续~~</p>
-<h1 id="前端移动开发">前端移动开发</h1>
+<h1 id="谈谈前端工程师开发移动应用">谈谈前端工程师开发移动应用</h1>
 <blockquote>
 <p>想来在这一个混合应用的项目上，我已经差不多做了一年了。加之，在上一个项目里，我做的是一个移动 Web 应用，从 Backbone 到设计基于 React 的原型，也积累了一定的移动开发经验。</p>
 </blockquote>
@@ -1139,7 +1136,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>只是到了今天，许许多多的事情都发生了一些变化。</p>
 <h2 id="大前端移动应用类型对比">大前端移动应用类型对比</h2>
 <figure>
-<img src="imagesfrontend-app-compare.png" alt="大前端移动应用类型对比" /><figcaption>大前端移动应用类型对比</figcaption>
+<img src="images/frontend-app-compare.png" alt="大前端移动应用类型对比" /><figcaption>大前端移动应用类型对比</figcaption>
 </figure>
 <h3 id="混合应用">混合应用</h3>
 <p>与原生应用相比，Web 应用有着相当多的优势：</p>
@@ -1162,25 +1159,20 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ol>
 <p>今天的混合应用开发技术，已经成熟得不能再成熟了，人们开始在追求性能上的一些突破。这个时候，我们需要一个更快的 WebView，如 CrossWalk，又或者是使用诸如 React Native 或者 NativeScript 这样的方案。</p>
 <h3 id="react-native">React Native</h3>
-<p>生成 JSBundle 文件</p>
-<p>尽管 JSX 类似于 HTML，但是其对应于不同系统上的原生组件，</p>
-<h3 id="ios">iOS</h3>
+<p>越来越多的前端开发人员，加入了编写 React Native 的大军。主要便是因为可以使用 JavaScript 来实现功能，而编译运行之后， 又可以拥有接近原生应用的性能。即，我们仍然可以:</p>
+<blockquote>
+<p>write once, run anywhere</p>
+</blockquote>
+<p>与 Cordova 不自 JavaScript 引擎与 WebView 相比，React Native 自带 JavaScriptCore 作为 JavaScript 引擎倒是一种明智的做法。</p>
+<figure>
+<img src="images/webkit-framework.png" alt="Webkit Architecture" /><figcaption>Webkit Architecture</figcaption>
+</figure>
+<h4 id="ios">iOS</h4>
 <p>JavaScriptCore WebView</p>
 <h4 id="android">Android</h4>
 <p>内置了一个用于解析 JavaScript 脚本的框架</p>
 <p>初始化阶段，Java端会把所有要暴漏的Java类的信息封装成Config传给JS，然后根据Config生成对应Java类的Javascript镜像对象，以及要暴漏的方法，在JS中调用这个镜像对象的方法就会被转发到对应的Java对象上</p>
-<h2 id="响应式设计">响应式设计</h2>
-<ol type="1">
-<li>优先考虑兼容性</li>
-</ol>
-<p>类似于早期的 moz-border-radius</p>
-<p>width calc 100%-60 px</p>
-<ol start="2" type="1">
-<li><p>em rem px</p></li>
-<li><p>居中，居中，居中</p></li>
-</ol>
-<h2 id="用户体验">用户体验</h2>
-<h2 id="性能">性能</h2>
+<h3 id="nativescript">NativeScript</h3>
 <h1 id="api-使用-与-设计">API 使用 与 设计 ？</h1>
 <h1 id="前端工程化思维">前端工程化思维</h1>
 <h2 id="自动化构建">自动化构建</h2>

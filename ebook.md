@@ -1351,7 +1351,7 @@ fetch(url).then(response => response.json())
 待续~~
 
 
-前端移动开发
+谈谈前端工程师开发移动应用
 ===
 
 > 想来在这一个混合应用的项目上，我已经差不多做了一年了。加之，在上一个项目里，我做的是一个移动
@@ -1376,7 +1376,7 @@ APP 应用来说，如果是使用 HTML + JavaScript 实现的混合应用，算
 大前端移动应用类型对比
 ---
 
-![大前端移动应用类型对比](imagesfrontend-app-compare.png)
+![大前端移动应用类型对比](images/frontend-app-compare.png)
 
 ### 混合应用
 
@@ -1417,11 +1417,15 @@ WebView，如 CrossWalk，又或者是使用诸如  React Native 或者 NativeSc
 
 ### React Native
 
-生成 JSBundle 文件
+越来越多的前端开发人员，加入了编写 React Native 的大军。主要便是因为可以使用 JavaScript 来实现功能，而编译运行之后， 又可以拥有接近原生应用的性能。即，我们仍然可以:
 
-尽管 JSX 类似于 HTML，但是其对应于不同系统上的原生组件，
+> write once, run anywhere
 
-### iOS
+与 Cordova 不自 JavaScript 引擎与 WebView 相比，React Native 自带 JavaScriptCore 作为 JavaScript 引擎倒是一种明智的做法。
+
+![Webkit Architecture](images/webkit-framework.png)
+
+#### iOS
 
 JavaScriptCore WebView
 
@@ -1432,26 +1436,7 @@ JavaScriptCore WebView
 初始化阶段，Java端会把所有要暴漏的Java类的信息封装成Config传给JS，然后根据Config生成对应Java类的Javascript镜像对象，以及要暴漏的方法，在JS中调用这个镜像对象的方法就会被转发到对应的Java对象上
 
 
-
-响应式设计
----
-
-1. 优先考虑兼容性
-
-类似于早期的 moz-border-radius
-
-width calc 100%-60 px
-
-2. em rem px
-
-3. 居中，居中，居中
-
-
-用户体验
----
-
-性能
----
+### NativeScript
 
 API 使用 与 设计 ？
 ===
