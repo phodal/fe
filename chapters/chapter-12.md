@@ -108,8 +108,9 @@ NativeScript
 
 如果 Ionic 2 不能满足你的性能要求，React Native 又存在一定的学习成本、开发成本，那么我们也可以考虑迁移到 NativeScript 上。
 
-与 React Native 相比，NativeScript专注于创建一个单一的开发体验，
+与 不同平台间存在 UI 差异的 React Native 相比，NativeScript专注于创建一个单一的开发体验。
 
+~~等我用过~~，再补这部分的内容吧。
 
 Weex及其他
 ---
