@@ -1372,13 +1372,10 @@ APP 应用来说，如果是使用 HTML + JavaScript 实现的混合应用，算
 
 只是到了今天，许许多多的事情都发生了一些变化。
 
-
-大前端移动应用类型对比
----
-
 ![大前端移动应用类型对比](images/frontend-app-compare.png)
 
-### 混合应用
+混合应用
+---
 
 与原生应用相比，Web 应用有着相当多的优势：
 
@@ -1403,6 +1400,8 @@ Web App 的跨平台及使用 Native 应用的接口。当我们手上已经有�
 Ionic 这样的框架，不仅封装了不同系统上的 UI，还提供了 ngCordova
 的方案——封装第三方原生插件。
 
+### 性能
+
 混合应用性能受限有三个主要原因：
 
 1. 设备自带的 WebView（PS：可以视作是浏览器） 影响。如旧的 Android
@@ -1415,15 +1414,36 @@ Ionic 这样的框架，不仅封装了不同系统上的 UI，还提供了 ngCo
 WebView，如 CrossWalk，又或者是使用诸如  React Native 或者 NativeScript
 这样的方案。
 
-### React Native
+### 选型指南
+
+如果你仍然计划使用混合应用来作为开发移动应用，那么我相信你一定是出于下面的原因来考虑的：
+
+ - Web 端使用的是与移动端相似的技术栈。当 Web 端使用的是 Angular 2 的时候，移动端使用基于 Angular 2，可以利用部分代码。同理于，React + Cordova，又或者是 Cordova + Weex。
+ - 在 Web 方面的经验比较丰富，没有足够的能力来支撑起 React Native 的开发。
+ - 你们在这方面已经有相当多的积累。在这个时候，开始一个应用都只是修改模板的工作。
+ - 性能对于你们来说并不重要。对于很多资讯类、浏览类的应用来说，性能并非是重点。
+ - 用户是高端人士，使用 iOS 和高级的 Android 手机。这个时候，你基本上不需要考虑 Android 低版本的问题。
+
+如果上面的原因没有说服你，那么你应该选择使用 Ionic。作为一个 Ionic 框架的深度用户，**我已经开发了近十个基于 Ionic 的应用**，Ionic 可以为你提供丰富的 UI 组件，大量的原生插件可以使用。与此同时，我们可以发现 Ionic 应用的性能，正在努力地提升着~~。
+
+并且依照我的开发习惯，它不仅仅可以作为一个移动 APP 应用，还可以是一个移动 Web 应用，又或者是 PWA 应用。丰富的 Web 组件，你只需要写一次，就可以在所有的平台上运行，React Native 可是做不到的哦。
+
+![Full Platform](images/full-platform.png)
+
+React Native
+---
 
 越来越多的前端开发人员，加入了编写 React Native 的大军。主要便是因为可以使用 JavaScript 来实现功能，而编译运行之后， 又可以拥有接近原生应用的性能。即，我们仍然可以:
 
 > write once, run anywhere
 
-与 Cordova 不自 JavaScript 引擎与 WebView 相比，React Native 自带 JavaScriptCore 作为 JavaScript 引擎倒是一种明智的做法。
+与 Cordova 不自 JavaScript 引擎与 WebView 相比，React Native 自带 JavaScriptCore 作为 JavaScript 引擎倒是一种明智的做法。它可以解决低版本 Android 设备上的 JS 引擎效率问题。
+
+当然，如果基于 Cordova 的应用，还自带 WebView。那么，它可能做不到这么轻的量级。与此同时，与 React Native 相比，Cordova 是通过 WebView 来执行 JavaScript，这到底仍然是浪费了一些资源。
 
 ![Webkit Architecture](images/webkit-framework.png)
+
+
 
 #### iOS
 
@@ -1436,7 +1456,8 @@ JavaScriptCore WebView
 初始化阶段，Java端会把所有要暴漏的Java类的信息封装成Config传给JS，然后根据Config生成对应Java类的Javascript镜像对象，以及要暴漏的方法，在JS中调用这个镜像对象的方法就会被转发到对应的Java对象上
 
 
-### NativeScript
+NativeScript、Weex及其他
+---
 
 API 使用 与 设计 ？
 ===
