@@ -65,7 +65,7 @@ WebView，如 CrossWalk，又或者是使用诸如  React Native 或者 NativeSc
 
 如果你仍然计划使用混合应用来作为开发移动应用，那么我相信你一定是出于下面的原因来考虑的：
 
- - Web 端使用的是与移动端相似的技术栈。当 Web 端使用的是 Angular 2 的时候，移动端使用基于 Angular 2，可以利用部分代码。同理于，React + Cordova，又或者是 Cordova + Weex。
+ - Web 端使用的是与移动端相似的技术栈。当 Web 端使用的是 Angular 2 的时候，移动端使用基于 Angular 2，可以利用部分代码。同理于，React + Cordova，又或者是 Cordova + Vue。
  - 在 Web 方面的经验比较丰富，没有足够的能力来支撑起 React Native 的开发。
  - 你们在这方面已经有相当多的积累。在这个时候，开始一个应用都只是修改模板的工作。
  - 性能对于你们来说并不重要。对于很多资讯类、浏览类的应用来说，性能并非是重点。
