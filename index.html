@@ -1218,6 +1218,15 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h2 id="api-演进史">API 演进史</h2>
 <p>刚毕业的时候，工作的主要内容是用 Java 写网站后台，业余写写自己喜欢的前端代码。慢慢的，随着各个公司的 Mobile First 战略的实施，项目上的主要语言变成了 JavaScript。项目开始实施了前后端分离，团队也变成了全功能团队，前端、后台、DevOps 变成了每个人需要提高的技能。于是如你所见，当我们完成一个任务卡的时候，我们需要自己完成后台 API，还要编写相应的前端代码。</p>
 <p>尽管当时的手机浏览器性能，已经有相当大的改善，但是仍然会存在明显的卡顿。因此，我们在设计的时候，尽可能地便将逻辑移到了后台，以减少对于前端带来的压力。可性能问题在今天看来，差异已经没有那么明显了。</p>
+<figure>
+<img src="origin-api-design.png" alt="origin-api-design.png" /><figcaption>origin-api-design.png</figcaption>
+</figure>
+<figure>
+<img src="microserivces-bff.png" alt="microserivces-bff.png" /><figcaption>microserivces-bff.png</figcaption>
+</figure>
+<figure>
+<img src="mobile-bff.png" alt="mobile-bff.png" /><figcaption>mobile-bff.png</figcaption>
+</figure>
 <h2 id="api-的协作设计">API 的协作设计</h2>
 <p>API 设计实际上应该是由前端人员来驱动的。后台只提高你想要的数据，而不是反过来的。后台提供数据，你从中选择你需要的内容。</p>
 <p>我们常报怨后台 API 设计得不合理，主要便是因为后台不知道前端需要什么内容。</p>

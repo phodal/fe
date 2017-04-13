@@ -1492,6 +1492,13 @@ API 演进史
 
 尽管当时的手机浏览器性能，已经有相当大的改善，但是仍然会存在明显的卡顿。因此，我们在设计的时候，尽可能地便将逻辑移到了后台，以减少对于前端带来的压力。可性能问题在今天看来，差异已经没有那么明显了。
 
+![origin-api-design.png](origin-api-design.png)
+
+![microserivces-bff.png](microserivces-bff.png)
+
+![mobile-bff.png](mobile-bff.png)
+
+
 API 的协作设计
 ---
 
