@@ -221,6 +221,11 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#遵循-api-约定">遵循 API 约定</a></li>
 <li><a href="#设计原则">设计原则</a></li>
 </ul></li>
+<li><a href="#前端应用中的常见开发模式">前端应用中的常见开发模式</a><ul>
+<li><a href="#api-模式">API 模式</a></li>
+<li><a href="#观察者模式">观察者模式</a></li>
+<li><a href="#共享数据模式">共享数据模式</a></li>
+</ul></li>
 <li><a href="#如何以正确的姿势从零开发一个前端应用">如何以正确的姿势从零开发一个前端应用</a><ul>
 <li><a href="#了解真实世界的需求">了解真实世界的需求</a></li>
 <li><a href="#确认技术方案">确认技术方案</a></li>
@@ -1250,6 +1255,17 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <ul>
 <li>前端、应用端使用同一套 API，那么当出现 API 前后端皆可时，应该交给后台。这是从工作量的计算上来看的，后台实现这个功能一天，移动端、前端各一天，那么就应该交由后台去做。Time is money.</li>
 </ul>
+<h1 id="前端应用中的常见开发模式">前端应用中的常见开发模式</h1>
+<h2 id="api-模式">API 模式</h2>
+<p>前端 &lt;-&gt; 契约 &lt;-&gt; 后台</p>
+<p>URL + 参数 返回结果</p>
+<p>JSON Web Token</p>
+<p>HTTP 请求 &lt;-&gt; 服务端数据</p>
+<p>HTTP 请求 &lt;-&gt; 缓存 &lt;-&gt; 服务端数据</p>
+<p>HTTP 请求 &lt;-&gt; 代理 &lt;-&gt; 服务端数据</p>
+<p>HTTP 请求 &lt;-&gt; 缓存 &lt;-&gt; 代理 &lt;-&gt; 服务端数据</p>
+<h2 id="观察者模式">观察者模式</h2>
+<h2 id="共享数据模式">共享数据模式</h2>
 <h1 id="如何以正确的姿势从零开发一个前端应用">如何以正确的姿势从零开发一个前端应用</h1>
 <h2 id="了解真实世界的需求">了解真实世界的需求</h2>
 <h2 id="确认技术方案">确认技术方案</h2>
