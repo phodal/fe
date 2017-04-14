@@ -22,7 +22,7 @@
 
 **API 的维护是一件烦人的事，所以最好能一次设计好 API。**可是这是不可能的，API 在其的生命周期里，应该是要不断地演进的。它与精益创业的思想是相似的，当一个 API 不合适现有场景时，应该对这个 API 进行更新，以满足需求。也因此，API 本身是面向变化的，问题是这种变化是双向的、单向的、联动的？还是静默的？
 
-API 设计是一个非常大的话题，这里我们只讨论：设计、使用及维护
+API 设计是一个非常大的话题，这里我们只讨论：演进、设计及维护
 
 API 演进史
 ---
@@ -31,11 +31,15 @@ API 演进史
 
 尽管当时的手机浏览器性能，已经有相当大的改善，但是仍然会存在明显的卡顿。因此，我们在设计的时候，尽可能地便将逻辑移到了后台，以减少对于前端带来的压力。可性能问题在今天看来，差异已经没有那么明显了。
 
-![origin-api-design.png](../images/origin-api-design.png)
+如同我在《[RePractise：前端演进史](https://github.com/phodal/repractise/blob/gh-pages/chapters/frontend.md)》中所说，前端领域及 Mobile First 的变化，引起了后台及 API 架构的一系列演进。
 
-![mobile-bff.png](../images/mobile-bff.png)
+最初的时候，我们只有一个网站，没有 REST API。后台直接提供 Model 数据给前端模板，模板处理完后就展示了相关的数据。
 
-![microserivces-bff.png](../images/microserivces-bff.png)
+![原始 API 模式下的架构](../images/origin-api-design.png)
+
+![BFF 架构](../images/mobile-bff.png)
+
+![微服务 + BFF 架构](../images/microserivces-bff.png)
 
 API 的协作设计
 ---
