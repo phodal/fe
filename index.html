@@ -231,6 +231,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#weex及其他">Weex及其他</a></li>
 </ul></li>
 <li><a href="#前后端分离的-api-的正确打开姿势">前后端分离的 API 的正确打开姿势</a><ul>
+<li><a href="#子标题前端应该是-api-的主设计者">子标题：前端应该是 API 的主设计者</a></li>
 <li><a href="#api-演进史">API 演进史</a></li>
 <li><a href="#api-的协作设计">API 的协作设计</a><ul>
 <li><a href="#遵循-api-约定">遵循 API 约定</a></li>
@@ -1251,14 +1252,22 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h2 id="weex及其他">Weex及其他</h2>
 <p>Weex，额，我没用过，不敢用。</p>
 <h1 id="前后端分离的-api-的正确打开姿势">前后端分离的 API 的正确打开姿势</h1>
-<p>子标题：前端应该是 API 的主设计者</p>
+<h2 id="子标题前端应该是-api-的主设计者">子标题：前端应该是 API 的主设计者</h2>
 <blockquote>
-<p>如果 API 设计只是后台的活，那么不需要前端工程师了。</p>
+<p>如果 API 设计只是后台的活，为什么还需要前端工程师。</p>
 </blockquote>
-<p>作为一个程序员，我讨厌那些没有文档的库，当一个库没有文档的时候，它也不会有测试。</p>
-<p>如果一个 API 有测试，那么它也相当于有一份简单的文档了——如果我们可以看到测试代码的话。</p>
-<p>因为交付周期的原因，接入了一个第三方的库，遇到了这么一些问题：文档老旧，并且不够全面。</p>
-<p>当我们在做一个前后端分离的项目时，我们就经常遇到这样的问题。**API 的维护是一件烦人的事，所以在设计之前，你已经设计好你需要什么内容。</p>
+<p>作为一个程序员，我讨厌那些没有文档的库。我们就好像在操纵一个黑盒一样，预期不了它的正常行为是什么。输入了一个 A，预期返回的是一个 B，结果它什么也没有。有的时候，还抛出了一堆异常，导致你的应用崩溃。</p>
+<p>因为交付周期的原因，接入了一个第三方的库，遇到了这么一些问题：文档老旧，并且不够全面。这个问题相比于没有文档来说，愈加的可怕。我们需要的接口不在文档上，文档上的接口不存在库里，又或者是少了一行关键的代码。</p>
+<p>对于一个库来说，文档是多种多样的：一份 demo、一个入门指南、一个 API 列表，还有一个测试。如果一个 API 有测试，那么它也相当于有一份简单的文档了——如果我们可以看到测试代码的话。而当一个库没有文档的时候，它也不会有测试。</p>
+<p>在前后端分离的项目里，API 也是这样一个烦人的存在。我们就经常遇到各种各样的问题：</p>
+<ul>
+<li>API 的字段更新了</li>
+<li>API 的路由更新了</li>
+<li>API 返回了未预期的值</li>
+<li>API 返回由于某种原因被删除了</li>
+<li>。。。</li>
+</ul>
+<p><strong>API 的维护是一件烦人的事，所以最好能一次设计好 API。</strong>可是这是不可能的，API 在其的生命周期里，应该是要不断地演进的。它与精益创业的思想是相似的，当一个 API 不合适现有场景时，应该对这个 API 进行更新，以满足需求。也因此，API 本身是面向变化的，问题是这种变化是双向的、单向的、联动的？还是静默的？</p>
 <p>API 设计是一个非常大的话题，这里我们只讨论：设计、使用及维护</p>
 <h2 id="api-演进史">API 演进史</h2>
 <p>刚毕业的时候，工作的主要内容是用 Java 写网站后台，业余写写自己喜欢的前端代码。慢慢的，随着各个公司的 Mobile First 战略的实施，项目上的主要语言变成了 JavaScript。项目开始实施了前后端分离，团队也变成了全功能团队，前端、后台、DevOps 变成了每个人需要提高的技能。于是如你所见，当我们完成一个任务卡的时候，我们需要自己完成后台 API，还要编写相应的前端代码。</p>
@@ -1267,10 +1276,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <img src="images/origin-api-design.png" alt="origin-api-design.png" /><figcaption>origin-api-design.png</figcaption>
 </figure>
 <figure>
-<img src="images/microserivces-bff.png" alt="microserivces-bff.png" /><figcaption>microserivces-bff.png</figcaption>
+<img src="images/mobile-bff.png" alt="mobile-bff.png" /><figcaption>mobile-bff.png</figcaption>
 </figure>
 <figure>
-<img src="images/mobile-bff.png" alt="mobile-bff.png" /><figcaption>mobile-bff.png</figcaption>
+<img src="images/microserivces-bff.png" alt="microserivces-bff.png" /><figcaption>microserivces-bff.png</figcaption>
 </figure>
 <h2 id="api-的协作设计">API 的协作设计</h2>
 <p>API 设计实际上应该是由前端人员来驱动的。后台只提高你想要的数据，而不是反过来的。后台提供数据，你从中选择你需要的内容。</p>
