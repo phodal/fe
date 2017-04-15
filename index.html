@@ -234,9 +234,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#如何处理好前后端分离的-api-问题">如何处理好前后端分离的 API 问题</a><ul>
 <li><a href="#前后端分享-api-的演进史">前后端分享 API 的演进史</a></li>
 <li><a href="#api-的协作设计">API 的协作设计</a><ul>
-<li><a href="#遵循-api-约定">遵循 API 约定</a></li>
-<li><a href="#基于契约的形式">基于契约的形式</a></li>
-<li><a href="#api-适配器">API 适配器</a></li>
+<li><a href="#使用文档规范-api">使用文档规范 API</a></li>
+<li><a href="#集成契约测试基于代码">集成契约测试：基于代码</a></li>
+<li><a href="#前端测试与-api-适配器">前端测试与 API 适配器</a></li>
 </ul></li>
 </ul></li>
 <li><a href="#详解从零设计开发一个前端应用">详解从零设计、开发一个前端应用</a><ul>
@@ -1324,15 +1324,42 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>因此，当你把 API 的设计交给后台的时候，也就意味着这个 API 将更符合后台的需求。那么它的设计就趋向于对后台更简单的结果，比如后台返回给你一个 Unix 时间，而你需要的是一个标准时间。又或者是反过来的，你需要的是一个 Unix 时间，而后台返回给你的是当地的时间。</p>
 <p>与此同时，按前端人员的假设，我们也会做类似的、『不正确』的 API 设计。</p>
 <p>因此，API 设计这种活动便像是一个博弈。</p>
-<h3 id="遵循-api-约定">遵循 API 约定</h3>
+<h3 id="使用文档规范-api">使用文档规范 API</h3>
+<p>这是最常见的一种形式。</p>
 <p>Swagger</p>
-<p>方式</p>
+<p>基于 YAML语法定义 RESTful API，如：</p>
+<p>它会自动生成一篇排版优美的API文档</p>
+<p>然而，它并不能解决没有人维护文档的问题。但是持续集成与之中的自动化测试可以。</p>
+<h3 id="集成契约测试基于代码">集成契约测试：基于代码</h3>
+<p>与其以文档来规范，不如尝试用代码与测试来维护 API</p>
+<p>早在 2011 年，Martin Folwer 就写了一篇相关的文章：<a href="http://martinfowler.com/bliki/IntegrationContractTest.html">集成契约测试</a></p>
+<p>步骤：</p>
 <ul>
-<li>契约即测试代码（contract as code）</li>
-<li>API 即文档（api as document）</li>
+<li>编写契约（即 API）。即规定好 API 请求的 URL、请求内容、返回结果、鉴权方式等等。</li>
+<li>根据契约编写 Mock Server。可以彩 Moco</li>
+<li>编写集成测试将请求发给这个 Mock Server，并验证</li>
 </ul>
-<h3 id="基于契约的形式">基于契约的形式</h3>
-<h3 id="api-适配器">API 适配器</h3>
+<p>当契约发生发动的时候，相应的后台代码也相应的改动。</p>
+<p>使用 Moscow 和 Moco，如这是我们项目上采用的 Moscow：</p>
+<pre><code>[
+    {
+        &quot;description&quot;: &quot;should_response_text_foo&quot;,
+        &quot;request&quot;: {
+          &quot;method&quot;: &quot;GET&quot;,
+          &quot;uri&quot;: &quot;/property&quot;
+        },
+        &quot;response&quot;: {
+            &quot;status&quot;: 401,
+            &quot;json&quot;: {
+                &quot;message&quot;: &quot;Full authentication is required to access this resource&quot;
+            }
+        }
+    }
+]</code></pre>
+<h3 id="前端测试与-api-适配器">前端测试与 API 适配器</h3>
+<p>开始写 React 组件的时候，我发现了一个名为 PropTypes 的类型检测工具，它会对传入的数据进行验证。在那之前，我们总会写下一行又一行的：</p>
+<pre><code>if(response &amp;&amp; response.data &amp;&amp; response.data.length &gt; 0){}</code></pre>
+<p>TypeScript 这种强类型的语言也有其优点</p>
 <h1 id="详解从零设计开发一个前端应用">详解从零设计、开发一个前端应用</h1>
 <h2 id="了解真实世界的需求">了解真实世界的需求</h2>
 <h2 id="分析设计图">分析设计图</h2>

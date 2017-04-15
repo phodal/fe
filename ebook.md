@@ -1632,19 +1632,62 @@ API 设计实际上应该是由前端人员来驱动的。后台只提高你想�
 
 因此，API 设计这种活动便像是一个博弈。
 
-### 遵循 API 约定
+### 使用文档规范 API
+
+这是最常见的一种形式。
 
 Swagger
 
-方式
-
- - 契约即测试代码（contract as code）
- - API 即文档（api as document）
+基于 YAML语法定义 RESTful API，如：
 
 
-### 基于契约的形式
+它会自动生成一篇排版优美的API文档
 
-### API 适配器
+然而，它并不能解决没有人维护文档的问题。但是持续集成与之中的自动化测试可以。
+
+### 集成契约测试：基于代码
+
+与其以文档来规范，不如尝试用代码与测试来维护 API 
+
+早在 2011 年，Martin Folwer 就写了一篇相关的文章：[集成契约测试](http://martinfowler.com/bliki/IntegrationContractTest.html)
+
+步骤：
+
+ - 编写契约（即 API）。即规定好 API 请求的 URL、请求内容、返回结果、鉴权方式等等。
+ - 根据契约编写 Mock Server。可以彩 Moco
+ - 编写集成测试将请求发给这个 Mock Server，并验证
+
+当契约发生发动的时候，相应的后台代码也相应的改动。
+
+使用 Moscow 和 Moco，如这是我们项目上采用的 Moscow：
+
+```
+[
+    {
+        "description": "should_response_text_foo",
+        "request": {
+	      "method": "GET",
+	      "uri": "/property"
+	    },
+        "response": {
+		    "status": 401,
+		    "json": {
+		        "message": "Full authentication is required to access this resource"
+		    }
+		}
+    }
+]
+```
+
+### 前端测试与 API 适配器
+
+开始写 React 组件的时候，我发现了一个名为 PropTypes 的类型检测工具，它会对传入的数据进行验证。在那之前，我们总会写下一行又一行的：
+
+```
+if(response && response.data && response.data.length > 0){}
+```
+
+TypeScript 这种强类型的语言也有其优点
 
 
 
