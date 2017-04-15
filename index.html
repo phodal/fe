@@ -1343,6 +1343,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>编写集成测试将请求发给这个 Mock Server，并验证</li>
 </ul>
 <p>当契约发生发动的时候，相应的后台代码也相应的改动。</p>
+<figure>
+<img src="images/contract-fe.png" alt="前端-后台与契约" /><figcaption>前端-后台与契约</figcaption>
+</figure>
 <p>消费者驱动契约</p>
 <p>使用 Moscow 和 Moco，如这是我们项目上采用的 Moscow：</p>
 <pre><code>[
@@ -1361,8 +1364,16 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
     }
 ]</code></pre>
 <h3 id="前端测试与-api-适配器">前端测试与 API 适配器</h3>
+<p>使用代理，如 node-http-proxy，来写上不同环境的配置：</p>
+<figure>
+<img src="images/fe-proxy-env.png" alt="前端代理" /><figcaption>前端代理</figcaption>
+</figure>
 <p>开始写 React 组件的时候，我发现了一个名为 PropTypes 的类型检测工具，它会对传入的数据进行验证。在那之前，我们总会写下一行又一行的：</p>
 <pre><code>if(response &amp;&amp; response.data &amp;&amp; response.data.length &gt; 0){}</code></pre>
+<p>这部分工作本来应该是由后台去做的，不得已的情况下，也需要加一层适配层</p>
+<figure>
+<img src="images/api-adapter.png" alt="API 适配层" /><figcaption>API 适配层</figcaption>
+</figure>
 <p>TypeScript 这种强类型的语言也有其优点</p>
 <p>如我之前尝试的：<a href="https://github.com/phodal/ddm">DDM</a>。不过，设计倒是有待改进~~，Redux 可以管理状态，还应该有个相应的类型检测及 Adapter 工具~。</p>
 <h1 id="详解从零设计开发一个前端应用">详解从零设计、开发一个前端应用</h1>

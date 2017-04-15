@@ -1661,6 +1661,7 @@ Swagger
 
 当契约发生发动的时候，相应的后台代码也相应的改动。
 
+![前端-后台与契约](images/contract-fe.png)
 
 消费者驱动契约
 
@@ -1686,15 +1687,24 @@ Swagger
 
 ### 前端测试与 API 适配器
 
+使用代理，如 node-http-proxy，来写上不同环境的配置：
+
+![前端代理](images/fe-proxy-env.png)
+
 开始写 React 组件的时候，我发现了一个名为 PropTypes 的类型检测工具，它会对传入的数据进行验证。在那之前，我们总会写下一行又一行的：
 
 ```
 if(response && response.data && response.data.length > 0){}
 ```
 
+这部分工作本来应该是由后台去做的，不得已的情况下，也需要加一层适配层
+
+![API 适配层](images/api-adapter.png)
+
 TypeScript 这种强类型的语言也有其优点
 
 如我之前尝试的：[DDM](https://github.com/phodal/ddm)。不过，设计倒是有待改进~~，Redux 可以管理状态，还应该有个相应的类型检测及 Adapter 工具~。
+
 
 详解从零设计、开发一个前端应用
 ===
