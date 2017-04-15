@@ -231,18 +231,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#nativescript">NativeScript</a></li>
 <li><a href="#weex及其他">Weex及其他</a></li>
 </ul></li>
-<li><a href="#前后端分离的-api-的正确打开姿势">前后端分离的 API 的正确打开姿势</a><ul>
-<li><a href="#子标题前端应该是-api-的主设计者">子标题：前端应该是 API 的主设计者</a></li>
+<li><a href="#如何处理好前后端分离的-api-问题">如何处理好前后端分离的 API 问题</a><ul>
 <li><a href="#前后端分享-api-的演进史">前后端分享 API 的演进史</a></li>
 <li><a href="#api-的协作设计">API 的协作设计</a><ul>
 <li><a href="#遵循-api-约定">遵循 API 约定</a></li>
 <li><a href="#基于契约的形式">基于契约的形式</a></li>
 <li><a href="#api-适配器">API 适配器</a></li>
-</ul></li>
-<li><a href="#api-编程指南">API 编程指南</a><ul>
-<li><a href="#编写自动化测试进行覆盖">编写自动化测试进行覆盖</a></li>
-<li><a href="#对接口进行数据检验">对接口进行数据检验</a></li>
-<li><a href="#处理异常">处理异常</a></li>
 </ul></li>
 </ul></li>
 <li><a href="#详解从零设计开发一个前端应用">详解从零设计、开发一个前端应用</a><ul>
@@ -1282,8 +1276,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p><del>等我用过</del>，再补这部分的内容吧。</p>
 <h2 id="weex及其他">Weex及其他</h2>
 <p>Weex，额，我没用过，不敢用。</p>
-<h1 id="前后端分离的-api-的正确打开姿势">前后端分离的 API 的正确打开姿势</h1>
-<h2 id="子标题前端应该是-api-的主设计者">子标题：前端应该是 API 的主设计者</h2>
+<h1 id="如何处理好前后端分离的-api-问题">如何处理好前后端分离的 API 问题</h1>
 <blockquote>
 <p>如果 API 设计只是后台的活，为什么还需要前端工程师。</p>
 </blockquote>
@@ -1330,7 +1323,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>答案，不用想也知道。</p>
 <p>因此，当你把 API 的设计交给后台的时候，也就意味着这个 API 将更符合后台的需求。那么它的设计就趋向于对后台更简单的结果，比如后台返回给你一个 Unix 时间，而你需要的是一个标准时间。又或者是反过来的，你需要的是一个 Unix 时间，而后台返回给你的是当地的时间。</p>
 <p>与此同时，按前端人员的假设，我们也会做类似的、『不正确』的 API 设计。</p>
-<p>因此，这种活动便像是一个博弈。</p>
+<p>因此，API 设计这种活动便像是一个博弈。</p>
 <h3 id="遵循-api-约定">遵循 API 约定</h3>
 <p>Swagger</p>
 <p>方式</p>
@@ -1340,12 +1333,6 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul>
 <h3 id="基于契约的形式">基于契约的形式</h3>
 <h3 id="api-适配器">API 适配器</h3>
-<h2 id="api-编程指南">API 编程指南</h2>
-<p>考虑到后台是『不相信』（不知道）前端的数据是否满足格式。</p>
-<p>因此，API 第一原则：不要『相信』后台返回的数据。它可能返回给你一个 null 或者 “”，而不都是正确的结果。</p>
-<h3 id="编写自动化测试进行覆盖">编写自动化测试进行覆盖</h3>
-<h3 id="对接口进行数据检验">对接口进行数据检验</h3>
-<h3 id="处理异常">处理异常</h3>
 <h1 id="详解从零设计开发一个前端应用">详解从零设计、开发一个前端应用</h1>
 <h2 id="了解真实世界的需求">了解真实世界的需求</h2>
 <h2 id="分析设计图">分析设计图</h2>
