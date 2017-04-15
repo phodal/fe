@@ -233,6 +233,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li><a href="#如何处理好前后端分离的-api-问题">如何处理好前后端分离的 API 问题</a><ul>
 <li><a href="#前后端分享-api-的演进史">前后端分享 API 的演进史</a></li>
+<li><a href="#瀑布式开发的-api-设计">瀑布式开发的 API 设计</a></li>
 <li><a href="#api-的协作设计">API 的协作设计</a><ul>
 <li><a href="#使用文档规范-api">使用文档规范 API</a></li>
 <li><a href="#测试保证-api">测试保证 API</a></li>
@@ -1316,16 +1317,23 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <img src="images/microserivces-bff.png" alt="微服务 + BFF 架构" /><figcaption>微服务 + BFF 架构</figcaption>
 </figure>
 <p>系统由内部的类调用，拆解为基于 RESTful API 的调用。后台 API 生产者与前端 API 消费者，已经区分不出谁才是真正的开发者。</p>
+<h2 id="瀑布式开发的-api-设计">瀑布式开发的 API 设计</h2>
+<p>说实话，API 开发这种活就和传统的瀑布开发差不多：未知的前期设计，痛苦的后期集成。好在，每次这种设计的周期都比较短。</p>
+<figure>
+<img src="images/waterfall-model.png" alt="瀑布开发流程" /><figcaption>瀑布开发流程</figcaption>
+</figure>
+<p>新的业务需求来临时，前端、后台是一起开始工作的。而不是后台在前，又或者前端先完成。他们开始与业务人员沟通，需要在页面上显示哪些内容，需要做哪一些转换及特殊处理。</p>
+<p>然后便配合着去设计相应的 API：请求的 API 路径是哪一个、请求里要有哪些参数、是否需要鉴权处理等等。对于返回结果来说，仍然也需要一系列的定义：返回哪些相应的字段、额外的显示参数、特殊的 header 返回等等。除此，还需要讨论一些异常情况，如用户授权失败，服务端没有返回结果。</p>
+<p>整理出一个相应的文档约定，前端与后台便去编写相应的实现代码。</p>
+<p>最后，再经历痛苦的集成，便算是能完成了工作。</p>
+<p>可是，API 在这个过程中是不断变化的，因此在这个过程中需要的是协作能力。它也能从侧面地反映中，团队的协作水平。</p>
 <h2 id="api-的协作设计">API 的协作设计</h2>
 <p>API 设计实际上应该是由前端人员来驱动的。后台只提高你想要的数据，而不是反过来的。后台提供数据，你从中选择你需要的内容。</p>
-<p>我们常报怨后台 API 设计得不合理，主要便是因为后台不知道前端需要什么内容。</p>
-<p>这就好像你接到了一个需求，而 UX 或者美工给老板见过设计图，但是并没有给你看。你能设计出符合需求的界面吗？</p>
-<p>答案，不用想也知道。</p>
+<p>我们常报怨后台 API 设计得不合理，主要便是因为后台不知道前端需要什么内容。这就好像你接到了一个需求，而 UX 或者美工给老板见过设计图，但是并没有给你看。你能设计出符合需求的界面吗？答案，不用想也知道。</p>
 <p>因此，当你把 API 的设计交给后台的时候，也就意味着这个 API 将更符合后台的需求。那么它的设计就趋向于对后台更简单的结果，比如后台返回给你一个 Unix 时间，而你需要的是一个标准时间。又或者是反过来的，你需要的是一个 Unix 时间，而后台返回给你的是当地的时间。</p>
 <p>与此同时，按前端人员的假设，我们也会做类似的、『不正确』的 API 设计。</p>
 <p>因此，API 设计这种活动便像是一个博弈。</p>
 <h3 id="使用文档规范-api">使用文档规范 API</h3>
-<p>这是最常见的一种形式。</p>
 <p>Swagger</p>
 <p>基于 YAML语法定义 RESTful API，如：</p>
 <p>它会自动生成一篇排版优美的API文档</p>
@@ -1334,7 +1342,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>与其以文档来规范，不如尝试用代码与测试来维护 API</p>
 <p>早在 2011 年，Martin Folwer 就写了一篇相关的文章：<a href="http://martinfowler.com/bliki/IntegrationContractTest.html">集成契约测试</a></p>
 <figure>
-<img src="../imagse/IntegrationContractTest.png" alt="集成契约测试" /><figcaption>集成契约测试</figcaption>
+<img src="images/IntegrationContractTest.png" alt="集成契约测试" /><figcaption>集成契约测试</figcaption>
 </figure>
 <p>步骤：</p>
 <ul>
