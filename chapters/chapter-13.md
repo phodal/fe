@@ -1,7 +1,7 @@
 如何处理好前后端分离的 API 问题
 ===
 
-> 如果 API 设计只是后台的活，为什么还需要前端工程师。
+> API 都搞不好，还怎么当程序员？如果 API 设计只是后台的活，为什么还需要前端工程师。
 
 作为一个程序员，我讨厌那些没有文档的库。我们就好像在操纵一个黑盒一样，预期不了它的正常行为是什么。输入了一个 A，预期返回的是一个 B，结果它什么也没有。有的时候，还抛出了一堆异常，导致你的应用崩溃。
 
@@ -81,11 +81,13 @@ Swagger
 
 然而，它并不能解决没有人维护文档的问题。但是持续集成与之中的自动化测试可以。
 
-### 集成契约测试：基于代码
+### 测试保证 API 
 
 与其以文档来规范，不如尝试用代码与测试来维护 API 
 
 早在 2011 年，Martin Folwer 就写了一篇相关的文章：[集成契约测试](http://martinfowler.com/bliki/IntegrationContractTest.html)
+
+![集成契约测试](../imagse/IntegrationContractTest.png)
 
 步骤：
 
@@ -94,6 +96,9 @@ Swagger
  - 编写集成测试将请求发给这个 Mock Server，并验证
 
 当契约发生发动的时候，相应的后台代码也相应的改动。
+
+
+消费者驱动契约
 
 使用 Moscow 和 Moco，如这是我们项目上采用的 Moscow：
 
@@ -125,4 +130,4 @@ if(response && response.data && response.data.length > 0){}
 
 TypeScript 这种强类型的语言也有其优点
 
-
+如我之前尝试的：[DDM](https://github.com/phodal/ddm)。不过，设计倒是有待改进~~，Redux 可以管理状态，还应该有个相应的类型检测及 Adapter 工具~。

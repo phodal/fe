@@ -235,7 +235,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#前后端分享-api-的演进史">前后端分享 API 的演进史</a></li>
 <li><a href="#api-的协作设计">API 的协作设计</a><ul>
 <li><a href="#使用文档规范-api">使用文档规范 API</a></li>
-<li><a href="#集成契约测试基于代码">集成契约测试：基于代码</a></li>
+<li><a href="#测试保证-api">测试保证 API</a></li>
 <li><a href="#前端测试与-api-适配器">前端测试与 API 适配器</a></li>
 </ul></li>
 </ul></li>
@@ -1278,7 +1278,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Weex，额，我没用过，不敢用。</p>
 <h1 id="如何处理好前后端分离的-api-问题">如何处理好前后端分离的 API 问题</h1>
 <blockquote>
-<p>如果 API 设计只是后台的活，为什么还需要前端工程师。</p>
+<p>API 都搞不好，还怎么当程序员？如果 API 设计只是后台的活，为什么还需要前端工程师。</p>
 </blockquote>
 <p>作为一个程序员，我讨厌那些没有文档的库。我们就好像在操纵一个黑盒一样，预期不了它的正常行为是什么。输入了一个 A，预期返回的是一个 B，结果它什么也没有。有的时候，还抛出了一堆异常，导致你的应用崩溃。</p>
 <p>因为交付周期的原因，接入了一个第三方的库，遇到了这么一些问题：文档老旧，并且不够全面。这个问题相比于没有文档来说，愈加的可怕。我们需要的接口不在文档上，文档上的接口不存在库里，又或者是少了一行关键的代码。</p>
@@ -1330,9 +1330,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>基于 YAML语法定义 RESTful API，如：</p>
 <p>它会自动生成一篇排版优美的API文档</p>
 <p>然而，它并不能解决没有人维护文档的问题。但是持续集成与之中的自动化测试可以。</p>
-<h3 id="集成契约测试基于代码">集成契约测试：基于代码</h3>
+<h3 id="测试保证-api">测试保证 API</h3>
 <p>与其以文档来规范，不如尝试用代码与测试来维护 API</p>
 <p>早在 2011 年，Martin Folwer 就写了一篇相关的文章：<a href="http://martinfowler.com/bliki/IntegrationContractTest.html">集成契约测试</a></p>
+<figure>
+<img src="../imagse/IntegrationContractTest.png" alt="集成契约测试" /><figcaption>集成契约测试</figcaption>
+</figure>
 <p>步骤：</p>
 <ul>
 <li>编写契约（即 API）。即规定好 API 请求的 URL、请求内容、返回结果、鉴权方式等等。</li>
@@ -1340,6 +1343,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>编写集成测试将请求发给这个 Mock Server，并验证</li>
 </ul>
 <p>当契约发生发动的时候，相应的后台代码也相应的改动。</p>
+<p>消费者驱动契约</p>
 <p>使用 Moscow 和 Moco，如这是我们项目上采用的 Moscow：</p>
 <pre><code>[
     {
@@ -1360,6 +1364,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>开始写 React 组件的时候，我发现了一个名为 PropTypes 的类型检测工具，它会对传入的数据进行验证。在那之前，我们总会写下一行又一行的：</p>
 <pre><code>if(response &amp;&amp; response.data &amp;&amp; response.data.length &gt; 0){}</code></pre>
 <p>TypeScript 这种强类型的语言也有其优点</p>
+<p>如我之前尝试的：<a href="https://github.com/phodal/ddm">DDM</a>。不过，设计倒是有待改进~~，Redux 可以管理状态，还应该有个相应的类型检测及 Adapter 工具~。</p>
 <h1 id="详解从零设计开发一个前端应用">详解从零设计、开发一个前端应用</h1>
 <h2 id="了解真实世界的需求">了解真实世界的需求</h2>
 <h2 id="分析设计图">分析设计图</h2>
