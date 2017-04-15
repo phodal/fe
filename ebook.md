@@ -1647,38 +1647,64 @@ API 设计应该由前端开发者来驱动的。后台只提供前端想要的�
 
 ### 使用文档规范 API
 
-Swagger
+不论是异地，或者是坐一起协作开发，使用 API 文档来确保对接成功，是一个“低成本”、较为通用的选择。在这一点上，使用接口及函数调用，与使用 REST API 来进行通讯，并没有太大的区别。
 
-基于 YAML语法定义 RESTful API，如：
+先写一个 API 文档，双方一起来维护，文档放在一个公共的地方，方便修改，方便沟通。慢慢的再随着这个过程中的一些变化，如无法提供事先定好的接口、不需要某个值等等，再去修改接口及文档。
 
+可这个时候因为没有一个可用的 API，因此前端开发人员便需要自己去 Mock 数据，或者搭建一个 Mock Server 来完成后续的工作。
 
-它会自动生成一篇排版优美的API文档
+因此，这个时候就出现了两个问题：
 
-然而，它并不能解决没有人维护文档的问题。但是持续集成与之中的自动化测试可以。
+ - 维护 API 文档很痛苦
+ - 需要一个同步的 Mock Server
+
+而在早期，开发人员有同样的问题，于是他们有了 JavaDoc、JSDoc 这样的工具。它可以一个根据代码文件中中注释信息，生成应用程序或库、模块的API文档的工具。
+
+![JSDoc](images/jsdoc.png)
+
+同样的对于 API 来说，也可以采取类似的步骤，如 Swagger。它是基于 YAML语法定义 RESTful API，如：
+
+```
+swagger: "2.0"
+
+info:
+  version: 1.0.0
+  title: Simple API
+  description: A simple API to learn how to write OpenAPI Specification
+
+schemes:
+  - https
+host: simple.api
+basePath: /openapi101
+
+paths: {}
+```
+
+它会自动生成一篇排版优美的API文档，与此同时还能生成一个供前端人员使用的 Mock Server。同时，它还能支持根据 Swagger API Spec 生成客户端和服务端的代码。
+
+然而，它并不能解决没有人维护文档的问题，并且无法及时地通知另外一方。当前端开发人员修改契约时，后台开发人员无法及时地知道，反之亦然。但是持续集成与自动化测试则可以做到这一点。
+
+### 契约测试：基于持续集成与自动化测试
+
+当我们定好了这个 API 的规范时，这个 API 就可以称为是前后端之间的契约，这种设计方式也可以称为『契约式设计』。（定义来自[维基百科](https://zh.wikipedia.org/wiki/%E5%A5%91%E7%BA%A6%E5%BC%8F%E8%AE%BE%E8%AE%A1)）
+
+> 这种方法要求软件设计者为软件组件定义正式的，精确的并且可验证的接口，这样，为传统的抽象数据类型又增加了先验条件、后验条件和不变式。这种方法的名字里用到的“契约”或者说“契约”是一种比喻，因为它和商业契约的情况有点类似。
 
 按传统的『瀑布开发模型』来看，这个契约应该由前端人员来创建。因为当后台没有提供 API 的时候，前端人员需要自己去搭建 Mock Server 的。可是，这个 Mock API 的准确性则是由后台来保证的，因此它需要共同去维护。
 
-### 契约：测试保证 API 
+与其用文档来规范，不如尝试用持续集成与测试来维护 API，保证协作方都可以及时知道。
 
-与其以文档来规范，不如尝试用代码与测试来维护 API 
-
-早在 2011 年，Martin Folwer 就写了一篇相关的文章：[集成契约测试](http://martinfowler.com/bliki/IntegrationContractTest.html)
+在 2011 年，Martin Folwer 就写了一篇相关的文章：[集成契约测试](http://martinfowler.com/bliki/IntegrationContractTest.html)，介绍了相应的测试方式：
 
 ![集成契约测试](images/IntegrationContractTest.png)
 
-步骤：
+其步骤如下：
 
  - 编写契约（即 API）。即规定好 API 请求的 URL、请求内容、返回结果、鉴权方式等等。
  - 根据契约编写 Mock Server。可以彩 Moco
  - 编写集成测试将请求发给这个 Mock Server，并验证
 
-当契约发生发动的时候，相应的后台代码也相应的改动。
-
-![前端-后台与契约](images/contract-fe.png)
-
-消费者驱动契约
-
-使用 Moscow 和 Moco，如这是我们项目上采用的 Moscow：
+如下是我们项目使用的 [Moco](https://github.com/dreamhead/moco) 生成的契约，再通过 [Moscow](https://github.com/macdao/moscow) 来进行 API 测试。
 
 ```
 [
@@ -1697,6 +1723,14 @@ Swagger
     }
 ]
 ```
+
+只需要在相应的测试代码里请求资源，并验证返回结果即可。
+
+而对于前端来说，则是依赖于 UI 自动化测试。在测试的时候，启动这个 Mock Server，并借助于 Selenium 来访问浏览器相应的地址，模拟用户的行为进行操作，并验证相应的数据是否正确。
+
+![前端-后台与契约](images/contract-fe.png)
+
+当契约发生发动的时候，持续集成便失败了。因此相应的后台测试数据也需要做相应的修改，相应的前端集成测试也需要做相应的修改。因此，这一改动就可以即时地通知各方了。
 
 ### 前端测试与 API 适配器
 

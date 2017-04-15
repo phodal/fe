@@ -236,7 +236,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#瀑布式开发的-api-设计">瀑布式开发的 API 设计</a></li>
 <li><a href="#api-的协作设计">API 的协作设计</a><ul>
 <li><a href="#使用文档规范-api">使用文档规范 API</a></li>
-<li><a href="#契约测试保证-api">契约：测试保证 API</a></li>
+<li><a href="#契约测试基于持续集成与自动化测试">契约测试：基于持续集成与自动化测试</a></li>
 <li><a href="#前端测试与-api-适配器">前端测试与 API 适配器</a></li>
 </ul></li>
 </ul></li>
@@ -1334,29 +1334,52 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>与此同时，按前端人员的假设，我们也会做类似的、『不正确』的 API 设计。</p>
 <p>因此，API 设计这种活动便像是一个博弈。</p>
 <h3 id="使用文档规范-api">使用文档规范 API</h3>
-<p>Swagger</p>
-<p>基于 YAML语法定义 RESTful API，如：</p>
-<p>它会自动生成一篇排版优美的API文档</p>
-<p>然而，它并不能解决没有人维护文档的问题。但是持续集成与之中的自动化测试可以。</p>
+<p>不论是异地，或者是坐一起协作开发，使用 API 文档来确保对接成功，是一个“低成本”、较为通用的选择。在这一点上，使用接口及函数调用，与使用 REST API 来进行通讯，并没有太大的区别。</p>
+<p>先写一个 API 文档，双方一起来维护，文档放在一个公共的地方，方便修改，方便沟通。慢慢的再随着这个过程中的一些变化，如无法提供事先定好的接口、不需要某个值等等，再去修改接口及文档。</p>
+<p>可这个时候因为没有一个可用的 API，因此前端开发人员便需要自己去 Mock 数据，或者搭建一个 Mock Server 来完成后续的工作。</p>
+<p>因此，这个时候就出现了两个问题：</p>
+<ul>
+<li>维护 API 文档很痛苦</li>
+<li>需要一个同步的 Mock Server</li>
+</ul>
+<p>而在早期，开发人员有同样的问题，于是他们有了 JavaDoc、JSDoc 这样的工具。它可以一个根据代码文件中中注释信息，生成应用程序或库、模块的API文档的工具。</p>
+<figure>
+<img src="images/jsdoc.png" alt="JSDoc" /><figcaption>JSDoc</figcaption>
+</figure>
+<p>同样的对于 API 来说，也可以采取类似的步骤，如 Swagger。它是基于 YAML语法定义 RESTful API，如：</p>
+<pre><code>swagger: &quot;2.0&quot;
+
+info:
+  version: 1.0.0
+  title: Simple API
+  description: A simple API to learn how to write OpenAPI Specification
+
+schemes:
+  - https
+host: simple.api
+basePath: /openapi101
+
+paths: {}</code></pre>
+<p>它会自动生成一篇排版优美的API文档，与此同时还能生成一个供前端人员使用的 Mock Server。同时，它还能支持根据 Swagger API Spec 生成客户端和服务端的代码。</p>
+<p>然而，它并不能解决没有人维护文档的问题，并且无法及时地通知另外一方。当前端开发人员修改契约时，后台开发人员无法及时地知道，反之亦然。但是持续集成与自动化测试则可以做到这一点。</p>
+<h3 id="契约测试基于持续集成与自动化测试">契约测试：基于持续集成与自动化测试</h3>
+<p>当我们定好了这个 API 的规范时，这个 API 就可以称为是前后端之间的契约，这种设计方式也可以称为『契约式设计』。（定义来自<a href="https://zh.wikipedia.org/wiki/%E5%A5%91%E7%BA%A6%E5%BC%8F%E8%AE%BE%E8%AE%A1">维基百科</a>）</p>
+<blockquote>
+<p>这种方法要求软件设计者为软件组件定义正式的，精确的并且可验证的接口，这样，为传统的抽象数据类型又增加了先验条件、后验条件和不变式。这种方法的名字里用到的“契约”或者说“契约”是一种比喻，因为它和商业契约的情况有点类似。</p>
+</blockquote>
 <p>按传统的『瀑布开发模型』来看，这个契约应该由前端人员来创建。因为当后台没有提供 API 的时候，前端人员需要自己去搭建 Mock Server 的。可是，这个 Mock API 的准确性则是由后台来保证的，因此它需要共同去维护。</p>
-<h3 id="契约测试保证-api">契约：测试保证 API</h3>
-<p>与其以文档来规范，不如尝试用代码与测试来维护 API</p>
-<p>早在 2011 年，Martin Folwer 就写了一篇相关的文章：<a href="http://martinfowler.com/bliki/IntegrationContractTest.html">集成契约测试</a></p>
+<p>与其用文档来规范，不如尝试用持续集成与测试来维护 API，保证协作方都可以及时知道。</p>
+<p>在 2011 年，Martin Folwer 就写了一篇相关的文章：<a href="http://martinfowler.com/bliki/IntegrationContractTest.html">集成契约测试</a>，介绍了相应的测试方式：</p>
 <figure>
 <img src="images/IntegrationContractTest.png" alt="集成契约测试" /><figcaption>集成契约测试</figcaption>
 </figure>
-<p>步骤：</p>
+<p>其步骤如下：</p>
 <ul>
 <li>编写契约（即 API）。即规定好 API 请求的 URL、请求内容、返回结果、鉴权方式等等。</li>
 <li>根据契约编写 Mock Server。可以彩 Moco</li>
 <li>编写集成测试将请求发给这个 Mock Server，并验证</li>
 </ul>
-<p>当契约发生发动的时候，相应的后台代码也相应的改动。</p>
-<figure>
-<img src="images/contract-fe.png" alt="前端-后台与契约" /><figcaption>前端-后台与契约</figcaption>
-</figure>
-<p>消费者驱动契约</p>
-<p>使用 Moscow 和 Moco，如这是我们项目上采用的 Moscow：</p>
+<p>如下是我们项目使用的 <a href="https://github.com/dreamhead/moco">Moco</a> 生成的契约，再通过 <a href="https://github.com/macdao/moscow">Moscow</a> 来进行 API 测试。</p>
 <pre><code>[
     {
         &quot;description&quot;: &quot;should_response_text_foo&quot;,
@@ -1372,6 +1395,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
         }
     }
 ]</code></pre>
+<p>只需要在相应的测试代码里请求资源，并验证返回结果即可。</p>
+<p>而对于前端来说，则是依赖于 UI 自动化测试。在测试的时候，启动这个 Mock Server，并借助于 Selenium 来访问浏览器相应的地址，模拟用户的行为进行操作，并验证相应的数据是否正确。</p>
+<figure>
+<img src="images/contract-fe.png" alt="前端-后台与契约" /><figcaption>前端-后台与契约</figcaption>
+</figure>
+<p>当契约发生发动的时候，持续集成便失败了。因此相应的后台测试数据也需要做相应的修改，相应的前端集成测试也需要做相应的修改。因此，这一改动就可以即时地通知各方了。</p>
 <h3 id="前端测试与-api-适配器">前端测试与 API 适配器</h3>
 <p>使用代理，如 node-http-proxy，来写上不同环境的配置：</p>
 <figure>
