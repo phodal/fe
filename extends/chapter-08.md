@@ -41,7 +41,6 @@ Description 就比较复杂了，如
 
 ![知乎](../imags/zhihu-seo.jpg)
 
-单页面应用的后台渲染
 
 内链
 ---
