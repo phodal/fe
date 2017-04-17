@@ -1789,6 +1789,8 @@ react、angular、vue.js ？
 
 还需要考虑部署方案，自动部署，还是集成式？
 
+![RePractise](images/repractise.jpg)
+
 而这些设计都不能脱离原始的需求，因此我们必须明白业务到底要的是什么系统。
 
 真实世界的需求
