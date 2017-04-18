@@ -244,16 +244,25 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#从零开发一个前端应用有多难">从零开发一个前端应用有多难？</a><ul>
 <li><a href="#个人经历">个人经历</a></li>
 <li><a href="#真实世界的需求">真实世界的需求</a></li>
+<li><a href="#项目准备">项目准备</a><ul>
 <li><a href="#确认技术方案">确认技术方案</a></li>
 <li><a href="#搭建构建系统">搭建构建系统</a></li>
-<li><a href="#定义前端接口---使用-mock-server">定义前端接口 - 使用 Mock Server</a></li>
+</ul></li>
 <li><a href="#实现功能">实现功能</a><ul>
 <li><a href="#分析设计图">分析设计图</a></li>
+<li><a href="#mock-数据">Mock 数据</a></li>
 <li><a href="#实现功能-1">实现功能</a></li>
 <li><a href="#编写测试">编写测试</a></li>
 </ul></li>
-<li><a href="#对接应用">对接应用</a></li>
-<li><a href="#上线">上线</a></li>
+<li><a href="#集成">集成</a><ul>
+<li><a href="#与后台集成">与后台集成</a></li>
+<li><a href="#设置-toggle">设置 Toggle</a></li>
+</ul></li>
+<li><a href="#上线">上线</a><ul>
+<li><a href="#部署">部署</a></li>
+<li><a href="#上线-1">上线</a></li>
+<li><a href="#修-bug">修 bug</a></li>
+</ul></li>
 </ul></li>
 </ul>
 </nav>
@@ -1431,8 +1440,6 @@ paths: {}</code></pre>
 <p>后来，懒了，便找个模板，改吧，改吧，就用上了。</p>
 <p>代码只是其中的一小代码，还需要设计一系列的流程。</p>
 <p>如 workflow，</p>
-<p>webpack、rollup、tsc ？</p>
-<p>gulp、grunt、npm ?</p>
 <p>react、angular、vue.js ？</p>
 <p>还需要考虑部署方案，自动部署，还是集成式？</p>
 <figure>
@@ -1440,11 +1447,28 @@ paths: {}</code></pre>
 </figure>
 <p>而这些设计都不能脱离原始的需求，因此我们必须明白业务到底要的是什么系统。</p>
 <h2 id="真实世界的需求">真实世界的需求</h2>
-<p>stepping 完成建模？</p>
+<p><a href="https://github.com/phodal/stepping">stepping</a> 完成建模？</p>
+<pre><code>domain: 库存子域
+  aggregate: 库存
+    event: 库存已增加
+    event: 库存已恢复
+    event: 库存已扣减
+    event: 库存已锁定
+    command: 编辑库存</code></pre>
+<p>结合 Swagger 生成 Mock API</p>
 <p>可这是后端的工作~~，2333。</p>
-<h2 id="确认技术方案">确认技术方案</h2>
-<h2 id="搭建构建系统">搭建构建系统</h2>
-<h2 id="定义前端接口---使用-mock-server">定义前端接口 - 使用 Mock Server</h2>
+<h2 id="项目准备">项目准备</h2>
+<h3 id="确认技术方案">确认技术方案</h3>
+<p>react、angular、vue.js ？</p>
+<h3 id="搭建构建系统">搭建构建系统</h3>
+<p>webpack、rollup、tsc ？</p>
+<p>gulp、grunt、npm ?</p>
+<p>fastlane</p>
+<h2 id="实现功能">实现功能</h2>
+<h3 id="分析设计图">分析设计图</h3>
+<p>我的意思是：切图。</p>
+<h3 id="mock-数据">Mock 数据</h3>
+<p>定义前端接口 - 使用 Mock Server</p>
 <p>按优先级有所不同</p>
 <ul>
 <li>先需要从 Mockup 中写入需要的数据 —— 定死</li>
@@ -1453,13 +1477,16 @@ paths: {}</code></pre>
 <li>同步后台的接口</li>
 </ul>
 <p>如一些 Related Fields 前端需要的可能是扁平的结果，但是未来可能需要更多的值</p>
-<h2 id="实现功能">实现功能</h2>
-<h3 id="分析设计图">分析设计图</h3>
-<p>我的意思是：切图。</p>
 <h3 id="实现功能-1">实现功能</h3>
 <h3 id="编写测试">编写测试</h3>
-<h2 id="对接应用">对接应用</h2>
+<h2 id="集成">集成</h2>
+<h3 id="与后台集成">与后台集成</h3>
+<h3 id="设置-toggle">设置 Toggle</h3>
 <h2 id="上线">上线</h2>
+<h3 id="部署">部署</h3>
+<h3 id="上线-1">上线</h3>
+<h3 id="修-bug">修 bug</h3>
+<p>最后，祝大家修 bug 愉快。</p>
 <section class="footnotes">
 <hr />
 <ol>

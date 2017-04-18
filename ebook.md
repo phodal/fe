@@ -1781,10 +1781,6 @@ if(response && response.data && response.data.length > 0){}
 
 如 workflow，
 
-webpack、rollup、tsc ？
-
-gulp、grunt、npm ?
-
 react、angular、vue.js ？
 
 还需要考虑部署方案，自动部署，还是集成式？
@@ -1796,19 +1792,48 @@ react、angular、vue.js ？
 真实世界的需求
 ---
 
-stepping 完成建模？
+[stepping](https://github.com/phodal/stepping) 完成建模？
+
+```
+domain: 库存子域
+  aggregate: 库存
+    event: 库存已增加
+    event: 库存已恢复
+    event: 库存已扣减
+    event: 库存已锁定
+    command: 编辑库存
+```
+
+结合 Swagger 生成 Mock API
 
 可这是后端的工作~~，2333。
 
-
-确认技术方案
+项目准备
 ---
 
-搭建构建系统
+### 确认技术方案
+
+react、angular、vue.js ？
+
+### 搭建构建系统
+
+webpack、rollup、tsc ？
+
+gulp、grunt、npm ?
+
+fastlane
+
+实现功能
 ---
+
+### 分析设计图
+
+我的意思是：切图。
+
+
+### Mock 数据
 
 定义前端接口 - 使用 Mock Server
----
 
 按优先级有所不同
 
@@ -1819,19 +1844,24 @@ stepping 完成建模？
 
 如一些 Related Fields 前端需要的可能是扁平的结果，但是未来可能需要更多的值 
 
-实现功能
----
-
-### 分析设计图
-
-我的意思是：切图。
-
 ### 实现功能
 
 ### 编写测试
 
-对接应用
+集成
 ---
+
+### 与后台集成
+
+### 设置 Toggle
 
 上线
 ---
+
+### 部署
+
+### 上线
+
+### 修 bug
+
+最后，祝大家修 bug 愉快。
