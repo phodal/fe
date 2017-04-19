@@ -136,7 +136,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li><a href="#总结">总结</a></li>
 </ul></li>
-<li><a href="#基本的调试技能">基本的调试技能</a><ul>
+<li><a href="#必会的六个调试技能">必会的六个调试技能</a><ul>
 <li><a href="#我的调试入门">我的调试入门</a></li>
 <li><a href="#基本调试技巧实时调试">基本调试技巧：实时调试</a><ul>
 <li><a href="#实时调试样式">实时调试样式</a></li>
@@ -203,7 +203,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#用户交互事件">用户交互：事件</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#客户端存储艺术">客户端存储艺术</a><ul>
+<li><a href="#客户端存储与模型的艺术">客户端存储与模型的艺术</a><ul>
 <li><a href="#模型与存储">模型与存储</a></li>
 <li><a href="#存储">存储</a></li>
 <li><a href="#模型的变化">模型的变化</a></li>
@@ -245,6 +245,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#前端应用的生命周期">前端应用的生命周期</a></li>
 <li><a href="#项目准备">项目准备</a><ul>
 <li><a href="#确认技术方案">确认技术方案</a></li>
+<li><a href="#hello-world">hello, world</a></li>
 <li><a href="#搭建构建系统">搭建构建系统</a></li>
 <li><a href="#架构设计">架构设计</a></li>
 </ul></li>
@@ -549,7 +550,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h2 id="总结">总结</h2>
 <p>今天，大部分的框架并不只是那么简单。为了使用这个框架你，可能需要学习更多的框架、知识、理论。一个很好的例子就是 React，这个框架的开发人员，引入了相当多的概念，JSX、VIrtual Dom。而为了更好地使用 React 来开发，我们还需要引入其他框架，如 Redux、ES6 等等的内容。</p>
 <p>这些框架从思想上存在一些差异，但是它们都有相似之处，如组件化、MV**、All in JS、模板引擎等等。欲知后事如何，请期待下一章“前端=模板 + 数据，这就是模板引擎”。</p>
-<h1 id="基本的调试技能">基本的调试技能</h1>
+<h1 id="必会的六个调试技能">必会的六个调试技能</h1>
 <blockquote>
 <p>我还是一个野生程序员的时候，不会 Debug，只会傻傻地写一句句 std::count。即使是在今天，有些时候我也会这样做：打一个 console.log，然后看看结果是不是和预期的一样。如果不是和预期一样，就修改一下代码，刷新一下浏览器。这得亏是 JavaScript 是一门动态语言，可以很快的看到运行的结果。</p>
 </blockquote>
@@ -1085,7 +1086,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h3 id="用户交互事件">用户交互：事件</h3>
 <p>事实上，对于用户交互来说也只是改变状态的值，即对状态进行操作。</p>
 <p>举一个例子，当用户点击登录的时候，发送数据到后台，由后台返回这个值。由控制器一一的去修改这些状态，最后确认这个用户登录，并发一个用户已经登录的广播，又或者修改全局的用户值。</p>
-<h1 id="客户端存储艺术">客户端存储艺术</h1>
+<h1 id="客户端存储与模型的艺术">客户端存储与模型的艺术</h1>
 <blockquote>
 <p>Web或者移动应用的重心，由后台往前台挪动的两个标志是：客户端存储，客户端模型维护。在可见的未来，我们将会见证后端将不存储数据、由前端负责存储数据的应用。</p>
 </blockquote>
@@ -1474,6 +1475,7 @@ paths: {}</code></pre>
 <h2 id="项目准备">项目准备</h2>
 <h3 id="确认技术方案">确认技术方案</h3>
 <p>react、angular、vue.js ？</p>
+<h3 id="hello-world">hello, world</h3>
 <h3 id="搭建构建系统">搭建构建系统</h3>
 <p>webpack、rollup、tsc ？</p>
 <p>gulp、grunt、npm ?</p>

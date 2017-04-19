@@ -1,0 +1,69 @@
+{
+    "content": [
+        {
+        	"title": "关于作者",
+        	"path": "chapters/0-index.md"
+        },
+        {
+        	"title": "序：如何成为全栈增长工程师",
+        	"path": "chapters/0-prelude.md"
+        },
+        {
+        	"title": "第一章：我要成为一个前端设计师",
+        	"path": "chapters/chapter-01.md"
+        },
+        {
+        	"title": "第二章：入门不是应该很简单吗？",
+        	"path": "chapters/chapter-02.md"
+        },
+        {
+        	"title": "第三章：如何选择合适的前端语言",
+        	"path": "chapters/chapter-03.md"
+        },
+        {
+        	"title": "第四章：如何选择合适的前端框架",
+        	"path": "chapters/chapter-04.md"
+        },
+        {
+        	"title": "第五章：必会的六个调试技能",
+        	"path": "chapters/chapter5.md"
+        },
+        {
+        	"title": "第六章：如何以正确的姿势练习",
+        	"path": "chapters/chapter-06.md"
+        },
+        {
+            "title": "第七章：前后端分离，你应该知道的八件事",
+            "path": "chapters/chapter-07.md"
+        },
+        {
+        	"title": "第八章：SEO 优化技巧",
+        	"path": "chapters/chapter-08.md"
+        },
+        {
+        	"title": "第九章：单页面应用的核心知识",
+        	"path": "chapters/chapter-09.md"
+        },
+        {
+        	"title": "第十章：客户端存储与模型的艺术",
+        	"path": "chapters/chapter-10.md"
+        },
+        {
+        	"title": "第十一章：如何优化前端应用性能",
+        	"path": "chapters/chapter-11.md"
+        },
+        {
+        	"title": "第十二章：移动应用选型指南",
+        	"path": "chapters/chapter-12.md"
+        },
+        {
+        	"title": "第十三章：如何处理好前后端分离的 API 问题",
+        	"path": "chapters/chapter-13.md"
+        },
+        {
+        	"title": "第十四章：配置管理",
+        	"path": "chapters/chapter-14.md"
+        }
+    ],
+    "source": "http://ued.party/"
+}
