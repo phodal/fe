@@ -120,7 +120,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li><a href="#小结">小结</a></li>
 </ul></li>
-<li><a href="#如何选择合适的前端框架告别选择恐惧症">如何选择合适的前端框架，告别选择恐惧症</a><ul>
+<li><a href="#如何选择合适的前端框架">如何选择合适的前端框架</a><ul>
 <li><a href="#前端的选择恐惧症">前端的选择恐惧症</a><ul>
 <li><a href="#技术选型不仅仅受技术影响">技术选型：不仅仅受技术影响</a></li>
 <li><a href="#上线时间影响框架">上线时间影响框架</a></li>
@@ -242,7 +242,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#小结-3">小结</a></li>
 </ul></li>
 <li><a href="#如何从头开发一个前端应用">如何从头开发一个前端应用</a><ul>
-<li><a href="#repractise">RePractise</a></li>
+<li><a href="#前端应用的生命周期">前端应用的生命周期</a></li>
 <li><a href="#项目准备">项目准备</a><ul>
 <li><a href="#确认技术方案">确认技术方案</a></li>
 <li><a href="#搭建构建系统">搭建构建系统</a></li>
@@ -467,7 +467,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>并且未来 TypeScript 将会和 ECMAScript 建议的标准看齐。</p>
 <h2 id="小结">小结</h2>
 <p>除去语言本身，还有各种新的前端框架带来的变化。和其他领域（如后台，APP等等）中的框架一样，有的框架可以用于开发中大型应用，有的框架则能让我们更好地完成开发。</p>
-<h1 id="如何选择合适的前端框架告别选择恐惧症">如何选择合适的前端框架，告别选择恐惧症</h1>
+<h1 id="如何选择合适的前端框架">如何选择合适的前端框架</h1>
 <blockquote>
 <p>将 package.json 中的 Ionic 版本改为 2.0.0 的时候，我就思考一个问题。这个该死的问题是——我到底要用哪个框架继续工作下去。</p>
 </blockquote>
@@ -1457,20 +1457,20 @@ paths: {}</code></pre>
 <li>发布策略：红绿发布，以及 Toggle</li>
 </ul>
 <p>倘若，平时能像工作上走这些流程，那定能是提升自身的水平。工作上，需要更多的业务探索。而日常，则需要更多的技术发掘。</p>
-<h2 id="repractise">RePractise</h2>
+<h2 id="前端应用的生命周期">前端应用的生命周期</h2>
+<p>照例，我还是画下了这个过程的草图~。看上去，还不算太复杂：</p>
 <figure>
-<img src="images/refe.png" alt="ReFE" /><figcaption>ReFE</figcaption>
+<img src="images/refe.png" alt="前端应用的生命周期" /><figcaption>前端应用的生命周期</figcaption>
 </figure>
-<p>刚开始的时候，自己一点点的构建添加各种需要的东西。</p>
-<p>后来，懒了，便找个模板，改吧，改吧，就用上了。</p>
-<p>代码只是其中的一小代码，还需要设计一系列的流程。</p>
-<p>如 workflow，</p>
-<p>react、angular、vue.js ？</p>
-<p>还需要考虑部署方案，自动部署，还是集成式？</p>
+<p>刚开始，写前端应用的时候，为了创建 “hello, world”。总是，自己一点点的添加各种需要的元素。可后来，懒了，便寻找个模板，改吧，改吧，就用上了。</p>
+<p>最初的开发流程中，编码只是其中的一小代码，还需要设计一系列的 workflow、流程、技术选型等等。如，第三章《如何选择合适的前端语言》与第四章《如何选择合适的前端框架》中谈到的技术选型。</p>
+<p>除此，还需要考虑自动部署、持续集成等等的内容。</p>
+<p>而，上面的流程图，与我在 RePractise 中画的 “Web 应用生命周期” 差不多。</p>
 <figure>
-<img src="images/repractise.jpg" alt="RePractise" /><figcaption>RePractise</figcaption>
+<img src="images/repractise.jpg" alt="Web 应用的生命周期" /><figcaption>Web 应用的生命周期</figcaption>
 </figure>
-<p>而这些设计都不能脱离原始的需求，因此我们必须明白业务到底要的是什么系统。</p>
+<p>有兴趣的读者，阅读 GitHub 上的相关资料：<a href="https://github.com/phodal/growth-in-30-minutes">30分钟了解《全栈应用开发：精益实践》</a>。或者等待，即将出版的纸质书籍。</p>
+<p>现在，让我们进入这最后的一章，了解真实世界的应用构建。</p>
 <h2 id="项目准备">项目准备</h2>
 <h3 id="确认技术方案">确认技术方案</h3>
 <p>react、angular、vue.js ？</p>
