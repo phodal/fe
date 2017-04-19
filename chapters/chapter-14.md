@@ -7,7 +7,7 @@
 
 ![ReFE](../images/refe.png)
 
-个人经历
+RePractise
 ---
 
 刚开始的时候，自己一点点的构建添加各种需要的东西。
@@ -26,8 +26,22 @@ react、angular、vue.js ？
 
 而这些设计都不能脱离原始的需求，因此我们必须明白业务到底要的是什么系统。
 
-真实世界的需求
+项目准备
 ---
+
+### 确认技术方案
+
+react、angular、vue.js ？
+
+### 搭建构建系统
+
+webpack、rollup、tsc ？
+
+gulp、grunt、npm ?
+
+fastlane
+
+### 架构设计
 
 [stepping](https://github.com/phodal/stepping) 完成建模？
 
@@ -45,20 +59,6 @@ domain: 库存子域
 
 可这是后端的工作~~，2333。
 
-项目准备
----
-
-### 确认技术方案
-
-react、angular、vue.js ？
-
-### 搭建构建系统
-
-webpack、rollup、tsc ？
-
-gulp、grunt、npm ?
-
-fastlane
 
 实现功能
 ---
