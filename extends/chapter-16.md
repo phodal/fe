@@ -1,6 +1,8 @@
-前端工程化思维
+前端工作流
 ===
 
+
+![Workflow](../images/web-workflow-componets.jpg)
 
 自动化构建
 ---
