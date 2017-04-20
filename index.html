@@ -253,13 +253,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#实现功能-1">实现功能</a></li>
 <li><a href="#编写测试">编写测试</a></li>
 </ul></li>
-<li><a href="#集成">集成</a><ul>
+<li><a href="#集成与上线">集成与上线</a><ul>
 <li><a href="#与后台集成">与后台集成</a></li>
-<li><a href="#设置-toggle">设置 Toggle</a></li>
-</ul></li>
-<li><a href="#上线">上线</a><ul>
-<li><a href="#部署">部署</a></li>
-<li><a href="#上线-1">上线</a></li>
+<li><a href="#上线">上线</a></li>
 <li><a href="#修-bug">修 bug</a></li>
 </ul></li>
 </ul></li>
@@ -1525,6 +1521,10 @@ paths: {}</code></pre>
 <h2 id="实现功能">实现功能</h2>
 <h3 id="分析设计图">分析设计图</h3>
 <p>我的意思是：切图。</p>
+<p>header 和 footer ，通常都是共用的，因此，多数时候，我们都在处理页面内容。</p>
+<p>而对于 content 来说，要做的一般都是：详情页和列表页，有些时候还会有个特别的首页。</p>
+<p>这个过程中，最麻烦的便是写 CSS</p>
+<p>CSS 被认识很简单，也因此大部分的人都不会去学。</p>
 <h3 id="实现功能-1">实现功能</h3>
 <p>对于数据处理来说，不同的时候，有不同的方式。</p>
 <p>按优先级有所不同</p>
@@ -1536,12 +1536,11 @@ paths: {}</code></pre>
 </ul>
 <p>如一些 Related Fields 前端需要的可能是扁平的结果，但是未来可能需要更多的值</p>
 <h3 id="编写测试">编写测试</h3>
-<h2 id="集成">集成</h2>
+<p>可惜的是，国内测试环境不好。</p>
+<h2 id="集成与上线">集成与上线</h2>
 <h3 id="与后台集成">与后台集成</h3>
-<h3 id="设置-toggle">设置 Toggle</h3>
-<h2 id="上线">上线</h2>
-<h3 id="部署">部署</h3>
-<h3 id="上线-1">上线</h3>
+<h3 id="上线">上线</h3>
+<h4 id="设置-toggle">设置 Toggle</h4>
 <h3 id="修-bug">修 bug</h3>
 <p>最后，祝大家修 bug 愉快。</p>
 <section class="footnotes">
