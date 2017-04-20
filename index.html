@@ -244,9 +244,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#如何从头开发一个前端应用">如何从头开发一个前端应用</a><ul>
 <li><a href="#前端应用的生命周期">前端应用的生命周期</a></li>
 <li><a href="#项目准备">项目准备</a><ul>
-<li><a href="#确认技术方案">确认技术方案</a></li>
-<li><a href="#hello-world">hello, world</a></li>
-<li><a href="#搭建构建系统">搭建构建系统</a></li>
+<li><a href="#构建系统">构建系统</a></li>
 <li><a href="#架构设计">架构设计</a></li>
 </ul></li>
 <li><a href="#实现功能">实现功能</a><ul>
@@ -1470,7 +1468,7 @@ paths: {}</code></pre>
 <p>刚开始，写前端应用的时候，为了创建 “hello, world”。总是自己亲手来完成，一点点的添加各种需要的元素。可做过的人都知道，这并不是一件容易的事，我们需要构建工具、测试工具、自动化测试组件等等。创建一个 package.json、index.html，再慢慢地往上加上各种配置，或者 karma.js 或者 webpack.js、tsconfig.json。对于新手程序员来说，这简单是一场灾难——像小学生一样，刚才会了拿笔、大字不识几个，却要让他们写篇文章。前端新手的痛苦期，莫过于此。</p>
 <p>而那些前端框架的开发者们，应该是看到了这个痛苦的过程，便添加了一些基本的脚手架，可以让开发者使用 CLI 来生成项目。可是，生成的项目在多数时候并不能满足我们的需求，又得基于这个官方再修改一下。如 React 官方提供的 create-react-app 生成的项目，只是一个简单的 react 应用。</p>
 <p>后来，懒了，便在 GitHub 寻找个模板，改吧，改吧，就用上了。GitHub 上可能是大量的开发者，他们也经历了相同的坑，便共享出了这些代码。</p>
-<p>如大家所见，在这个过程里，编码只是其中的一小代码，还需要设计一系列的 workflow、流程、技术选型等等。诸如我们在第三章《如何选择合适的前端语言》、第四章《如何选择合适的前端框架》中谈到的技术选型简介绍的那些内容。</p>
+<p>如大家所见，在这个过程里，编码只是其中的一小代码，还需要设计一系列的 workflow、流程、技术选型等等。</p>
 <p>除此，对于软件工程做得好的前端团队来说，还需要考虑自动化测试、自动部署、持续集成等等的内容。</p>
 <p>按这些步骤来看，前端应用的生命周期，与 Web 应用保持得相当的一致。上面的流程图，与我在 RePractise 中画的 “Web 应用生命周期” 差不多。</p>
 <figure>
@@ -1479,14 +1477,22 @@ paths: {}</code></pre>
 <p>有兴趣的读者，阅读 GitHub 上的相关资料：<a href="https://github.com/phodal/growth-in-30-minutes">30分钟了解《全栈应用开发：精益实践》</a>。或者等待，即将出版的纸质书籍。</p>
 <p>现在，让我们进入这最后的一章，了解真实世界的应用构建。</p>
 <h2 id="项目准备">项目准备</h2>
-<h3 id="确认技术方案">确认技术方案</h3>
-<p>react、angular、vue.js ？</p>
-<h3 id="hello-world">hello, world</h3>
-<h3 id="搭建构建系统">搭建构建系统</h3>
-<p>webpack、rollup、tsc ？</p>
-<p>gulp、grunt、npm ?</p>
-<p>fastlane</p>
+<p>我们已经在第三章《如何选择合适的前端语言》、第四章《如何选择合适的前端框架》中谈到的技术选型简介绍的那些细节，这里就不展开讨论了。</p>
+<p>选好了合适的技术栈，有了一个 hello, world 模板，剩下的就是考虑一下：构建系统与工作流。</p>
+<h3 id="构建系统">构建系统</h3>
+<p>如《全栈应用开发：精益实践》一书中所说，构建系统是一个投入产出比非常高的组件部分。只需要在前期投入一定的时间，便能节省大量的时间用于开发 。</p>
+<p>当我们选择了 Angular、Vue、React 这一类的现代前端框架，它们使用了 ES6、TypeScript 等 JavaScript 方言。要在浏览器运行应用，我们就需要 webpack、rollup、tsc 这类的工作来转换代码：</p>
+<figure>
+<img src="images/webpack-process.png" alt="Webpack 构建流程" /><figcaption>Webpack 构建流程</figcaption>
+</figure>
+<p>可我们还需要其他更多的步骤，如启动 MockServer 等等的过程。这时，我们就需要一个构建工具，诸如 Gulp、Grunt、Npm，它可以帮助我们完成自动化的过程。</p>
+<p>可构建系统相当的复杂，需要执行一系列的步骤：</p>
+<figure>
+<img src="images/build-web-project.png" alt="构建系统" /><figcaption>构建系统</figcaption>
+</figure>
+<p>也因此需要不断地练习，并积累相关的经验。</p>
 <h3 id="架构设计">架构设计</h3>
+<p>虽然这是一个前端的创建指南，但是我还想稍微扯一点无关的内容。</p>
 <p><a href="https://github.com/phodal/stepping">stepping</a> 完成建模？</p>
 <pre><code>domain: 库存子域
   aggregate: 库存
@@ -1495,6 +1501,9 @@ paths: {}</code></pre>
     event: 库存已扣减
     event: 库存已锁定
     command: 编辑库存</code></pre>
+<figure>
+<img src="images/stepping.png" alt="Stepping" /><figcaption>Stepping</figcaption>
+</figure>
 <p>结合 Swagger 生成 Mock API</p>
 <p>可这是后端的工作~~，2333。</p>
 <h2 id="实现功能">实现功能</h2>
