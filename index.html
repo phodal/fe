@@ -244,8 +244,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#如何从头开发一个前端应用">如何从头开发一个前端应用</a><ul>
 <li><a href="#前端应用的生命周期">前端应用的生命周期</a></li>
 <li><a href="#项目准备">项目准备</a><ul>
+<li><a href="#技术选型">技术选型</a></li>
 <li><a href="#构建系统">构建系统</a></li>
-<li><a href="#架构设计">架构设计</a></li>
+<li><a href="#前后端分离设计">前后端分离设计</a></li>
 </ul></li>
 <li><a href="#实现功能">实现功能</a><ul>
 <li><a href="#分析设计图">分析设计图</a></li>
@@ -1477,7 +1478,16 @@ paths: {}</code></pre>
 <p>有兴趣的读者，阅读 GitHub 上的相关资料：<a href="https://github.com/phodal/growth-in-30-minutes">30分钟了解《全栈应用开发：精益实践》</a>。或者等待，即将出版的纸质书籍。</p>
 <p>现在，让我们进入这最后的一章，了解真实世界的应用构建。</p>
 <h2 id="项目准备">项目准备</h2>
-<p>我们已经在第三章《如何选择合适的前端语言》、第四章《如何选择合适的前端框架》中谈到的技术选型简介绍的那些细节，这里就不展开讨论了。</p>
+<h3 id="技术选型">技术选型</h3>
+<p>在第四章中，我们提到了影响技术选型的几个因素。</p>
+<figure>
+<img src="images/tech-decide.png" alt="技术选择因素" /><figcaption>技术选择因素</figcaption>
+</figure>
+<p>这时，为了更好的考量不同的因素，你就需要列出重要的象限，如<strong>开发效率</strong>、团队喜好等等。并依此来决定，哪个框架更适合当前的团队和项目。</p>
+<figure>
+<img src="images/pri.jpg" alt="PRI" /><figcaption>PRI</figcaption>
+</figure>
+<p>即使，不考虑前端框架以外的因素，那么技术选型也是相当痛苦的一件事。</p>
 <p>选好了合适的技术栈，有了一个 hello, world 模板，剩下的就是考虑一下：构建系统与工作流。</p>
 <h3 id="构建系统">构建系统</h3>
 <p>如《全栈应用开发：精益实践》一书中所说，构建系统是一个投入产出比非常高的组件部分。只需要在前期投入一定的时间，便能节省大量的时间用于开发 。</p>
@@ -1491,9 +1501,13 @@ paths: {}</code></pre>
 <img src="images/build-web-project.png" alt="构建系统" /><figcaption>构建系统</figcaption>
 </figure>
 <p>也因此需要不断地练习，并积累相关的经验。</p>
-<h3 id="架构设计">架构设计</h3>
-<p>虽然这是一个前端的创建指南，但是我还想稍微扯一点无关的内容。</p>
-<p><a href="https://github.com/phodal/stepping">stepping</a> 完成建模？</p>
+<h3 id="前后端分离设计">前后端分离设计</h3>
+<p>虽然这是一个前端的创建指南，但是我还想稍微扯一点『无关』的内容。好的前端程序员，应该是要懂后端的，特别是后端的数据模型。其次，便是与后台交互时的 API 行为/动作设计，即事件。</p>
+<p>我们需要考虑领域相关的模型，则模型相关的事件，而后整理出系统的领域事件图。</p>
+<figure>
+<img src="images/stepping.png" alt="Stepping" /><figcaption>Stepping</figcaption>
+</figure>
+<p>而诸如 <a href="https://github.com/phodal/stepping">stepping</a> 这样的工具，则可以用 DSL 来生成。</p>
 <pre><code>domain: 库存子域
   aggregate: 库存
     event: 库存已增加
@@ -1501,11 +1515,13 @@ paths: {}</code></pre>
     event: 库存已扣减
     event: 库存已锁定
     command: 编辑库存</code></pre>
+<p>再依据此去划分相关的子域，以及对应的微服务层次。</p>
 <figure>
-<img src="images/stepping.png" alt="Stepping" /><figcaption>Stepping</figcaption>
+<img src="images/event-storming.png" alt="领域" /><figcaption>领域</figcaption>
 </figure>
-<p>结合 Swagger 生成 Mock API</p>
-<p>可这是后端的工作~~，2333。</p>
+<p>借此，开发人员与领域专家共同完成业务的抽象。</p>
+<p>再由后台人员去设计后台数据结构，并结合 Swagger 设计并生成 Mock API 供前端使用，就可以完成前期的准备工作。</p>
+<p>后端与前端开发人员，都能分别专注于自己的工作。</p>
 <h2 id="实现功能">实现功能</h2>
 <h3 id="分析设计图">分析设计图</h3>
 <p>我的意思是：切图。</p>
