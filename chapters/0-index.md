@@ -11,6 +11,10 @@
 
 他热爱编程、写作、设计、旅行、hacking，你可以从他的个人网站：[https://www.phodal.com/](https://www.phodal.com/) 了解到更多的内容。
 
+作者微信公众号:
+
+![phodal-weixin](../images/wechat.jpg)
+
 相关信息：
 
  - 微博：[http://weibo.com/phodal](http://weibo.com/phodal)
@@ -31,7 +35,6 @@
 
 阅读过程中遇到语法错误、拼写错误、技术错误等等，不烦来个Pull Request，这样可以帮助到其他阅读这本电子书的童鞋。
 
-作者微信公众号:
+愿意支持作者或者遇到难题，可以加入 phodal 的小密圈:
 
-![phodal-weixin](../images/wechat.jpg)
-
+![小密圈](../images/xiaomiquan.jpg)
