@@ -1,7 +1,7 @@
 关于作者
 ---
 
-黄峰达（Phodal Huang）是一个开发者、创作者和作家。他毕业于西安文理学院电子信息工程专业，现作为一个咨询师就职于 ThoughtWorks。长期活跃于开源软件社区 GitHub，目前专注于物联网和前端领域。他是一个开源狂热者，并创建了一系列的开源项目在 GitHub 上。每天在结束日常的工作后，他喜欢去重新发明一些轮子。
+黄峰达（Phodal Huang）是一个创客、工程师、咨询师和作家。他毕业于西安文理学院电子信息工程专业，现作为一个咨询师就职于 ThoughtWorks 深圳。长期活跃于开源软件社区 GitHub，目前专注于物联网和前端领域。
 
 作为一个开源软件作者，著有 Growth、Stepping、Lan、Echoesworks 等软件。其中开源学习应用 Growth，广受读者和用户好评，可在 APP Store 及各大 Android 应用商店下载。
 
@@ -11,16 +11,16 @@
 
 他热爱编程、写作、设计、旅行、hacking，你可以从他的个人网站：[https://www.phodal.com/](https://www.phodal.com/) 了解到更多的内容。
 
-作者微信公众号:
-
-![phodal-weixin](../images/wechat.jpg)
-
-相关信息：
+其它相关信息：
 
  - 微博：[http://weibo.com/phodal](http://weibo.com/phodal)
  - GitHub： [https://github.com/phodal](https://github.com/phodal)
  - 知乎：[https://www.zhihu.com/people/phodal](https://www.zhihu.com/people/phodal)
  - SegmentFault：[https://segmentfault.com/u/phodal](https://segmentfault.com/u/phodal)
+
+当前为预览版，在使用的过程中遇到任何遇到请及时与我联系。阅读过程中问题，不烦在GitHub上提出来： [Issues](https://github.com/phodal/fe/issues)
+
+阅读过程中遇到语法错误、拼写错误、技术错误等等，不烦来个Pull Request，这样可以帮助到其他阅读这本电子书的童鞋。
 
 其他电子书：
 
@@ -31,10 +31,10 @@
  * 《[Growth: 全栈增长工程师指南](https://github.com/phodal/growth-ebook)》
  * 《[Growth: 全栈增长工程师实战](https://github.com/phodal/growth-in-action)》
 
-当前为预览版，在使用的过程中遇到任何遇到请及时与我联系。阅读过程中问题，不烦在GitHub上提出来： [Issues](https://github.com/phodal/fe/issues)
+作者微信公众号:
 
-阅读过程中遇到语法错误、拼写错误、技术错误等等，不烦来个Pull Request，这样可以帮助到其他阅读这本电子书的童鞋。
+![作者微信公众号：phodal-weixin](../images/wechat.jpg)
 
-愿意支持作者或者遇到难题，可以加入 phodal 的小密圈:
+支持作者，可以加入作者的小密圈:
 
 ![小密圈](../images/xiaomiquan.jpg)
