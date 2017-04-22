@@ -1,2 +1,0 @@
-
-![](../images/phodal-sign.jpg)

@@ -1968,6 +1968,3 @@ domain: 库存子域
 上线后，用户反馈了一堆 Bug。
 
 最后，祝大家修 bug 愉快。
-
-
-![](images/phodal-sign.jpg)
