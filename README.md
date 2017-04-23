@@ -3,6 +3,12 @@
 
 2017 年 1 月份，看完村上春树的新书《我的职业是一个小说家》，我便萌发了写一个《我的职业是前端工程师》系列文章的想法——以个人视角来看前端领域的各种技术。整个系列的文章大概有 15 篇左右，从我是如何成为一个前端工程师，到各种前端框架的知识。
 
+在线阅读地址：[http://ued.party/](http://ued.party/)
+
+下载地址 1：[https://github.com/phodal/fe/releases](https://github.com/phodal/fe/releases)
+
+下载地址 2：[http://t.xiaomiquan.com/3fqbQbM](http://t.xiaomiquan.com/3fqbQbM)
+
 关注我的微信公众号（扫描下面的二维码或搜索 Phodal）.
 
 ![QRCode](http://articles.phodal.com/qrcode.jpg)
