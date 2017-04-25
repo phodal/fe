@@ -165,7 +165,7 @@ product/powerbank/?minPrice=100&maxPrice=150&location=shenzhen&location=shenzhen
 
 ![站点标题](../images/title-example.jpg)
 
-如上图所示的结果，是我用 Google 搜索：“程序员如何提高影响力”得到的结果。对应的第一个链接的，``如何提高影响力- Phodal | Phodal - A Growth Engineer`` 就是我博客的站点标题。对应在 HTML 中就是 title 标题：
+如上图所示的结果，是我用 Google 搜索：“程序员如何提高影响力”得到的结果。对应的第一个链接的，``程序员如何提高影响力2.0 - Phodal | Phodal - A Growth Engineer`` 就是我博客的站点标题。对应在 HTML 中就是 title 标题：
 
 ![Phodal's COM SEO](../images/phodal-com-seo.png)
 
