@@ -38,3 +38,8 @@
 支持作者，可以加入作者的小密圈:
 
 ![小密圈](../images/xiaomiquan.jpg)
+
+或者转账：
+
+![支付宝](../images/alipay.png) ![微信](../images/wechat-pay.png)
+

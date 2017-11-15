@@ -40,6 +40,11 @@
 
 ![小密圈](images/xiaomiquan.jpg)
 
+或者转账：
+
+![支付宝](images/alipay.png) ![微信](images/wechat-pay.png)
+
+
 序
 ===
 
