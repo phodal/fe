@@ -23,16 +23,18 @@
 
 阅读过程中遇到语法错误、拼写错误、技术错误等等，不妨来个Pull Request，这样可以帮助到其他阅读这本电子书的童鞋。
 
-其他电子书：
+我的电子书：
 
+ * 《[GitHub 漫游指南](https://github.com/phodal/github-roam)》
+ * 《[我的职业是前端工程师](https://github.com/phodal/fe)》
+ * 《[Serverless 架构应用开发指南](https://github.com/phodal/serverless)》
+ * 《[Growth: 全栈增长工程师指南](https://github.com/phodal/growth-ebook)》
  * 《[Phodal's Idea实战指南](https://github.com/phodal/ideabook)》
  * 《[一步步搭建物联网系统](https://github.com/phodal/designiot)》
- * 《[GitHub 漫游指南](https://github.com/phodal/github-roam)》
  * 《[RePractise](https://github.com/phodal/repractise)》
- * 《[Growth: 全栈增长工程师指南](https://github.com/phodal/growth-ebook)》
  * 《[Growth: 全栈增长工程师实战](https://github.com/phodal/growth-in-action)》
 
-作者微信公众号:
+我的微信公众号:
 
 ![作者微信公众号：phodal-weixin](images/wechat.jpg)
 
