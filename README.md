@@ -5,11 +5,7 @@
 
 在线阅读地址：[http://ued.party/](http://ued.party/)
 
-下载地址 1：[https://github.com/phodal/fe/releases](https://github.com/phodal/fe/releases)
-
-下载地址 2：[http://t.xiaomiquan.com/3fqbQbM](http://t.xiaomiquan.com/3fqbQbM)
-
-关注我的微信公众号（扫描下面的二维码或搜索 Phodal）.
+关注我的微信公众号（扫描下面的二维码或搜索 Phodal)，回复书籍，可下载电子书版本
 
 ![QRCode](http://articles.phodal.com/qrcode.jpg)
 
