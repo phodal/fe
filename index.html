@@ -1194,7 +1194,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>如当用户访问博客的列表页时，大概需要 500+ ms 左右的时间，而一篇详情页则差不多是 200ms+。对于数据查询来说，除了使用更多、更好的服务器，还可以减少对数据的查询——即缓存数据结果。</p>
 <p>而在当时，我并没有注意博客对于缓存的控制，主要是因为使用的静态资源比较少。这一点直到我实习的时候才发现。</p>
 <h2 id="项目优化经验缓存优化">项目优化经验：缓存优化</h2>
-<p>当我试用了 PageSpeed 以及 YSlow 之后， 我发现光只使用 Nginx 来启用压缩 JS 和 CSS 是不够的，我们还需要：</p>
+<p>当我试用了 PageSpeed 以及 YSlow 之后， 我发现只使用 Nginx 来启用压缩 JS 和 CSS 是不够的，我们还需要：</p>
 <ul>
 <li>CSS和JavaScript压缩、合并、级联、内联等等</li>
 <li>设置资源的缓存时间。将资源缓存到服务器里，减少浏览器对资源的请求。</li>
@@ -1212,7 +1212,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>受限于移动应用的种种条件限制，我们会有选择的对移动应用进行缓存。并且，它还有助于我们改善移动应用的用户体验。移动应用与 Web 应用受限于网络条件，会有一些不同之处：</p>
 <ul>
 <li>移动应用或者移动 Web 应用，都是先响应用户的行为，再去获取数据。而桌面应用则可以先获取数据，再响应用户的行为。</li>
-<li>移动应用或单页面应用，在进行页面跳转后，为了加快返回上一页的速度，都会考虑数据或者页面。</li>
+<li>移动应用或单页面应用，在进行页面跳转后，为了加快返回上一页的速度，都会考虑缓存数据或者缓存页面。</li>
 <li>Web 应用的用户有着更稳定的网页条件，而移动应用则容易遇到网络问题。</li>
 <li>等等</li>
 </ul>
@@ -1277,7 +1277,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <blockquote>
 <p>write once, run anywhere</p>
 </blockquote>
-<p>与 Cordova 不自 JavaScript 引擎与 WebView 相比，React Native 自带 JavaScriptCore 作为 JavaScript 引擎倒是一种明智的做法。它可以解决低版本 Android 设备上的 JS 引擎效率问题。</p>
+<p>与 Cordova 不自带 JavaScript 引擎与 WebView 相比，React Native 自带 JavaScriptCore 作为 JavaScript 引擎倒是一种明智的做法。它可以解决低版本 Android 设备上的 JS 引擎效率问题。</p>
 <p>当然，如果基于 Cordova 的应用，还自带 WebView。那么，它可能做不到这么轻的量级。与此同时，与 React Native 相比，Cordova 是通过 WebView 来执行 JavaScript，这到底仍然是浪费了一些资源。</p>
 <figure>
 <img src="images/webkit-framework.png" alt="Webkit Architecture" /><figcaption>Webkit Architecture</figcaption>
