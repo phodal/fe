@@ -1435,7 +1435,7 @@ fetch(url).then(response => response.json())
 项目优化经验：缓存优化
 ---
 
-当我试用了 PageSpeed 以及 YSlow 之后， 我发现光只使用 Nginx 来启用压缩 JS 和 CSS 是不够的，我们还需要：
+当我试用了 PageSpeed 以及 YSlow 之后， 我发现只使用 Nginx 来启用压缩 JS 和 CSS 是不够的，我们还需要：
 
  - CSS和JavaScript压缩、合并、级联、内联等等
  - 设置资源的缓存时间。将资源缓存到服务器里，减少浏览器对资源的请求。
